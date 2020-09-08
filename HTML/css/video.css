@@ -1,0 +1,31 @@
+.main {
+    padding: 5%;
+    width: 80%;
+    margin: 2%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.search {
+    margin-top: 5%;
+}
+
+.results {
+    margin-top: 2%;
+    padding: 1%;
+    align-content: center;
+}
+
+.video {
+    margin-left: 1%;
+}
+
+.banner {
+    width: 50%;
+}
+
+.backgroundGray {
+    background-color: silver;
+}
