@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap example</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .h100px {
+            height: 100px;
+        }
+
+        .w100px {
+            width: 120px;
+        }
+
+        .ExampleContainer {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .ExampleContainer>div {
+            background-color: rgba(0, 0, 255, .1)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Width</h2>
+        <div class="ExampleContainer">
+            <div class="w-25 p-3"   >Width 25%</div>
+            <div class="w-50 p-3"   >Width 50%</div>
+            <div class="w-75 p-3"   >Width 75%</div>
+            <div class="w-100 p-3"  >Width 100%</div>
+            <div class="w-auto p-3" >Width auto</div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <h2>Height</h2>
+        <div class="ExampleContainer h100px">
+            <div class="h-25   d-inline-block   w100px ExampleChild">Height 25%</div>
+            <div class="h-50   d-inline-block   w100px ExampleChild">Height 50%</div>
+            <div class="h-75   d-inline-block   w100px ExampleChild">Height 75%</div>
+            <div class="h-100  d-inline-block   w100px ExampleChild">Height 100%</div>
+            <div class="h-auto d-inline-block   w100px ExampleChild">Height auto</div>
+        </div>
+    </div>
+    <hr>
+</body>
+
+</html>
