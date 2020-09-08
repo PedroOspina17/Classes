@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap example</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .mheight {
+            min-height: 10rem;
+            background-color: rgba(255, 0, 0, .1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bd-example-row">
+        <h2>equally distributed</h2>
+        <div class="row">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="w-100"></div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container  bd-example-row">
+        <h2>Specific distributions</h2>
+        <div class="row">
+            <div class="col-12 ">
+                12 cols
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                2 cols
+            </div>
+            <div class="col-8">
+                8 cols
+            </div>
+            <div class="col-2">
+                2 cols
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                6 cols
+            </div>
+            <div class="col-6">
+                6 cols
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-4">
+                4 cols
+            </div>
+            <div class="col-4">
+                4 cols
+            </div>
+            <div class="col-4">
+                4 cols
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                3 cols
+            </div>
+            <div class="col-3">
+                3 cols
+            </div>
+            <div class="col-3">
+                3 cols
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="container bd-example-row">
+        <h2>Alignments</h2>
+        <h3>Vertical</h3>
+        <div class="row align-items-start mheight">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <br>
+        <div class="row align-items-center mheight">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <br>
+        <div class="row align-items-end mheight">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+
+
+        <div class="container bd-example-row">
+            <h2>Horizontal</h2>
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    One of two columns
+                </div>
+                <div class="col-4">
+                    One of two columns
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    One of two columns
+                </div>
+                <div class="col-4">
+                    One of two columns
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-4">
+                    One of two columns
+                </div>
+                <div class="col-4">
+                    One of two columns
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    One of two columns
+                </div>
+                <div class="col-4">
+                    One of two columns
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    One of two columns
+                </div>
+                <div class="col-4">
+                    One of two columns
+                </div>
+            </div>
+        </div>
+        <div class="container bd-example-row">
+            <h2>Nested</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    Level 1: .col-sm-9
+                    <div class="row">
+                        <div class="col-8 col-sm-6">
+                            Level 2: .col-8 .col-sm-6
+                        </div>
+                        <div class="col-4 col-sm-6">
+                            Level 2: .col-4 .col-sm-6
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
