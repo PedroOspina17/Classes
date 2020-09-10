@@ -1,0 +1,11 @@
+.background{
+    background-color: dimgray;
+}
+
+.margen{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.borde{
+    border: 1px solid black;
+}
