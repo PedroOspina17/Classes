@@ -1,0 +1,91 @@
+<ul (un listado organizado)>  </li>(puntos en lista) br ralla para separar 
+<h3>Inputs(controles)</h3>  <h3>Boxes</h3>    <h3>Inputs(controles)</h3>
+ <h5>Textbox(caja tipotexto)</h5>
+    <input type="text" name="txtFirstName" id="txtFirstName">
+
+<h3>label(texto cualquiera)</h3>
+    <span>Some label</span>
+
+ <h5>button</h5>
+    <input type="button" name="btnSave" id="btnSave" value="button"(lo que quiero que el boton me muestre)>
+
+ <h5>checkbox(dos checkbox para saber que tipo de comda quiere ordenar)</h5>
+    <input type="checkbox" name="chkFood" id="chkChicken" > Chicken
+    <input type="checkbox" name="chkFood" id="chkCocacola" > Cocacola
+
+    <h5>radio button(unica seleccion)</h5>
+    <input type="radio" name="rbtnGender" id="rbtnMale"> Male
+    <input type="radio" name="rbtnGender" id="rbtnFemale"> Female
+
+    <h5>password(no me deja ver lo que escribo)</h5>
+    <input type="password" name="txtPassword" id="txtPassword">
+
+    <h5>datetime(fechas)</h5>
+    <input type="date" name="txtDateOfBird" id="txtDateOfBird">
+
+    <h5>number(solo numeros)</h5>
+    <input type="number" name="txtAge" id="txtAge">
+
+    <h5>color</h5>
+    <input type="color" name="btnFavoriteColor" id="btnFavoriteColor">
+
+    <h3>Drop down list(listados, tipo documento,tiene atributos)</h3>
+            <select name="ddlDocumentType" id="ddlDocumentType">
+                <option value="1">CC</option>
+                <option value="2">TI</option>
+                <option value="3">Passport</option>
+                <option value="4">NUIP</option>
+            </select>
+
+    <h3>Textarea(texto grande como comentarios,cols y rows lineas que quiero que tan grande quiero que sea mi area)</h3>
+    <textarea name="txtComments" id="txtComments" cols="30" rows="5"></textarea>
+        </li>
+      
+    <h3>Images(src ruta de la imagen)</h3>
+    <img src="img/img.jpg" class="w100px">
+        </li>
+       
+    <h3>Links(href es una url donde lo quiero mandar, si target blank quiero que me abra en otra pestaña)</h3>
+    <a href="http://Youtube.com" > Go to youtube</a>
+    <br (saltodelineaentre dos elementos)>
+    <a href="http://Youtube.com" target="_blank"> Open Youtube</a>
+
+  <h3>Tables(tr fila, td columnas,loque quiero que tnga en mi columna)</h3>
+            <table class="bordered">
+                <tr>
+                    <td class="bordered w100px">First col</td>
+                    <td class="bordered ">Second col</td>
+                    <td class="bordered w100px">Thrid col</td>
+                </tr>
+                <tr>
+                    <td class="bordered h100px">First col 1</td>
+                    <td class="bordered h100px">Second col 2</td>
+                    <td class="h100px">Thrid col 3</td>
+                </tr>
+                
+            </table>
+
+boostrap hoja de estilos. opc de diseño con el solo hecho de agregar se empieza a diseñar para moviles pantalla pequeña 
+diseño responsiv cambia depende de la pantalla que tengo 
+
+placeholder= letra dentro de un cuadro informacion que quiero aparezca y no modifica nada 
+class="container" me coloca automaticamente margenes div para todo con clase container
+class="form-control" inputs tipo texto estilo del input redondo iconos, 
+class="form-group" me separa inforamcion automaticamente para checkbox se coloca solo esta clase. 
+
+para botones la class="btn btn-primary" resalta y da ese color. 
+for lo que hace es atarme automaticamente el label con el boton 
+
+filas y columnas bostrap creo automaticamente diseños son puros divs y es responsiv 
+fila class="row" la pantalla la divide en 12 posibles secciones. 
+<div class="row">
+    <div class="col">col</div>
+        
+
+hr es una ralla de division 
+
+
+
+
+
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
+    <link rel="stylesheet" href="..//css/bootstrap.min.css">
     <style>
    
    main{
@@ -38,49 +39,118 @@
 </head>
 
 <body>
-    <div class="results">
-        <h3><span>Sales</span></h3>
-         Date <input type="dato" name="txtdato" id="txtdato1">
-         <br>   
-        seller 
-         <select name="ddlDocumentType" id="ddlDocumentType">
+    <div class= "results">
+        <div class=" form-group form-control">
+            <H3><LABEL>SALES</LABEL></H3>
+            <br>
+        </div>
+        <div class="form-group ">
+            <label for="date">Date</label>
+            <input type="dato" name="txtdato" id="txtdato1" placeholder="datos del usuario"> 
+        </div>
+        <div class="form-group ">
+            <label for="seller">seller</label>  
+            <select name="ddlDocumentType" id="ddlDocumentType">
             <option value="1">isabel gomez</option>
             <option value="2">alexandra ospina</option>
             <option value="3">david ossa</option>
             <option value="4">pedro ospina</option>
-        </select>
-        <br>
-        delivery amount <input type="number" name="numero" id="nnumber">
-        <div class="results1">
-        observaciones <textarea name="observaciones" id="txobservaciones" cols="30" rows="3">
-        customer:
-        adress:
-        phone:</textarea>
+            </select>
         </div>
-        <h5><span>sales detail</span></h5>
-        product 
-        <select name="producto" id="idproducto">
-            <option value="1">cortina</option>
-            <option value="2">sabanas</option>
-        </select>
+        <div class="form-group ">
+            <LABEL>delivery amount</LABEL>
+            <input type="number" name="numero" id="nnumber" placeholder="Ingrese datos">
+        </div>
+        <div class=" form-group ">
+            <label>observaciones</label>
+            <textarea name="observaciones" id="txobservaciones" rows="4">
+                customer:
+                adress:
+                hone:
+            </textarea>
+        </div>
         <br>
-        <span>price list $38.000</span>
+            <h4><label for="Sales Detail">sales detail</label></h4>
+            <hr>
+        <div class="form-group ">
+            <label for="producto">producto</label>
+            <select name="producto" id="idproducto">
+                    <option value="1">cortina</option>
+                    <option value="2">sabanas</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Price list">Price list $38.000</label>
+        </div>
+        <div class=" form-group">
+            <label for="expected profits">expected profits $10.000</label>
+        </div>
+        <div class="form-group">
+             <label for="sub total $48.000 ">subtotal $48.000</label>
+         </div>
+         <div class="form-group">
+            <label for="final price">final price</label>
+            <input type="preciofinal" name="pfinal" id="valorpfinal">
+        </div>
+        <div class="form-group">
+            <label for="quantity">quantity</label>
+            <input type="number" name="quantity" id="vquantity">
+        </div>
+        <div class="form-group">
+            <input type="button" value="add" class="btn btn-primary">
+        </div>
+        <hr>
+        <h3>Tables</h3>
+        <table class="bordered">
+            <tr>
+                <td class="bordered w100px">producto</td>
+                <td class="bordered ">quantity</td>
+                <td class="bordered w100px">price</td>
+                <td class="bordered w100px">subtotal</td>
+                <td class="bordered w100px">expected</td>
+                <td class="bordered w100px">profits</td>
+                <td class="bordered w100px">action</td>
+            </tr>
+            <tr>
+                <td class="bordered h100px">cortina</td>
+                <td class="bordered h100px">1</td>
+                <td class="h100px">$48.000</td>
+                <td class="bordered h100px">$48.000</td>
+                <td class="h100px">10.000</td>
+                <td class="h100px"></td>
+                <td><input type="button" value="modify"  type="button" value="remove" class="btn btn-primary"></td>
+             </tr>
+             <tr>
+                <td class="bordered h100px">sabana infantil</td>
+                <td class="bordered h100px">2</td>
+                <td class="h100px">$45.000</td>
+                <td class="bordered h100px">$90.000</td>
+                <td class="h100px">30.000</td>
+                <td class="h100px"></td>
+                <td><input type="button" value="modify"  type="button" value="remove" class="btn btn-primary"></td>
+             </tr>
+             <tr>
+                <td class="bordered h100px">cogin</td>
+                <td class="bordered h100px">3</td>
+                <td class="h100px">$40.000</td>
+                <td class="bordered h100px">$120.000</td>
+                <td class="h100px">30.000</td>
+                <td class="h100px"></td>
+                <td><input type="button" value="modify"  type="button" value="remove" class="btn btn-primary"></td>
+             </tr>
+
+
+            
+        </table>
         <br>
-        <span>expected profits $10.000 </span>
-        <br>
-        <span>sub total $48.000 </span>
-        <br>
-        <span>final price</span> <input type="preciofinal" name="pfinal" id="valorpfinal">
-        <br>
-        <span>quantity</span> <input type="number" name="quantity" id="vquantity">
-        <br>
-        <input type="button" value="add">
-        <br>
-        <h5>total profits </h5>
+         <h5>total profits </h5>
         <span>--</span>
-        <h3><span>total:</span></h3>
-        <h5><span>Delivery incluided:</span></h5>
-        <input type="button" value="save"> <a href="..//alexa/youtube redi.html">devolver</a>
-    </div>    
+        <br>
+        <label for="total">total$258.000</label>
+           
+            <h5><span>Delivery incluided:</span></h5>
+            <input type="button" value="save" class="btn-primary"> <a href="..//alexa/youtube redi.html">devolver</a>
+    </div> 
+</div>   
 </body>
 </html>
