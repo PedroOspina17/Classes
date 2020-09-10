@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <div class="container">
+       
+        <h1 class="text-centered">Sales</h1>
+    
+        <div class="col-12">
+    
+            <div class="form-group">
+                <label for="dateForm1">Date</label>
+                <input type="date" id="dateForm1" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="form-group">
+                <label for="selectForm1">Seller</label>
+                <select name="selectForm1" id="selectForm1">
+                    <option value=""></option>
+                    <option value="1">Isabel Gomez</option>
+                    <option value="2">David Ossa</option>
+                    <option value="3">Andrea Ospina</option>
+                    <option value="4">Dioselina Graciano</option>
+                    <option value="5">Omar Rendón</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deliveryForm1">Delivery Amount</label>
+                <input type="number" id="deliveryForm1">
+            </div>
+            <div class="form-group">
+                <label for="observForm1">Observations</label>
+                <textarea type="text" id="observForm1"></textarea>
+            </div>
+        </div>
+        <h2>Sales Detail</h2>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="productForm1">Product</label>
+                <select name="productForm1" id="productForm1">
+                    <option value=""></option>
+                    <option value="1">Cortina</option>
+                    <option value="2">Mantel</option>
+                    <option value="3">Tendido sencillo</option>
+                    <option value="4">Tendido doble</option>
+                    <option value="5">Sabana</option>
+                    <option value="6">Acolchado</option>
+                    <option value="7">Cobija</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label id="priceListForm1">Price List $38.000</label>
+            </div>
+            <div class="form-group">
+                <label id="expProForm1">Expected Profits $10.000</label>
+            </div>
+            <div class="form-group">
+                <label id="subTotalForm1">SubTotal $48.000</label>
+            </div>
+            <div class="form-group">
+                <label for="finalPriceForm1">Final Price</label>
+                <input type="number" id="finalPriceForm1">
+            </div>
+            <div class="form-group">
+                <label for="quantForm1">Quantity</label>
+                <input type="number" id="quantForm1">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <table class="bordered">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th> 
+                                <th>Price</th> 
+                                <th>SubTotal</th> 
+                                <th>Expected Profits</th>
+                                <th>Actions</th>
+                            </tr>
+                            <tr>
+                                <td>Cortina</td>
+                                <td>1</td>
+                                <td>$48.000</td>
+                                <td>$48.000</td>
+                                <td>$10.000</td>
+                                <td>
+                                    <button type="submit" class="btn btn-warning">Modify</button>
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sabana</td>
+                                <td>2</td>
+                                <td>$45.000</td>
+                                <td>$90.000</td>
+                                <td>$30.000</td>
+                                <td>
+                                    <button type="submit" class="btn btn-warning">Modify</button>
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mantel</td>
+                                <td>3</td>
+                                <td>$40.000</td>
+                                <td>$120.000</td>
+                                <td>$30.000</td>
+                                <td>
+                                    <button type="submit" class="btn btn-warning">Modify</button>
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div> 
+        </div>  
+        <div class="form-group">
+            <label id="totalProForm1">Total Profits: $70.000</label>
+        </div>
+        <div class="form-group">
+            <label id="totalForm1">Total: $258.000</label>
+        </div>
+        <div class="form-group">
+            <label id="deliverIncForm1">Delivery Included: $266.000</label>
+        </div>
+        <div class="form-group"></div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </div>
+</body>
+</html>
