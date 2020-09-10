@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap example</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .h100px {
+            height: 100px;
+        }
+
+        .ExampleContainer {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .ExampleContainer .row>div,
+        .ExampleContainer>div {
+            background-color: rgba(0, 0, 255, .1);
+        }
+
+        .noBackground {
+            background-color: transparent !important;
+        }
+
+        hr {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="text-center">Margins</h1>
+
+    <div class="container">
+        <div class="ExampleContainer">
+            <hr>
+            <div class="m-5">Width 50%</div>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <h2>On X direction</h2>
+        <div class="ExampleContainer">
+            <div class="row noBackground">
+                <div class="w-50 mx-5">Width 50%</div>
+            </div>
+            <div class="row noBackground">
+                <div class="w-50 ml-5">Width 50%</div>
+            </div>
+            <div class="row noBackground justify-content-end">
+                <div class="w-50 mr-5 ">Width 50%</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h2>On y direction</h2>
+        <div class="ExampleContainer">
+            <hr>
+            <div class="w-50 my-5">Width 50%</div>
+            <hr>
+            <div class="w-50 mt-5">Width 50%</div>
+            <hr>
+            <div class="w-50 mb-5">Width 50%</div>
+            <hr>
+            <div class="w-50 m-auto">Width 50%</div>
+            <hr>
+        </div>
+    </div>
+    <hr>
+
+
+    <h1 class="text-center">Paddings</h1>
+
+    <div class="container">
+        <div class="ExampleContainer">
+            <hr>
+            <div class="p-5">Width 50%</div>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <h2>On X direction</h2>
+        <div class="ExampleContainer">
+            <div class="w-50 px-5">Width 50%</div>
+            <div class="w-50 pl-5">Width 50%</div>
+            <div class="w-50 pr-5 text-right">Width 50%</div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h2>On y direction</h2>
+        <div class="ExampleContainer">
+            <hr>
+            <div class="w-50 py-5">Width 50%</div>
+            <hr>
+            <div class="w-50 pt-5">Width 50%</div>
+            <hr>
+            <div class="w-50 pb-5">Width 50%</div>
+            <hr>
+
+        </div>
+    </div>
+    <hr>
+</body>
+
+</html>
