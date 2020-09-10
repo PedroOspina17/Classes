@@ -80,9 +80,25 @@ filas y columnas bostrap creo automaticamente diseños son puros divs y es respo
 fila class="row" la pantalla la divide en 12 posibles secciones. 
 <div class="row">
     <div class="col">col</div>
-        
 
-hr es una ralla de division 
+columnas mas grandes se utilizan width(largo)-25 -50 - 75 - 100 o height (alto)25-50-75-100
+margenes margin mt-5 o ml-1-2-3-4-5 top arriba, button abajo, left izquierda r derecha 
+direcciones ancho x(a los dos ladoz izquierda y derecha) y largo y izquierda left derecha raif 
+padding pt-5relleno hacia adentro 
+colores en boostrap 
+colores primarios acciones mas vistosas 
+boton es con btn 
+si boton quiero que parezca un lin le coloco btn link 
+delineado es btn-outline-color
+grupo de botonos le doy btn group
+si texto quiero que tenga color le doy text
+para color de fondo le doy bg-warning text-white
+primary azul secondary gris  sucess verde  danger naranjado warning amrillo info verde claro light blanco 
+dark negro color secundario mas opaco 
+
+tablas 
+
+
 
 
 
