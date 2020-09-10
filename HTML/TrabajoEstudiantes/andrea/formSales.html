@@ -5,62 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cssAndrea/sales.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <title>sales</title>
 
 </head>
 
 <body>
 
-    <div class="main">
+    <div class="container">
         <h1>Sales</h1>
-        <div>
-            <span>Date</span>
-            <input type="date" name="txtDate" id="txtDate">
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" name="txtDate" id="txtDate" class="form-control">
         </div>
 
-        <div>
-            <span>Seller</span>
-            <select name="cboSaller" id="cboSaller">
+        <div class="form-group">
+            <label>Seller</label>
+            <select name="cboSaller" id="cboSaller" class="form-control">
                 <option value="1">David Ossa</option>
                 <option value="2">Andrea Ospina</option>
             </select>
         </div>
 
-        <div>
-            <span>Delivery Amount</span>
-            <input type="text" name="txtDelivery" id="txtDelivery">
+        <div class="form-group">
+            <label>Delivery Amount</label>
+            <input type="text" name="txtDelivery" id="txtDelivery" class="form-control">
         </div>
-        <div>
-            <SPan>Observations</SPan>
-            <textarea name="txtObservatios" id="" cols="20" rows="7">
-                Customer:
-                Adrees:
-                Phone:
+        <div class="form-group">
+            <label>Observations</label>
+            <textarea name="txtObservatios" id="" cols="5" rows="5" class="form-control">
+            Customer:
+
+            Adrees:
+
+            Phone:
             </textarea>
         </div>
         <h2>Sales Datail</h2>
         <hr>
-        <div>
-            <SPan>Produc</SPan>
-            <select name="" id="">
+        <div class="form-group">
+            <label>Produc</label>
+            <select name="" id="" class="form-control">
             <option value="1">Cortina</option>
             <option value="2">sabana</option>
             <option value="3">almuhada</option>
             </select>
         </div>
 
-        <span>Price List $ 38000</span>
+        <label>Price List $ 38000</label>
         <br>
-        <span>Expected Profits $ 10000</span>
+        <label>Expected Profits $ 10000</label>
         <br>
-        <span>Sub Total $ 48000</span>
-        <div>
-            <span>Final Price</span>
-            <input type="text">
+        <label>Sub Total $ 48000</label>
+        <div class="form-group">
+            <label>Final Price</label>
+            <input type="text" class="form-control">
         </div>
-        <div>
+        <div class="form-group">
             <span>Quantity</span>
-            <input type="text">
+            <input type="text" class="form-control">
         </div>
         <div>
             <input type="button" value="Add">
