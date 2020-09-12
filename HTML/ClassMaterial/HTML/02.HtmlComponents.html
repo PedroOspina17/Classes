@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Components</title>
+    <style>
+        .backGroundSilver{
+            background-color: silver;
+        }
+        .w100px{
+            width: 100px;
+        }
+        .h100px{
+            height: 100px;
+        }
+        .bordered{
+            border: 1px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Most common HTML components</h1>
+    <ul (un listado organizado)>
+        <li>
+            <h3>Boxes</h3>
+            <div class="backGroundSilver w100px h100px bordered">This is a 100x100 pixels div </div>
+        </li>(puntos en lista)
+        <li>
+            <h3>Inputs(controles)</h3>
+            <ul>
+                <li>
+                    <h5>Textbox(caja tipotexto)</h5>
+                    <input type="text" name="txtFirstName" id="txtFirstName">
+                </li>
+                <li>
+                    <h5>button</h5>
+                    <input type="button" name="btnSave" id="btnSave" value="button"(lo que quiero que el boton me muestre)>
+                </li>
+                <li>
+                    <h5>checkbox(dos checkbox para saber que tipo de comda quiere ordenar)</h5>
+                    <input type="checkbox" name="chkFood" id="chkChicken" > Chicken
+                    <input type="checkbox" name="chkFood" id="chkCocacola" > Cocacola
+                </li>
+                <li>
+                    <h5>radio button(unica seleccion)</h5>
+                    <input type="radio" name="rbtnGender" id="rbtnMale"> Male
+                    <input type="radio" name="rbtnGender" id="rbtnFemale"> Female
+                </li>
+                <li>
+                    <h5>password(no me deja ver lo que escribo)</h5>
+                    <input type="password" name="txtPassword" id="txtPassword">
+                </li>
+                <li>
+                    <h5>datetime(fechas)</h5>
+                    <input type="date" name="txtDateOfBird" id="txtDateOfBird">
+                </li>
+                <li>
+                    <h5>number(solo numeros)</h5>
+                    <input type="number" name="txtAge" id="txtAge">
+                </li>
+                <li>
+                    <h5>color</h5>
+                    <input type="color" name="btnFavoriteColor" id="btnFavoriteColor">
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Drop down list(listados, tipo documento,tiene atributos)</h3>
+            <select name="ddlDocumentType" id="ddlDocumentType">
+                <option value="1">CC</option>
+                <option value="2">TI</option>
+                <option value="3">Passport</option>
+                <option value="4">NUIP</option>
+            </select>
+        </li>
+        <li>
+            <h3>Textarea(texto grande como comentarios,cols y rows lineas que quiero que tan grande quiero que sea mi area)</h3>
+            <textarea name="txtComments" id="txtComments" cols="30" rows="5"></textarea>
+        </li>
+        <li>
+            <h3>Images(src ruta de la imagen)</h3>
+            <img src="img/img.jpg" class="w100px">
+        </li>
+        <li>
+            <h3>Links(href es una url donde lo quiero mandar, si target blank quiero que me abra en otra pestaña)</h3>
+            <a href="http://Youtube.com" > Go to youtube</a>
+            <br (saltodelineaentre dos elementos)>
+            <a href="http://Youtube.com" target="_blank"> Open Youtube</a>
+        </li>
+        <li>
+            <h3>Tables(tr fila, td columnas,loque quiero que tnga en mi columna)</h3>
+            <table class="bordered">
+                <tr>
+                    <td class="bordered w100px">First col</td>
+                    <td class="bordered ">Second col</td>
+                    <td class="bordered w100px">Thrid col</td>
+                </tr>
+                <tr>
+                    <td class="bordered h100px">First col 1</td>
+                    <td class="bordered h100px">Second col 2</td>
+                    <td class="h100px">Thrid col 3</td>
+                </tr>
+                
+            </table>
+        </li>
+        <li>
+            <h3>Paragraphs</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum quo quisquam quas praesentium corrupti, temporibus dignissimos recusandae itaque dolorem, delectus odio id similique dicta magnam provident perspiciatis distinctio asperiores.</p>
+
+        </li>        
+        <li>
+            <h3>label(texto cualquiera)</h3>
+            <span>Some label</span>
+        </li>
+    </ul>
+</body>
+</html>

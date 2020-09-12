@@ -2,130 +2,140 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
     <title>cuestionario</title>
 </head>
 
 <body>
     <div class="container w-75">
-        <div class="form-group">
-            <h1>Sales</h1>
-            <label for="dato">date</label>
-            <input class="form-control" type="date" name="" id="dato">
+        <h1>Sales</h1>
+        <div class="row">
+            <div class="form-group col">
+                <label for="dato">date</label>
+                <input class="form-control" type="date" name="" id="dato">
+            </div>
+            <div class="form-group col">
+                <label for="seller"> seller</label>
+                <select class="form-control" name="" id="seller">
+                    <option value="">maria isabel gomez</option>
+                    <option value="">pedro nel ospina</option>
+                    <option value="">david alejandro </option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label for="deli"> delivery amount</label>
+                <input class="form-control" type="number" name="" id="deli">
+            </div>
         </div>
-        <br>
-        <br>
-        <div class="form-group">
-            <label for="seller"> seller</label>
-            <select class="form-control" name="" id="seller">
-                <option value="">maria isabel gomez</option>
-                <option value="">pedro nel ospina</option>
-                <option value="">david alejandro </option>
-            </select>
-        </div>
-        <br>
-        <br>
-        <div class="form-group">
-            <label for="deli"> delivery amount</label>
-            <input class="form-control" type="number" name="" id="deli">
-        </div>
-        <br>
-        <br>
         <div class="form-group">
             <label for="description">observation</label>
-            <textarea class="form-control" name="description" id="description" cols="30" rows="5">
-                customers: 
-                address: 
-                phone:
+            <textarea class="form-control" name="description" id="description" cols="30" rows="3">customers:
+address: 
+phone:
             </textarea>
         </div>
         <br>
         <h3>sales detail</h3>
         <hr>
-        <hr>
         <div class="form-group">
-            <label for="pp"> product</label>
-            <select class="form-control" name="" id="pp">
-                <option value="">cortina</option>
-                <option value="">sabana</option>
-                <option value="">almohadas</option>
-                <option value="">cojines</option>
-            </select>
+            <div class="row">
+                <div class="col-7">
+                    <label for="pp"> product</label>
+                    <select class="form-control" name="" id="pp">
+                        <option value="">cortina</option>
+                        <option value="">sabana</option>
+                        <option value="">almohadas</option>
+                        <option value="">cojines</option>
+                    </select>
+                </div>
+                <div class=" col-2">
+                    <label for="area">final price</label>
+                    <input class="form-control" type="number" name="" id="area">
+                </div>
+                <div class=" col-2">
+                    <label for="nn2"> quantity</label> <input class="form-control" type="number" name="" id="nn2">
+                </div>
+                <div class=" col-1 mt-3 p-3">
+                    <input class="btn btn-outline-warning" type="button" value="Add">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label for="">price list $ 38.000</label>
+                </div>
+                <div class="col-3">
+                    <label for="">spected profist $ 10.000</label>
+                </div>
+                <div class="col-2">
+                    <label for="">sub tota $ 48.000</label>
+                </div>
+            </div>
+            <br>
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">product</th>
+                        <th scope="col">cuantity</th>
+                        <th scope="col">price</th>
+                        <th scope="col">subtotal</th>
+                        <th scope="col">spected profist</th>
+                        <th scope="col">actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cortina</td>
+                        <td>1</td>
+                        <td>$ 48.000</td>
+                        <td>$ 48.000</td>
+                        <td>$ 10.000</td>
+                        <td>
+                            <div>
+                                <div class="btn-group">
+                                    <input class="btn  btn-outline-warning" type="button" value="modify">
+                                    <input class="btn  btn-outline-danger" type="button" value="remove">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>sabana infantil</td>
+                        <td>2</td>
+                        <td>$ 45.000</td>
+                        <td>$ 90.000</td>
+                        <td>$ 30.000</td>
+                        <td>
+                            <div class="btn-group">
+                                <input class="btn  btn-outline-warning" type="button" value="modify">
+                                <input class="btn  btn-outline-danger" type="button" value="remove">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>cojin</td>
+                        <td>3</td>
+                        <td>$ 40.000</td>
+                        <td>$ 120.000</td>
+                        <td>$ 30.000</td>
+                        <td>
+                            <div class="btn-group">
+                                <input class="btn  btn-outline-warning" type="button" value="modify">
+                                <input class="btn  btn-outline-danger" type="button" value="remove">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>total profist: $ 70.000</h4>
+            <h5>-</h5>
+            <h3>total: $ 258.000</h3>
+            <br>
+            <h3>delivery included: $ 266.000</h3>
+            <br>
+            <input class="btn btn-outline-success" type="button" value="save">
+            <a href="youtube.html" class="btn btn-outline-warning">back to list</a>
         </div>
-        <br>
-        <label for="">price list $ 38.000</label>
-        <br>
-        <label for="">spected profist $ 10.000</label>
-        <br>
-        <label for="">sub tota $ 48.000</label>
-        <br>
-        <div class="form-group">
-            <label for="area">final price</label>
-            <textarea class="form-control" name="" id="area" cols="30" rows="1">48.000</textarea>
-        </div>
-        <br>
-        <div class="form-group">total profist:
-            <label for="nn2"> quantity</label> <input class="form-control" type="number" name="" id="nn2">
-        </div>
-        <br>
-        <div class="form-group">
-            <input type="button" value="add">
-        </div>
-        <br>
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">product</th>
-                    <th scope="col">cuantity</th>
-                    <th scope="col">price</th>
-                    <th scope="col">subtotal</th>
-                    <th scope="col">spected profist</th>
-                    <th scope="col">actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>cortina</td>
-                    <td>1</td>
-                    <td>$ 48.000</td>
-                    <td>$ 48.000</td>
-                    <td>$ 10.000</td>
-                    <td><input type="button" value="modify">
-                        <input type="button" value="remove"></td>
-                </tr>
-                <tr>
-                    <td>sabana infantil</td>
-                    <td>2</td>
-                    <td>$ 45.000</td>
-                    <td>$ 90.000</td>
-                    <td>$ 30.000</td>
-                    <td><input type="button" value="modify">
-                        <input type="button" value="remove"></td>
-                </tr>
-                <tr>
-                    <td>cojin</td>
-                    <td>3</td>
-                    <td>$ 40.000</td>
-                    <td>$ 120.000</td>
-                    <td>$ 30.000</td>
-                    <td><input type="button" value="modify">
-                        <input type="button" value="remove"></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>total profist:</h4>
-    <br>
-    <span>-</span>
-    <br>
-    <span>total</span>
-    <br>
-    <br>
-    <label for="">delivery included</label>
-    <br>
-    <input type="button" value="save">
-    <a href="youtube.html">back to list</a>
-    </div>
-    
+
 </body>
 
 </html>
