@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> FORMULARIO UNO </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
+
 <body>
-    
+    <div class="container pl-3 txt-bould">Sales</div>
+    <div class="container">
+        <div class="container row mb-2">
+            <div class="col"> Date </div>
+            <div class="col"> Seller </div>
+            <div class="col"> Delivery amount </div>
+        </div>
+        <div class="container row mb-2">
+            <div class="col">
+                <input type="date" name="dateFormulary" id="dateFormulary" class="form-control">
+            </div>
+            <div class="col">
+                <select name="listName" id="listName" class="form-control">
+                    <option value="name">Elisabeth Ospina G</option>
+                    <option value="name">Alexandra Ospina G</option>
+                    <option value="name">Yulieth Ospina G</option>
+                    <option value="name">Edwin Arley Arteaga</option>
+                    <option value="name">Pedro Nel Ospina G</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="number" name="txtAge" id="txtAge" class="form-control" value="8000">
+            </div>
+        </div>
+        <div class="container row mb-2">
+            <div class="col">Observaciones</div>
+        </div>
+        <div class="container row mb-2">
+            <div class="col">
+                <textarea name="Comments" id="Comments" cols="30" rows="3" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="container py-3 txt-bould">Sales Detail</div>
+        <div class="container">
+            <div class="container row mb-2">
+                <div class="col-4">Product</div>
+                <div class="col-3">Final price</div>
+                <div class="col-3">Quantity</div>
+                <div class="col-2"></div>
+            </div>
+            <div class="container row mb-2">
+                <div class="col-4">
+                    <select name="Products" id="Products" class="form-control">
+                        <option value="1">Cortina</option>
+                        <option value="1">Sabana</option>
+                        <option value="1">Cojin</option>
+                        <option value="1">Acolchado</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input type="number" name="finalPrice" id="finalPrice" class="form-control">
+                </div>
+                <div class="col-3">
+                    <input type="number" name="Quantity" id="QuantityProducts" class="form-control" value="1">
+                </div>
+                <div class="col2">
+                    <input type="button" name="btnAdd" id="btnAdd"value="Add" class="form-control">
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
 </body>
+
 </html>
