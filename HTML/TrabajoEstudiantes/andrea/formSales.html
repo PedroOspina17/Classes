@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cssAndrea/sales.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <title>sales</title>
 
@@ -13,75 +12,131 @@
 <body>
 
     <div class="container">
-        <h1>Sales</h1>
-        <div class="form-group">
-            <label>Date</label>
-            <input type="date" name="txtDate" id="txtDate" class="form-control">
+        <h1 class="ml-n3">Sales</h1>
+        <div class="row">
+            <div class="form-group col-4">
+                <label>Date</label>
+                <input type="date" name="txtDate" id="txtDate" class="form-control">
+            </div>
+
+            <div class="form-group col-4">
+                <label>Seller</label>
+                <select name="cboSaller" id="cboSaller" class="form-control">
+                    <option value="1">David Ossa</option>
+                    <option value="2">Andrea Ospina</option>
+                </select>
+            </div>
+
+            <div class="form-group col-4">
+                <label>Delivery Amount</label>
+                <input type="number" name="txtDelivery" id="txtDelivery" class="form-control">
+            </div>
         </div>
 
-        <div class="form-group">
-            <label>Seller</label>
-            <select name="cboSaller" id="cboSaller" class="form-control">
-                <option value="1">David Ossa</option>
-                <option value="2">Andrea Ospina</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Delivery Amount</label>
-            <input type="text" name="txtDelivery" id="txtDelivery" class="form-control">
-        </div>
         <div class="form-group">
             <label>Observations</label>
-            <textarea name="txtObservatios" id="" cols="5" rows="5" class="form-control">
-            Customer:
-
-            Adrees:
-
-            Phone:
+            <textarea name="txtObservatios" id="" cols="3" rows="3" class="form-control">
             </textarea>
         </div>
-        <h2>Sales Datail</h2>
+        <h2 class="ml-n3">Sales Detail</h2>
         <hr>
-        <div class="form-group">
-            <label>Produc</label>
-            <select name="" id="" class="form-control">
-            <option value="1">Cortina</option>
-            <option value="2">sabana</option>
-            <option value="3">almuhada</option>
-            </select>
-        </div>
+        <div class="row">
+            <div class="form-group col-7">
+                <label>Produc</label>
+                <select name="" id="" class="form-control">
+                    <option value="1">Cortina</option>
+                    <option value="2">sabana</option>
+                    <option value="3">almuhada</option>
+                </select>
+            </div>
 
-        <label>Price List $ 38000</label>
-        <br>
-        <label>Expected Profits $ 10000</label>
-        <br>
-        <label>Sub Total $ 48000</label>
-        <div class="form-group">
-            <label>Final Price</label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <span>Quantity</span>
-            <input type="text" class="form-control">
-        </div>
-        <div>
-            <input type="button" value="Add">
-        </div>
-        <h4>Total Profis</h4>
-        <span>-</span>
-        <h3>Total</h3>
-        <h3>Delivery Included</h3>
-        <div>
-            <input type="button" value="Save">
-            <a href="youtube.html">Back to list</a>
-        </div>
+            <div class="form-group col-2">
+                <label>Final Price</label>
+                <input type="number" class="form-control">
+            </div>
 
+            <div class="form-group col-2">
+                <label>Quantity</label>
+                <input type="number" class="form-control">
+            </div>
+            <div class="col-1 mt-4 pt-2">
+                <input type="button" value="Add" class="btn btn-outline-warning">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 mx-2">
+                <label>Price List $ 38000</label>
+            </div>
+            <div class="col-3 ml-4">
+                <label>Expected Profits $ 10000</label>
+            </div>
+            <div>
+                <label>Sub Total $ 48000</label>
+            </div>
+        </div>
+        <table class="table table-striped table-hover mt-5">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th>Expected Profits</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cortina</td>
+                    <td>1</td>
+                    <td>48000</td>
+                    <td>48000</td>
+                    <td>10000</td>
+                    <td>
+                        <div class="btn-group">
+                            <input type="button" value="Modify" class="btn btn-outline-warning">
+                            <input type="button" value="Remove" class="btn btn-outline-danger">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sabana Infantil</td>
+                    <td>2</td>
+                    <td>45000</td>
+                    <td>90000</td>
+                    <td>10000</td>
+                    <td>
+                        <div class="btn-group">
+                            <input type="button" value="Modify" class="btn btn-outline-warning">
+                            <input type="button" value="Remove" class="btn btn-outline-danger">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cojin</td>
+                    <td>3</td>
+                    <td>40000</td>
+                    <td>120000</td>
+                    <td>30000</td>
+                    <td>
+                        <div class="btn-group">
+                            <input type="button" value="Modify" class="btn btn-outline-warning">
+                            <input type="button" value="Remove" class="btn btn-outline-danger">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
+        <h4>Total Profis: $ 70.000</h4>
+        <label>-</label>
+        <h3>Total: $ 258.000</h3>
+        <h3 class="mt-3">Delivery Included: $ 266.000</h3>
+        <div class="mt-4">
+            <input type="button" value="Save" class="btn btn-outline-success">
+            <a href="youtube.html" class="btn btn-outline-warning">Back to list</a>
+        </div>
     </div>
-
-
-
 </body>
 
 </html>
