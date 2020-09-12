@@ -11,71 +11,83 @@
        
         <h1 class="text-centered">Sales</h1>
     
-        <div class="col-12">
-    
-            <div class="form-group">
-                <label for="dateForm1">Date</label>
-                <input type="date" id="dateForm1" placeholder="dd/mm/yyyy">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="dateForm1">Date</label>
+                    <input type="date" class="form-control" id="dateForm1" placeholder="dd/mm/yyyy">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="selectForm1">Seller</label>
-                <select name="selectForm1" id="selectForm1">
-                    <option value=""></option>
-                    <option value="1">Isabel Gomez</option>
-                    <option value="2">David Ossa</option>
-                    <option value="3">Andrea Ospina</option>
-                    <option value="4">Dioselina Graciano</option>
-                    <option value="5">Omar Rendón</option>
-                </select>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="selectForm1">Seller</label>
+                    <select name="selectForm1" id="selectForm1" class="form-control">
+                        <option value=""></option>
+                        <option value="1">Isabel Gomez</option>
+                        <option value="2">David Ossa</option>
+                        <option value="3">Andrea Ospina</option>
+                        <option value="4">Dioselina Graciano</option>
+                        <option value="5">Omar Rendón</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="deliveryForm1">Delivery Amount</label>
-                <input type="number" id="deliveryForm1">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="deliveryForm1">Delivery Amount</label>
+                    <input type="number" class="form-control" id="deliveryForm1">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="observForm1">Observations</label>
-                <textarea type="text" id="observForm1"></textarea>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="observForm1">Observations</label>
+                    <textarea type="text" class="form-control" id="observForm1"></textarea>
+                </div>
             </div>
         </div>
         <h2>Sales Detail</h2>
-        <div class="col-12">
-            <div class="form-group">
-                <label for="productForm1">Product</label>
-                <select name="productForm1" id="productForm1">
-                    <option value=""></option>
-                    <option value="1">Cortina</option>
-                    <option value="2">Mantel</option>
-                    <option value="3">Tendido sencillo</option>
-                    <option value="4">Tendido doble</option>
-                    <option value="5">Sabana</option>
-                    <option value="6">Acolchado</option>
-                    <option value="7">Cobija</option>
-                </select>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="productForm1">Product</label>
+                    <select name="productForm1" id="productForm1" class="form-control">
+                        <option value=""></option>
+                        <option value="1">Cortina</option>
+                        <option value="2">Mantel</option>
+                        <option value="3">Tendido sencillo</option>
+                        <option value="4">Tendido doble</option>
+                        <option value="5">Sabana</option>
+                        <option value="6">Acolchado</option>
+                        <option value="7">Cobija</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label id="priceListForm1">Price List $38.000</label>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="finalPriceForm1">Final Price</label>
+                    <input type="number" class="form-control" id="finalPriceForm1">
+                </div>
             </div>
-            <div class="form-group">
-                <label id="expProForm1">Expected Profits $10.000</label>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="quantForm1">Quantity</label>
+                    <input type="number" class="form-control" id="quantForm1">
+                </div>
             </div>
-            <div class="form-group">
-                <label id="subTotalForm1">SubTotal $48.000</label>
+            <div class="col-1 pt-2">
+                <button type="submit" class="btn btn-primary mt-4">Add</button>
             </div>
-            <div class="form-group">
-                <label for="finalPriceForm1">Final Price</label>
-                <input type="number" id="finalPriceForm1">
-            </div>
-            <div class="form-group">
-                <label for="quantForm1">Quantity</label>
-                <input type="number" id="quantForm1">
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
         </div>
-
+        <div class="row">
+            <div class="form-group">
+                <label id="priceListForm1" class="ml-3">Price List $38.000</label>
+                <label id="expProForm1" class="ml-2">Expected Profits $10.000</label>
+                <label id="subTotalForm1" class="ml-2">SubTotal $48.000</label>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="form-group">
-                    <table class="bordered">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Product</th>
@@ -133,7 +145,8 @@
             <label id="deliverIncForm1">Delivery Included: $266.000</label>
         </div>
         <div class="form-group"></div>
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="submit" class="ml-1 btn btn-outline-success">Save</button>
+            <button type="submit" class="ml-1 btn btn-outline-warning">Back to list</button>
         </div>
     </div>
 </body>
