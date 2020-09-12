@@ -1,4 +1,4 @@
-<ul (un listado organizado)>  </li>(puntos en lista) br ralla para separar 
+﻿<ul (un listado organizado)>  </li>(puntos en lista) br ralla para separar 
 <h3>Inputs(controles)</h3>  <h3>Boxes</h3>    <h3>Inputs(controles)</h3>
  <h5>Textbox(caja tipotexto)</h5>
     <input type="text" name="txtFirstName" id="txtFirstName">
@@ -64,6 +64,12 @@
                 </tr>
                 
             </table>
+
+placeholder _ para colocar un texto de muestra dentro de una cajita de texto
+formgroup para agrupar 
+w-50% para que mida la mitad de la pantalla
+identacion alt + shif + f
+btn-block-color para que el boton sea del ancho de su contenedor 
 
 boostrap hoja de estilos. opc de diseño con el solo hecho de agregar se empieza a diseñar para moviles pantalla pequeña 
 diseño responsiv cambia depende de la pantalla que tengo 
