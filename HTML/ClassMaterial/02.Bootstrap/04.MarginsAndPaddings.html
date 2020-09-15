@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap example</title>
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/styles.css">
+    <style>
+        .h100px {
+            height: 100px;
+        }
+
+        .ExampleContainer {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .ExampleContainer .row>div,
+        .ExampleContainer>div {
+            background-color: rgba(0, 0, 255, .1);
+        }
+
+        .noBackground {
+            background-color: transparent !important;
+        }
+
+        hr {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="text-center">Margins</h1>
+
+    <div class="container">
+        <div class="ExampleContainer">
+            <hr>
+            <div class="m-5">
+                <p>margin-5 (.m-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <h2>On X direction</h2>
+        <div class="ExampleContainer">
+            <div class=" mx-5">
+                <p>margin-5 on x (.mx-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div class="ml-5">
+                <p>margin-5 on the left (.ml-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div class="mr-5 ">
+                <p>margin-5 on the right (.mr-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div class="w-50 mx-auto">
+                <p>Center a div. Need to have a width less than the container (.mx-auto w-50)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h2>On y direction</h2>
+        <div class="ExampleContainer">
+            <div>some random element. <hr></div>
+            <div class="my-5">
+                <p>margin-5 on y (.my-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+            <div class="mt-5">
+                <p>margin-5 on top (.mt-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+            <div class="mb-5">
+                <p>margin-5 on bottom (.mb-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+        </div>
+    </div>
+    <hr>
+
+
+    <h1 class="text-center">Paddings</h1>
+
+    <div class="container">
+        <div class="ExampleContainer">
+            <div>some random element. <hr></div>
+            <div class="p-5">
+                <p>padding-5 on all directions (.p-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>On X direction</h2>
+        <div class="ExampleContainer">
+            <div class="px-5">
+                <p>padding-5 on x directions (.px-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div class=" pl-5">
+                <p>padding-5 on left side (.pl-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div class="pr-5 text-right">
+                <p>padding-5 on right side (.pr-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h2>On y direction</h2>
+        <div class="ExampleContainer">
+            <div>some random element. <hr></div>
+            <div class="py-5">
+                <p>padding-5 on y direction (.py-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+            <div class="pt-5">
+                <p>padding-5 on right side (.pr-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+            <div class="pb-5">
+                <p>padding-5 on right side (.pr-5)</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus accusantium commodi cum natus
+                    ea
+                    animi magnam eius beatae nostrum quas quae delectus nulla ex, officia ipsum iste illum
+                    blanditiis
+                    laudantium?
+                </p>
+            </div>
+            <div>some random element. <hr></div>
+
+        </div>
+    </div>
+    <hr>
+</body>
+
+</html>
