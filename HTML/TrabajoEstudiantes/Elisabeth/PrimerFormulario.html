@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> FORMULARIO UNO </title>
+    <title> FORMULARY ONE </title>
     <link rel="stylesheet" href="../../ClassMaterial/Common/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container pl-3 txt-bould">Sales</div>
+    <div class="container pl-3 txt-bould">
+        <h1>Sales</h1>
+    </div>
     <div class="container">
         <div class="container row mb-2">
             <div class="col"> Date </div>
@@ -44,13 +46,13 @@
         <div class="container py-3 txt-bould">Sales Detail</div>
         <div class="container">
             <div class="container row mb-2">
-                <div class="col-4">Product</div>
-                <div class="col-3">Final price</div>
-                <div class="col-3">Quantity</div>
+                <div class="col-6">Product</div>
+                <div class="col-2">Final price</div>
+                <div class="col-2">Quantity</div>
                 <div class="col-2"></div>
             </div>
             <div class="container row mb-2">
-                <div class="col-4">
+                <div class="col-6">
                     <select name="Products" id="Products" class="form-control">
                         <option value="1">Cortina</option>
                         <option value="1">Sabana</option>
@@ -58,14 +60,25 @@
                         <option value="1">Acolchado</option>
                     </select>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <input type="number" name="finalPrice" id="finalPrice" class="form-control">
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <input type="number" name="Quantity" id="QuantityProducts" class="form-control" value="1">
                 </div>
                 <div class="col2">
                     <input type="button" name="btnAdd" id="btnAdd"value="Add" class="form-control bg-warning">
+                </div>
+            </div>
+            <div class="container row mb-1">
+                <div class="col-2 mr-1">
+                    <label for="priceList">price list $8.000</label>
+                </div>
+                <div class="col-2 mr-1">
+                    <label for="expectedProfis">Expected Profis $10.000</label>
+                </div>
+                <div class="col-2 mr-1">
+                    <label for="subTotal">Subtotal $48.000</label>
                 </div>
             </div>
         </div>
