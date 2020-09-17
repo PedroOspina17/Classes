@@ -1,0 +1,15 @@
+un metodo se llama con function
+alert me muestra solo texto en alerta 
+prompt me trae un texto y me retorna una variable y me lo guarda tambien en una variable. 
+
+console.log(la variable definida) y me lo lleva a la consola y quiero mirar mi falla. 
+
+confirm me manda un mensaje si es positiva o negativa. 
+
+en java traigo la info con      script  src  me trae metodos.
+
+eventos. cuando .... le de o pase algo me le de click 
+onclick  cuando le doy click 
+onchance cuando el valor completo cambia 
+onkeypress cada vez que se presione una letra es un evento para mi pagina 
+onload para encabezados 
