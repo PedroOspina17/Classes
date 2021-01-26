@@ -3,6 +3,8 @@
  <h5>Textbox(caja tipotexto)</h5>
     <input type="text" name="txtFirstName" id="txtFirstName">
 
+    cuando es tipo texto le doy form control 
+
 <h3>label(texto cualquiera)</h3>
     <span>Some label</span>
 
@@ -99,7 +101,7 @@ delineado es btn-outline-color
 grupo de botonos le doy btn group
 si texto quiero que tenga color le doy text
 para color de fondo le doy bg-warning text-white
-primary azul secondary gris  sucess verde  danger naranjado warning amrillo info verde claro light blanco 
+primary azul secondary gris  sucess verde  rojo danger naranjado warning amrillo info verde claro light blanco 
 dark negro color secundario mas opaco 
 
 tablas 
