@@ -1,0 +1,13 @@
+alert para mostar una alerta
+consol.log() para mostrar 
+confirm me muestra unmensaje con una alerta positiva o negativa
+promt para pedir un texto y guardarlo en una variable
+confirmDesition() me muestra un mensaje y yo doy true o false.. me saca los botones aceptar o cancelar 
+
+para importar el java script se coloca en el head
+<script src= "   "
+
+eventos son las acciones que me dispara el usuario para yo desencadenar otra accion
+onclick evento en el que me dice cuando un usuario le da un click
+onChange dispara el evento cuando se cambia el texto  
+onKeyPress dispara el evento cuando se apreta una letra
