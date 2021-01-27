@@ -1,4 +1,6 @@
 var n;
+var oper;
+
 function number(n){
     console.log(n);
     document.getElementById('result').value+= n;   
@@ -11,22 +13,22 @@ function save_number(oper){
     console.log(old_n);
 }
 
-var oper;
+   
 function solution(){
     var new_n = parseInt(document.getElementById('result').value);
-    if (oper == '+'){
+    if (oper = '+'){
         document.getElementById('result').value= old_n + new_n; 
     }
-    else if (oper == '-'){
+    else if (oper = '-'){
         document.getElementById('result').value= old_n - new_n;
     }
-    else if (oper == 'x'){
+    else if (oper = '*'){
         document.getElementById('result').value= old_n * new_n;
     }
-    else if (oper == '÷'){
+    else if (oper = '/'){
         document.getElementById('result').value= old_n / new_n;
     }
-    
+    console.log(oper);
 }
 
 
