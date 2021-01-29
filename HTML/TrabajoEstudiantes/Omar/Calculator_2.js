@@ -3,32 +3,53 @@ var oper;
 
 function number(n){
     console.log(n);
-    document.getElementById('result').value+= n;   
+    document.getElementById('result').value += n;
+    document.getElementById('result1').value += n;
 }
 
-
-function save_number(oper){
+function save_number(paramOper){
+    console.log(paramOper);
     old_n = parseInt(document.getElementById('result').value);
-    document.getElementById('result').value= oper;
-    console.log(old_n);
+    document.getElementById('result').value= "";
+    document.getElementById('result1').value+= paramOper;
+    oper = paramOper;
 }
 
-   
+function reset (){
+    document.getElementById('result').value = "";
+    document.getElementById('result1').value = "";
+}
+
 function solution(){
+    var result = 0;
+    console.log("el input tiene:",document.getElementById('result').value);
     var new_n = parseInt(document.getElementById('result').value);
-    if (oper = '+'){
-        document.getElementById('result').value= old_n + new_n; 
+    console.log("oper es" + oper);
+    console.log("oldn", old_n);
+    console.log("newn", new_n);
+    if (oper == '+'){
+        result = old_n + new_n;
+        console.log('entró +');
     }
-    else if (oper = '-'){
-        document.getElementById('result').value= old_n - new_n;
+    else if (oper == '-'){
+        result = old_n - new_n;
+        console.log('entró -');
     }
-    else if (oper = '*'){
-        document.getElementById('result').value= old_n * new_n;
+    else if (oper == '*'){
+        result = old_n * new_n;
+        console.log('entró *');
     }
-    else if (oper = '/'){
-        document.getElementById('result').value= old_n / new_n;
+    else if (oper == '/'){
+        result = old_n / new_n;
+        console.log('entró /');
     }
-    console.log(oper);
+    else if (oper == '%'){
+        result = old_n * new_n /100 ;
+        console.log('entró %');
+    }
+    console.log("result",result);
+    document.getElementById('result').value= result;
+    console.log('Fin');
 }
 
 

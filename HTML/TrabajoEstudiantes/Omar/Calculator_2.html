@@ -10,18 +10,19 @@
 <body>
     <div class="container text-center w-25 card" style="background-color:#212529;">
         <h1 class="text-light">CASIO</h1>
-        <input type="text" id="result" name="result" class="modal-body text-right" style="background-color:#cddcf7;" readonly>
+        <input type="text" id="result1" name="result1" class="text-right border-bottom-0" style="background-color:#cddcf7;" readonly>
+        <input type="text" id="result" name="result" class=" text-right border-top-0  " style="background-color:#cddcf7; font-size: 25px;" readonly>
         <div class="row modal-header">
             <div class="btn-group mt-2 col-12 w-auto">
-                <button type="button" class="btn-warning w-25">%</button>
-                <button type="button" class="btn-warning w-25" onclick="clear(0)">CE</button>
-                <button type="button" class="btn-warning w-25">C</button>
+                <button type="button" class="btn-warning w-25" onclick="save_number('%')">%</button>
+                <button type="button" class="btn-warning w-25" onclick="save_number('')">CE</button>
+                <button type="button" class="btn-warning w-25" onclick="reset('')">C</button>
                 <button type="button" class="btn-warning w-25">←</button>   
             </div>
             <div class="btn-group mt-2 col-12 w-auto">
-                <button type="button" class="btn-warning w-25">¹/x</button>
-                <button type="button" class="btn-warning w-25">x²</button>
-                <button type="button" class="btn-warning w-25">²√x</button>
+                <button type="button" class="btn-secondary w-25">¹/x</button>
+                <button type="button" class="btn-secondary w-25">x²</button>
+                <button type="button" class="btn-secondary w-25">²√x</button>
                 <button type="button" class="btn-warning w-25" onclick="save_number('/')">÷</button>   
             </div>
         </div>
