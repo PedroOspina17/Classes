@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="02.Calculadora2.js"></script>
+</head>
+
+<body>
+    <div class="container w-25">
+        <h1 class="text-center">Calculadora</h1>
+        <br>
+        <div class="border">
+            <div class="p-3">
+                <div class="border">
+                    <label id="history" class="text-lg-right mx-2"></label>
+                    <input type="text" name="result" id="result" class="input-group text-lg-right border-0 " readonly>
+                </div>
+                
+                
+            </div>
+            <div class="p-3">
+                <div>
+
+                    <div class="btn-group  input-group">
+                        <input class="btn btn-warning w-25" name="AC" id="AC" type="button" value=" AC " onclick="saveOperation('AC')">
+                        <input class="btn btn-warning w-25" name="atras" id="atras" type="button" value="borrar " onclick="saveOperation()">
+                        <input class="btn btn-warning w-25" name="%" id="%" type="button" value=" % ">
+                        <input class="btn btn-warning w-25" name="/" id="/" type="button" value=" ÷ " onclick="saveOperation('/')">
+                    </div>
+
+                    <div class = "btn-group input-group">
+                        <input class="btn btn-light w-25" name="7" id="7" type="button" value=" 7 " onclick="saveNumber(7)">
+                        <input class="btn btn-light w-25" name="8" id="8" type="button" value=" 8 " onclick="saveNumber(8)">
+                        <input class="btn btn-light w-25" name="9" id="9" type="button" value=" 9 " onclick="saveNumber(9)">
+                        <input class="btn btn-warning w-25" name="x" id="x" type="button" value=" x " onclick="saveOperation('x')">
+                    </div>
+
+                    <div class = " btn-group input-group">
+                        <input class="btn btn-light w-25" name="4" id="4" type="button" value=" 4 " onclick="saveNumber(4)">
+                        <input class="btn btn-light w-25" name="5" id="5" type="button" value=" 5 " onclick="saveNumber(5)">
+                        <input class="btn btn-light w-25" name="6" id="6" type="button" value=" 6 " onclick="saveNumber(6)">
+                        <input class="btn btn-warning w-25" name="-" id="-" type="button" value=" - " onclick="saveOperation('-')">
+                    </div>
+
+                    <div class=" btn-group input-group">
+                        <input class="btn btn-light w-25" name="1" id="1" type="button" value=" 1 " onclick="saveNumber(1)">
+                        <input class="btn btn-light w-25" name="2" id="2" type="button" value=" 2 " onclick="saveNumber(2)">
+                        <input class="btn btn-light w-25" name="3" id="3" type="button" value=" 3 " onclick="saveNumber(3)">
+                        <input class="btn btn-warning w-25" name="+" id="+" type="button" value=" + " onclick="saveOperation('+')">
+                    </div>
+
+                    <div class="btn-group input-group">
+                        <input class="btn btn-warning w-25" name="," id="," type="button" value=" , ">
+                        <input class="btn btn-light w-25" name="0" id="0" type="button" value=" 0 " onclick="saveNumber(0)">
+                        <input class="btn btn-warning w-25" name="." id="." type="button" value=" . " onclick="saveNumber()">
+                        <input class="btn btn-warning w-25" name="=" id="=" type="button" value=" = " onclick="calculateResult()">
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

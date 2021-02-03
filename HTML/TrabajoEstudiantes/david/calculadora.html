@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mini Calculadora</title>
+    <script src="jc.js"></script>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Mini Calculadora</h1>
+        <div>
+            <br>
+            <h4>Numero #1</h4>
+        </div>
+        <input type="number" name="num1" id="num1" placeholder="Escriba el primer numero">
+        <br>
+        <br>
+        <div>
+            <h4>numero #2</h4>
+        </div>
+        <input type="number" name="num2" id="num2" placeholder="Escribe el segundo numero">
+        <br>
+        <br>
+        <div>
+            <div>
+                <input class="btn btn-dark" type="button" value=" + " onclick="suma()">
+            
+                <input class="btn btn-dark" type="button" value=" - " onclick="resta()">
+            </div>
+            <br>
+            <div>
+                <input class="btn btn-dark" type="button" value=" x " onclick="mult()">
+            
+                <input class="btn btn-dark" type="button" value=" / " onclick="div()">
+            </div>
+        <br>
+        </div>
+        <h4>resultado</h4>
+        <div><input type="number" name="resul" id="result" placeholder="Este es el resultado"></div>
+    </div>
+</body>
+
+</html>

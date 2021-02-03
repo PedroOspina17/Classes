@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="js/01.ComparisonWithJS.js"></script>
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body >
+    <h1 class="text-center">This is a comparison form</h1>
+    <div class="w-75 mx-auto mt-5" id="pnlForm">
+
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">User</label>
+            <input type="text" id="user" name="user" placeholder="Please type the user" class="form-control w-50">
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">user name</label>
+            <input type="text" id="userName" name="userName" placeholder="user name" class="form-control w-50">
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">Saludo</label>
+            <input type="text" id="saludo" name="saludo"  class="form-control w-50">
+        </div>        
+        <div class="form-group ">
+            <input type="button" id="btnHello" value="Say hello JS" class="btn btn-success" onclick="sayHelloJS()">            
+            <input type="button" id="btnHello" value="Say hello JQuery" class="btn btn-success" onclick="sayHelloJQuery()">
+        </div>   
+        <div class="form-group ">
+            <input type="button" id="btnHello" value="Hide with JS" class="btn btn-success" onclick="hidePanelJS()">            
+            <input type="button" id="btnHello" value="Hide with JQuery" class="btn btn-success" onclick="hidePanelJQuery()">
+        </div>       
+    </div>
+</body>
+
+</html>

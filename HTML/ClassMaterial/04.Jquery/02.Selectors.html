@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="js/02.Selectors.js"></script>
+</head>
+
+<body class="container" >
+    <h1 class="text-center">Selectors</h1>
+    <p> jQuery selectors allow you to select and manipulate HTML element(s).
+
+        jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. </p>
+    <div class="w-50 mx-auto mt-5">
+
+        <ul>
+            <li>
+                <div class="form-group">
+                    <span class="w-100 font-weight-bold">By tag name</span>
+                    <p>Selects all the tags elements specified.</p>
+                    <pre > $("TAGNAME")</pre>
+                    <span>Example: selector to get all the input tags <pre>$("input")</pre></span>            
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <span class="w-100 font-weight-bold">By class name</span>
+                    <p>Selects all the elements with the class specified. Denoted with <b class="font-weight-bold">"."</b></p> 
+                    <pre > $(".CLASSNAME")</pre>
+                    <span>Example: selector to get all the inputs with class 'testClass' <pre>  $(".testClass")</pre></span>            
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <span class="w-100 font-weight-bold">By element id</span>
+                    <p>Selects the first the element with the id specified.Denoted with <b class="font-weight-bold">"#"</b></p> 
+                    <pre > $("#ElementId")</pre>
+                    <span>Example: selector to get the element with id 'user'<pre>  $("#user")</pre></span>            
+                </div>
+            </li>   
+            <li>
+                <div class="form-group">
+                    <span class="w-100 font-weight-bold">By property</span>
+                    <p>Selects all the elements with the property specified. Denoted with <b class="font-weight-bold">"[]"</b> </p> 
+                    <pre > $("[Property]")</pre>
+                    <span>Example: selector to get all the elements with the property 'href'<pre>  $("#user")</pre></span>            
+                </div>
+            </li>   
+            <li>
+                <div class="form-group">
+                    <span class="w-100 font-weight-bold">By property and value</span>
+                    <p>Selects all the elements with the property and value specified. Denoted with <b class="font-weight-bold">"[]"</b></p> 
+                    <pre > $("[Property='Value']")</pre>
+                    <span>Example: selector to get all the elements with the property 'type' and value 'number'<pre>  $("[type='number']")</pre></span>
+                    <span>This can be mixed with the tag element selector.</span>
+                    <span>Example: selector to get all the inputs elements with the property 'name' and value 'dobDate'<pre>  $("input[name='dobDate']")</pre></span>
+                    
+                </div>
+            </li>   
+        </ul>
+        <div class="jumbotron pt-4">
+            <h2 class="text-center">Examples</h4>
+                <div class="form-group">
+                    <label class="w-100 font-weight-bold">User</label>
+                    <input type="text" id="user" name="user" placeholder="Please type the user" class="form-control  testClass user">
+                </div>
+                <div class="form-group">
+                    <label class="w-100 font-weight-bold">user name</label>
+                    <input type="text" id="user" name="userName" placeholder="Please type the user name" class="form-control  testClass user">
+                </div>
+                <div class="form-group">
+                    <label class="w-100 font-weight-bold">user age</label>
+                    <input type="number" id="userAge" name="userAge" placeholder="Please type the user age" class="form-control  testClass">
+                </div>
+                <div class="form-group ">
+                    <label class="w-100 font-weight-bold">user year and month of birth</label>
+                    <div class="form-inline">
+                        <input type="number" id="userYear" name="dobDate" placeholder="user DOB year" class="form-control w-50  testClass">
+                        <input type="number" id="userMonth" name="dobDate"  class="form-control w-50 testClass">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="w-100 font-weight-bold">user document type</label>
+                    <select name="doctype" id="doctype" class="form-control " >
+                        <option value="0">CC</option>
+                        <option value="1">TI</option>
+                        <option value="2">Passport</option>
+                    </select>                    
+                </div>
+                <div class="form-group">
+                    <label class="w-100 font-weight-bold">some links</label>
+                    <a href="www.google.com" class="testClass">This is a link</a><br>
+                    <a href="www.facebook.com" class="testClass">This is another link</a>
+                </div>      
+                <h5>Selectors to Hide</h5>  
+                <div class="form-group btn-group">
+
+                    
+                    <input type="button" value="all inputs" class="btn btn-sm btn-success testClass" onclick="hideAllInputs()">                                
+                    <input type="button" value="only user input" class="btn btn-sm btn-success testClass" onclick="hideUser()">
+                    <input type="button" value="links" class="btn btn-sm btn-success testClass" onclick="hideLink()">                    
+                    <input type="button" value="number inputs" class="btn btn-sm btn-success testClass" onclick="hideNumberInputs()">
+                    <input type="button" value="dob inputs" class="btn btn-sm btn-success testClass" onclick="hideDob()">                    
+                    
+                </div>   
+
+                <h5>Selectors to Show</h5>
+                <button value="" class="btn btn-sm btn-info" onclick="showAll()">Show all</button>
+                
+            </div>
+    </div>
+</body>
+
+</html>
