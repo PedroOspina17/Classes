@@ -62,3 +62,10 @@ function limpiarCampo() {
     acum=""
     document.getElementById("resultado").value="";
 }
+
+function calcular(op) {
+    if (op == "+") {
+        sumar(num1,num2)
+    }
+    
+}
