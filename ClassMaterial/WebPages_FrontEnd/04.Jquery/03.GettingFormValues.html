@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="js/05.GettingValues.js"></script>
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body class="container">
+    <div class="jumbotron pt-4">
+        <h2 class="text-center">Form test</h4>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">User</label>
+            <input type="text" id="user" name="user" placeholder="Please type the user" class="form-control  testClass">
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">user name</label>
+            <input type="text" id="userName" name="userName" placeholder="Please type the user name" class="form-control  testClass">
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">user age</label>
+            <input type="number" id="userAge" name="userAge" placeholder="Please type the user age" class="form-control  testClass">
+        </div>
+        <div class="form-group ">
+            <label class="w-100 font-weight-bold">user year and month of birth</label>
+            <div class="form-inline">
+                <input type="number" id="userYear" name="dobDate" placeholder="user DOB year" class="form-control w-50  testClass">
+                <input type="number" id="userMonth" name="dobDate" placeholder="user DOB month" class="form-control w-50 testClass">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">user document type</label>
+            <select name="doctype" id="doctype" class="form-control " >
+                <option value="0">CC</option>
+                <option value="1">TI</option>
+                <option value="2">Passport</option>
+            </select>                    
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">Educational level</label>
+            <select name="educationLevel" id="educationLevel" class="form-control " >
+                <option value="11">Undergraduate</option>
+                <option value="12">Graduate</option>
+                <option value="13">Master</option>
+            </select>                    
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">Gender</label>
+            <div class="form-check">
+            
+                <input type="radio" id="male" name="gender" value="Male" class="form-check-input" checked>
+                <label for="male" class="form-check-label">Male</label>            
+    
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>   
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">Knowledge</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="knowledge" id="python" value="python">
+                <label for="python" class="form-check-label">python</label>  
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="knowledge" id="html" >
+                <label for="html" class="form-check-label">html</label>  
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="knowledge" id="css" value="css">
+                <label for="css" class="form-check-label">css</label>  
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="knowledge" id="javascript" value="javascript">
+                <label for="javascript" class="form-check-label">javascript</label>  
+            </div>
+        </div>
+        <h5>Selectors to Hide</h5>  
+        <div class="form-group btn-group">
+
+            
+            <input type="button" value="all inputs" class="btn btn-sm btn-success testClass" onclick="hideAllInputs()">                                
+            <input type="button" value="only user input" class="btn btn-sm btn-success testClass" onclick="hideUser()">
+            <input type="button" value="links" class="btn btn-sm btn-success testClass" onclick="hideLink()">                    
+            <input type="button" value="number inputs" class="btn btn-sm btn-success testClass" onclick="hideNumberInputs()">
+            <input type="button" value="dob inputs" class="btn btn-sm btn-success testClass" onclick="hideDob()">                    
+            
+        </div>   
+
+        <h5>Selectors to Show</h5>
+        <button value="" class="btn btn-sm btn-info" onclick="showAll()">Show all</button>
+            
+    </div>
+</body>
+
+</html>
