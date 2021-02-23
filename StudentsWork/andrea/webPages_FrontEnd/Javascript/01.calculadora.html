@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="funciones.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container w-50">
+        <div class="row">
+            <div class="col">
+                <input type="text" name="txtPantalla" id="txtPantalla">
+            </div>
+        </div>
+        <div class="btn-group">
+            <input type="button" value="1" onclick="guardarNumero(1)">
+
+            <input type="button" value="2" onclick="guardarNumero(2)">
+
+            <input type="button" value="3" onclick="guardarNumero(3)">
+
+            <input type="button" value="/" onclick="guardarFuncion('/')">
+
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <input type="button" value="4" onclick="guardarNumero(4)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="5" onclick="guardarNumero(5)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="6" onclick="guardarNumero(6)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="*" onclick="guardarFuncion('*')">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <input type="button" value="7" onclick="guardarNumero(7)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="8" onclick="guardarNumero(8)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="9" onclick="guardarNumero(9)">
+            </div>
+            <div class="col-1">
+                <input type="button" value="-" onclick="guardarFuncion('-')">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <input type="button" value="c" onclick="borrar()">
+            </div>
+            <div class="col-1">
+                <input type="button" value="0" onclick="guardarNumero(0)">
+            </div>
+            <div class=" col-1 ">
+                <input type="button" value="=" onclick="resultado1()">
+            </div>
+            <div class=" col-1 ">
+                <input type="button" value="+" onclick="guardarFuncion('+')">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
