@@ -40,5 +40,5 @@ CREATE TABLE Department(
     Name VARCHAR(50) NOT NULL,
     LongName VARCHAR(100),
     Description VARCHAR(50),
-    IdCountry INT FOREIGN KEY REFERENCES Country(Id)
+    IdCountry INT FOREIGN KEY REFERENCES Country(Id) NOT NULL
 )
