@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 class="text-center">COMPLEX DOM MANIPULATION EXERCISE</h1>
+    <div class="container">
+        <p>
+            Create a form that holds a list of predefined programming languages (A list of checkboxes) and a list of
+            current open positions (A list of radio buttons).
+        </p>
+        
+        <div class="ml-5">
+            
+            Each knowledge has an score
+            <ul>
+                <li>Python: 5 points.</li>
+                <li>C#: 5 points</li>
+                <li>Java: 5 points</li>
+                <li>PHP: 4 points</li>
+                <li>HTML: 3 points</li>
+                <li>CSS: 2 points</li>
+                <li>Javascript: 3 points</li>
+                <li>Angular: 4 points</li>
+                <li>React: 4 points</li>
+                <li>SQL: 3 points</li>
+                <li>Go: 4 points</li>
+            </ul>
+        </div>
+        
+        <div class="ml-5">
+            Each open position has a minimum score
+            <ul>
+                <li>SQL Developer: 3 points</li>
+                <li>Backend developer: 8 points</li>
+                <li>Frontend developer: 8 points</li>
+                <li>Fullstack developer: 13 points</li>
+            </ul>
+        
+        
+
+    </div>
+    <p>
+        If a user wants to create another programming language can click on a button "Create new" (Which should be
+        besides or before of the knowledge section).
+        
+        <ul>
+            <li>
+                This button should show slowly a form with two inputs, One input to type the name of the knowledge to be created and one input to assign the points it has. Both of them should be required.The knowledge name should be with more than 3 characters and the points should be between 1 and 10.
+            </li>
+            <li>
+                Also should display a button to 'save' those values. When this button is clicked the application should create a new checkbox in the knowledge list.
+                Make sure you have validated all the fields before you add the new item to the list. If there is any invalid value report them with a nice alert.
+            </li>
+            <li>
+                Another button will be available to cancel the knowledge creation which will hide slowly this form shown.
+            </li>
+        </ul>
+    </p>
+    <p>
+        Create a button with the text "Get the job" to allow the users to validate if their knowledge is enouhg to an specific open position.
+        <br>
+        When this button is clicked the application need to do the following algorithm:</p>
+        <ol>
+            <li>Compute the amount of points that the user has</li>
+            <li>Identify the position that the user is applying to</li>
+            <li>Evaluate if the user is allowed to apply to the selected position.
+                <ul>
+                    <li>
+                        If the user doesn't get all the required points to apply show a nice alert notifying "The user does not meet the
+                        expected requirements"
+                    </li>
+                    <li>
+                        If the user has the expected points or more show a nice alert notifying "You have all the expected requirements. The position is yours !! Good job."
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        
+        
+        
+        
+        <img src="04.DOMManinupation_2.png" alt="">
+    </div>
+
+</body>
+
+</html>
