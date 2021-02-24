@@ -7,14 +7,16 @@
 
     <script src="../Common/js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="../Common/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="../Common/css/toastr.min.css">
     <script src="js/04.ManipulatingTheDom.js"></script>
     <title>DOM manipulation</title>
 </head>
 
 <body>
     
-    <div class="container">
-        <h2 class="">DOM Manipulation</h2>
+    <div class="container mb-5">
+        <h2 class="text-center">DOM Manipulation</h2>
         <p>
             The dom (Document object model - Page structure) can be modified on the fly. This means that using
             javascript or Jquery we can add, modify or delete elements as needed.
@@ -36,7 +38,7 @@
                 <br>
             </li>
             <li>
-                <b>.remove(ElementToRemove):</b> This method is used to eliminate a element from the page. Structure:
+                <b>.remove():</b> This method is used to eliminate a element from the page. Structure:
                 <code>$("#ElementToRemove").remove()</code>
 
                 <pre>
@@ -66,8 +68,97 @@
                         &lt;/div&gt;
                  </pre>
             </li>
+            <li>
+                <b> $("ElementToCreate"):</b>
+                There are several ways to achieve the same goal. 
+                You can create elements with the following structure <code>$("TagToCreate")</code> and then add it to the dom with the methods described bellow.
+                This is specially used when you need to create nested elements.
+                <pre>
+                    Start creating the elements as a container. It  can be any tag element
+                    <code>
+                        var container = $("&lt;someHtmlTag anyProperty="AnyValue"&gt;&lt;/someHtmlTag&gt;")
+                    </code>
+
+                    Then, create all the elements inside of the container and add them using the append. 
+                    <code>
+                        container.append("SomeOtherElement");
+                        container.append("SomeOtherElement");
+                        container.append("SomeOtherElement");
+                        container.append("SomeOtherElement");
+                    </code>
+
+                    And when all the element is created, it needs to be added to the DOM 
+                    using the append but this time modifying the element from the html and adding the container variable.
+                    <code>
+                        $("#ElementToModify").append(container);
+                    </code>
+                </pre>
+                <pre>
+                    Example: 
+                    Create a div with a label and a input inside (A bootstrap form field) each time the button is clicked
+
+                    <b> Before:</b>
+                    &lt;div id="divToModify"&gt;
+                    &lt;/div&gt;
+
+                    <b>Script:</b>
+                    var container = $("&lt;div class="form-group"&gt;&lt;/div&gt;")
+                    container.append("&lt;Label for="input" &gt; Some text label &lt;/Label&gt;")
+                    container.append("&lt;input type="text" id="input" name="input2" /&gt;")
+                    $("#divToModify").append(container);
+
+                    &lt;div id="divToModify"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;Label for="input" &gt; Some text label &lt;/Label&gt;
+                            &lt;input type="text" id="input" name="input2" /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+                Need to notice that <code>$("div")</code> is different than <code>$("&lt;div&gt;Content&lt;/div&gt;")</code>
+                <ol>
+                    <li><b>$("div")</b> is used to select all the 'div' tag elements</li>
+                    <li><b>$("&lt;div&gt;Content&lt;/div&gt;"):</b> is used to create a 'div' element <b>in memory</b> </li>
+                </ol>
+            </li>
         </ol>
         </p>
+        <div>
+            <h3>TOASTR</h3>
+            <p>Toastr is another library to show messages to the user. Similar to the sweet alert it needs to be imported in the same way of the swal</p>
+            Including the script
+            <br>
+            <code>
+                &lt;script src="../Common/js/sweetalert.min.js">&lt;/script></pre>
+            </code>
+            <br>
+            and the styles:
+            <br>
+            <code>
+                &lt;link rel="stylesheet" href="../Common/css/toastr.min.css">
+            </code>
+            <p>There are 4 type of message you can display. It just change the style of the message shown
+                <ul>
+                    <li>success: green</li>
+                    <li>error: red</li>
+                    <li>warning: orange</li>
+                    <li>info: blue</li>
+                </ul>    
+            </p>
+            <p>To use the toastr you just need to follow this structure <code>toastr.&lt;&lt;typeOfMessage&gt;&gt;('Any message you want.')</code></p>
+            <pre>
+                Example:
+                * To show a info message saying "Hello world". Use:
+
+                <code>
+                    toastr.info("Hello world").
+                </code>
+
+                * To show a warning message saying "The form has invalid values.". Use: 
+                <code>
+                    toastr.warning("The form has invalid values.");
+                </code>
+            </pre>
+        </div>
         <div class="jumbotron">
             <div id="divToModify">
                         
@@ -80,8 +171,10 @@
         </div>
         <div>
             <input type="button" class="btn btn-success" value="Add one input" onclick="createInput()">
-            <input type="button" class="btn btn-success" value="delete all the div's inputs" onclick="emptyDiv()">
             <input type="button" class="btn btn-success" value="delete one input" onclick="deleteInput()">
+            <input type="button" class="btn btn-success" value="delete all the div's elements" onclick="emptyDiv()">
+            <input type="button" class="btn btn-success" value="Create nested elements" onclick="createNested()">
+            <input type="button" class="btn btn-success" value="Create nested elements 2" onclick="createNested2()">
         </div>
     </div>
 </body>
