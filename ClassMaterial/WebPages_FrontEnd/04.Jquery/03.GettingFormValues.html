@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
     <script src="js/03.GettingFormValues.js"></script>
     <script src="../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../Common/js/sweetalert.min.js"></script>
 </head>
 
 <body class="container">
@@ -78,6 +79,31 @@
             </code>
         </pre>
     </div>
+    <div>
+        <h2>Sweet alert</h2>
+        <p>sweet alert is a library used to create a nice popup to show messages to the users.</p>
+        <p>To start using it all you need to do is import the script of the library</p>
+        <code>
+            &lt;script src="../Common/js/sweetalert.min.js">&lt;/script></pre>
+        </code>
+        Including this 
+        This function can be also executed with one, two or three parameters.
+        <ol>
+            <li>One parameter: it is used to show a simple alert. This is the simplest. <code>swal("This is the message")</code></li>
+            <li>Two parameters: It is used to show an alert with an specific title. <code>swal("this is the title","this is the message")</code></li>
+            <li>Three parameters: It is used to show an alert with title and icon. the thrid  parameter is the icon to be used. This last parameter can take three possible values:
+                <ol>
+                    <li>Success: Green</li>
+                    <li>Error: Red</li>
+                    <li>Warning: Orange</li>
+                    <li>Info: Blue</li>
+                </ol>
+                <code>swal("This is the title","this is the message","success")</code>
+            </li>
+        </ol>
+        
+        </p>
+    </div>
 
     <div class="jumbotron pt-4">
         <h2 class="text-center" id="title">Form test</h4>
@@ -138,6 +164,7 @@
 
                     <input type="radio" id="female" name="gender" value="2" description="Female">
                     <label for="female">Female</label>
+
                 </div>
             </div>
 
@@ -161,6 +188,25 @@
                 </div>
             </div>
             
+            <div class="form-group">
+                <label class="w-100 font-weight-bold">Experience</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experience" id="pythone" value="python">
+                    <label for="pythone" class="form-check-label">python</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experience" id="htmle" value="htmle">
+                    <label for="htmle" class="form-check-label">html</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experience" id="csse" value="csse">
+                    <label for="csse" class="form-check-label">css</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experience" id="javascripte" value="javascripte">
+                    <label for="javascripte" class="form-check-label">javascript</label>
+                </div>
+            </div>
             <div class="form-group btn-group">
 
 
