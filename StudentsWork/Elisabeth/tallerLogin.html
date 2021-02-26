@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TallerLogin</title>
     <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="../../StudentsWork/Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../StudentsWork/Common/js/sweetalert.min.js"></script>
+    <script src="../Elisabeth/WebPages_FrontEnd/JQuery/login/functionLogin.js"></script>
+
 </head>
 
 <body>
@@ -37,7 +41,7 @@
             <label class="form-check-label mb-4" for="CheckboxRecordar">Recuérdame</label>
         </div>
         <div class="container mb-5 w-50 mx-auto">
-            <input type="button" id="btnRegistrarse" value="Registrarse" class="btn btn-block btn-lg btn-success">
+            <input type="button" id="btnRegistrarse" value="Registrarse" class="btn btn-block btn-lg btn-success" onclick="validarUsuario()">
         </div>
         <div class="container">
             <label class="form-check-label mb-4" for="exampleCheck1">© 2020 - Clases HTML</label>

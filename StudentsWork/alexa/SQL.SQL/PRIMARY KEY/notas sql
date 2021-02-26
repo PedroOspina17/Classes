@@ -1,0 +1,12 @@
+int entero numeros
+varchar especificar cuantos caracteres vamos a tener varchar(50) texto
+float numeros decimales 
+date fechas 
+time
+datatime
+bit boleano 1/0 falso o verdadero
+primary key 
+identity(start increment) identity(1,1)
+foreignkeys, campo que relaciona una tabla con otra. referencia de mi tabla hacia la otra. foreignkeys el nombre de la tabla y nombre del campo mi foreignkeys debe tener el mismo tipo de dato de mi tabla int, varchar o lo que sea
+(nombre campo como quiero que se llame )int foreignkeys referencia (nombre de la tabla(primary key))
+campo requerido not null 

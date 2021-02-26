@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <script src="../JS/caluladora.js"></script>
+</head>
+<body>
+    <div class="text-center w-50">
+        <h1>CALCULADORA</h1>
+    </div>
+    <div class="container p-3">
+        <label for="num1"> numero 1</label>
+        <input type="number" name="num1" id="num1" placeholder="Ingrese el primer numero"class="form-control">
+    </div>
+    <div class="container p-3">
+        <label for="num2"> numero 2</label>
+        <input type="number" name="num2" id="num2" placeholder="Ingrese el segundo numero" class="form-control">
+    </div>
+    <div class="container row w- 50  mx-auto p">
+        <div class="col w-50 mx-auto">
+            <input type="button" name="suma" id="suma" value="+" class="btn btn-success p" onclick="operacion('+')">
+            <input type="button" name="resta" id="resta" value="-" class="btn btn-info p" onclick="operacion('-')">
+            <input type="button" name="multiplicacion" id="multiplicacion" value="*" class="btn btn-primary p" onclick="operacion('*')">
+            <input type="button" name="division" id="division" value="/" class="btn btn-outline-secondary p" onclick="operacion('/')">
+        </div>
+    </div>
+    <div class="container p-3">
+        <label for="resultado"> Resultado</label>
+        <input type="number" name="resultado" id="resultado" placeholder="Ingrese el primer numero"class="form-control" >
+    </div>
+</body>
+</html>

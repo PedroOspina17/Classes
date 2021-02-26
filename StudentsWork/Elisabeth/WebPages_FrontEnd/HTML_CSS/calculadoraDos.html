@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA DOS</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <script src="../JS/caluladora.js"></script>
+</head>
+<body>
+    <div class="container text-center w-50">
+        <h1>CALCULADORA</h1>
+    </div>
+    <div class="container bg-light w-50 m-auto p-2">
+        <div class=" container">
+            <input type="text" name="resultado" id="resultado" class="form-control" >
+        </div>
+        <div class="container row">
+            <div class="col mx-auto">
+                <input type="button" name="1" id="1" value="1" class="form-control" onclick="almacenarNumero('1')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="2" id="2" value="2" class="form-control" onclick="almacenarNumero('2')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="3" id="3" value="3" class="form-control" onclick="almacenarNumero('3')">
+            </div>
+            <div class="col mx-auto">
+                <input type="button" name="+" id="+" value="+" class="form-control" onclick="concatenar('+')">
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col mx-auto">
+                <input type="button" name="4" id="4" value="4" class="form-control" onclick="almacenarNumero('4')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="5" id="5" value="5" class="form-control" onclick="almacenarNumero('5')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="6" id="6" value="6" class="form-control" onclick="almacenarNumero('6')">
+            </div>
+            <div class="col mx-auto">
+                <input type="button" name="-" id="-" value="-" class="form-control" onclick="concatenar('-')">
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col mx-auto">
+                <input type="button" name="7" id="7" value="7" class="form-control" onclick="almacenarNumero('7')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="8" id="8" value="8" class="form-control" onclick="almacenarNumero('8')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="9" id="9" value="9" class="form-control" onclick="almacenarNumero('9')">
+            </div>
+            <div class="col mx-auto">
+                <input type="button" name="*" id="*" value="*" class="form-control" onclick="concatenar('*')">
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col mx-auto">
+                <input type="button" name="borrar" id="borrar" value="borrar" class="form-control" onclick="limpiarCampo('')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="0" id="0" value="0" class="form-control" onclick="almacenarNumero('0')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="=" id="=" value="=" class="form-control" onclick="calcular('=')">
+            </div> 
+            <div class="col mx-auto">
+                <input type="button" name="/" id="/" value="/" class="form-control" onclick="concatenar('/')">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
