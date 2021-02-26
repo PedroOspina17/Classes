@@ -1,0 +1,5 @@
+CREATE TABLE PRODUCTOS(
+    referencia INT IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(50)
+    )
+    
