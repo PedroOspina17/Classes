@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<style>
+    .backGroundSilver{
+        background-color: yellow;
+    }
+    .w100px{
+        width: 100px;
+    }
+    .h100px{
+        height: 100px;
+    }
+    .border{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <ul>
+        <li>
+            <h3>Boxer</h3>
+            <div class="backGroundSilver w100px h100px border">This is a 100x100 pixel div </div>
+        </li>
+        <li>
+            <h3>Inputs (components)</h3>
+            <ul>
+                <li>
+                    <h5>Texbox (caja tipo texto)</h5>
+                    <input type="text" name="txtFirsName" id="txtFirsName" placeholder="Firs Name">
+                </li>
+                <li>
+                    <h5>Button</h5>
+                    <input type="submit" name="btnSave" id="btnSave" value="button">
+                </li>
+                <li>
+                    <h5>Checkbox</h5>
+                    <input type="checkbox" name="chkFood" id="chkChiken">Chicken
+                    <input type="checkbox" name="chkFood" id="chkCocaCola">CocaCola
+                </li>
+                <li>
+                    <h5>radio button</h5>
+                    <input type="radio" name="rbtnGender" id="rbtnMale">Male
+                    <input type="radio" name="rbtnGender" id="rbtnFemale">Famale
+                </li>
+                <li>
+                    <h5>Password</h5>
+                    <input type="password" name="txtPassword" id="txtPassword">
+                </li>
+                <li>
+                    <h5>datetime(fechas)</h5>
+                    <input type="datetime" name="txtDateOfBird" id="txtDateOfBird">
+                </li>
+                <li>
+                    <h5>Number</h5>
+                    <input type="number" name="txtAge" id="txtAge" >
+                </li>
+                <li>
+                    <h5>Favorite color</h5>
+                    <input type="color" name="btnFavoriteColor" id="btnFavoriteColor">
+                </li>
+                <li>
+                    <h3>Dropdownlist</h3>
+                    <select type="ddlDocumentType" id="ddlDocumentType">
+                    <option value="1">.:Select:.</option>
+                    <option value="2">CC</option>
+                    <option value="3">TI</option>
+                    <option value="4">Passport</option>
+                    <option value="5">NUIP</option>
+                </select>
+                </li>
+                <li>
+                    <h3>TextArea</h3>
+                    <textarea name="txtComments" id="txtComments"cols="30" rows="5"></textarea>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>
