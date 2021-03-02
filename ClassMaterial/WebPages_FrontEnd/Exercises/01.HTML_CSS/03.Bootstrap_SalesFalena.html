@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create - falena</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="row">
+                <h2>Sales</h2>
+                <div class="col-12">
+                    <form>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="control-label" for="Date">Date</label>
+                                    <input class="form-control" type="date" id="Date" name="Date" value="">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="form-group ">
+                                    <label class="control-label" for="SellerId">Seller</label>
+                                    <select class="form-control" id="SellerId" name="SellerId">
+                                        <option value="2">Isabel Gómez</option>
+                                        <option value="3">Sofía Aristizabal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="form-group ">
+                                    <label class="control-label">Delivery amount</label>
+                                    <input type="number" id="DeliveryValue" class="form-control" value="8000"
+                                        step="1000" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="control-label" for="Observations">Observations</label>
+                                    <textarea class="form-control" type="text" rows="3" data-val="true"
+                                        data-val-maxlength="The field Observations must be a string or array type with a maximum length of &#39;2000&#39;."
+                                        data-val-maxlength-max="2000" id="Observations" maxlength="2000"
+                                        name="Observations"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h4>Sales detail</h4>
+
+                            <hr>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-12 form-group">
+                                                <label class="control-label">Product</label>
+                                                <select class="form-control valid" id="Product">
+                                                    <option value="1">cortina</option>
+                                                    <option value="3">Sabana infantil</option>
+                                                    <option value="4">Cojin</option>
+                                                </select>
+                                                <div class="row">
+                                                    <div class="col-4 pr-0">
+                                                        <div class="form-group">
+                                                            <label class="control-label form-control-sm">Price
+                                                                list</label>
+                                                            <label class="control-label form-control-sm p-0"
+                                                                id="PriceList">$ 38.000</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 p-0">
+                                                        <div class="form-group">
+                                                            <label class="control-label form-control-sm">Expected
+                                                                profits</label>
+                                                            <label class="control-label form-control-sm p-0"
+                                                                id="ExpectedIncomes">$ 10.000</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 pr-0">
+                                                        <div class="form-group">
+                                                            <label
+                                                                class="control-label form-control-sm">SubTotal</label>
+                                                            <label class="control-label form-control-sm p-0"
+                                                                id="Subtotal">$ 48.000</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-2 ">
+                                        <div class="form-group">
+                                            <label class="control-label">Final price</label>
+                                            <input class="form-control" id="FinalPrice" type="number" step="1000"
+                                                min="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-8 col-md-2 pr-0">
+                                        <div class="col-12 form-group pr-0">
+                                            <label class="control-label">Quantity</label>
+                                            <input class="form-control valid" value="1" id="Quantity" type="number"
+                                                step="1" min="1" >
+                                        </div>
+                                    </div>
+                                    <div class="col-4 col-md-1 ">
+                                        <div class="form-group p-4">
+                                            <input type="button" value="Add" class="btn btn-outline-warning btn-lg valid">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="detailsTable">
+                            <div class="col-12">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Subtotal</th>
+                                            <th>Expected profits</th>
+                                            <th class="w-25">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="TableBody">
+
+                                        <tr>
+                                            <td>cortina</td>
+                                            <td>1</td>
+                                            <td>$ 48.000</td>
+                                            <td>$ 48.000</td>
+                                            <td>$ 10.000</td>
+                                            <td class="btn-group">
+                                                <input type="button" class="btn btn-outline-warning" value="Modify">
+                                                <input type="button" class="btn btn-outline-danger" value="Remove">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sabana infantil</td>
+                                            <td>2</td>
+                                            <td>$ 45.000</td>
+                                            <td>$ 90.000</td>
+                                            <td>$ 30.000</td>
+                                            <td class="btn-group">
+                                                <input type="button" class="btn btn-outline-warning" value="Modify">
+                                                <input type="button" class="btn btn-outline-danger" value="Remove">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cojin</td>
+                                            <td>3</td>
+                                            <td>$ 40.000</td>
+                                            <td>$ 120.000</td>
+                                            <td>$ 30.000</td>
+                                            <td class="btn-group">
+                                                <input type="button" class="btn btn-outline-warning" value="Modify">
+                                                <input type="button" class="btn btn-outline-danger" value="Remove">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="form-group">
+                                    <h5 class="control-label">
+                                        Total profits:
+                                        <label class="" id="TotalIncomes">$ 70.000</label>
+                                    </h5>
+                                    -
+                                </div>
+
+                                <div class="form-group">
+                                    <h4 class="control-label">
+                                        Total:
+                                        <label class="" id="Total">$ 258.000</label>
+                                    </h4>
+                                    <h4 class="control-label">
+                                        Delivery included:
+                                        <label class="" id="GranTotal">$ 266.000</label>
+                                    </h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="button" value="Save" class="btn btn-outline-success">
+                                    <a class="btn btn-outline-warning" href="https://localhost:44319/Transactions/Sales">Back to List</a>
+
+                                </div>
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+
+            </div>
+
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>
