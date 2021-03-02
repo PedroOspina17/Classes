@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validations</title>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <script src="js/05.FormValidations.js"></script>
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../Common/js/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Validations on forms</h1>
+        <p>Most of the controls in a form need to be validated to make sure the value typed is correct. There are several validations that can be applied on forms but the most common ones are the following: </p>
+        <ul>
+            <li><b>Required:</b> This validation is to verify that the user have typed something in the input. 
+                <br>
+                To check this just take the input's value and compare it with an empty string. Remember to use the function trim to erase all the white spaces.<code>$("#fieldToCheck").val().trim() == ""</code> </li>
+            <li><b>Length:</b> This validation is to verify that the value does not exceed an specific length. <code>$("#fieldToValidate").val().length</code> </li>
+            <li><b>Dates:</b> When you are working with dates you need to convert the values into a Date data type. To do so you need to call the <code> new Date()</code>. To get the current date you just call the <code>new Date()</code> without parameters.
+                <br>
+                Then you can compare dates between them. For example to validate if the field dobDate is less than the current date you you use: <code>new Date($("#dobDate").val() + " 00:00:00") < new Date() </code>. </li>
+        </ul>
+
+
+        <div class="jumbotron">
+            <div class="form-group">
+                <label for="user">User</label>
+                <input type="text" name="user" id="user" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="user">User</label>
+                <input type="date" name="dob" id="dob" class="form-control">
+                <input type="number" name="age" id="age" class="form-control">
+                <select name="doctype" id="doctype" class="form-control ">
+                    <option value="">-- Seleccione una opción --</option>
+                    <option value="0">CC</option>
+                    <option value="1">TI</option>
+                    <option value="2">Passport</option>
+                </select>
+            </div>
+            <input type="button" value="Validate Form" onclick="validateForm()" class="btn btn-success">
+        </div>
+
+    </div>
+</body>
+
+</html>
