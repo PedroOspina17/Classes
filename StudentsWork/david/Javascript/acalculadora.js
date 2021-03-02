@@ -1,4 +1,4 @@
-var Rnumero;
+    var Rnumero;
 var numeroR
 function mostrar(numero) {
     Rnumero = document.getElementById("numbers").value += numero;
