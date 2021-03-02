@@ -1,9 +1,9 @@
 /*
-UPDATE: To change information.
+UPDATE: To change information to an specific table.
 
 Structure:
 
-UPDATE <<Table>> SET <<TargetField>> = <<NewValue>>, <<TargetField>> = <<NewValue>>
+UPDATE <<Table>> SET <<TargetField>> = <<NewValue>>, <<TargetField>> = <<NewValue>>, ...
 WHERE <<Condition>> AND/OR <<Condition>>
 
 <<Table>>:			The table name where the Update will be executed.
@@ -18,6 +18,7 @@ WHERE <<Condition>> AND/OR <<Condition>>
 
 
 
+UPDATE [User] SET Age = 700 -- This changes all the age's values to be 700
 
 UPDATE [User] SET Age = 700
 WHERE Age = 20 or name = 'pedro'
