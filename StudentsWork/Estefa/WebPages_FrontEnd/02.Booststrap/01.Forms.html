@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first form</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+</head>
+<style>
+    .tope {
+        padding-top: 3px;
+    }
+</style>
+<body>
+    <div class="Form">
+        <h1>My first form</h1>
+        <label>Email address</label>
+        <input type="text" placeholder="name@example.com" id="txtEmail" name="txtEmail">
+        <div class="tope">
+            <label>Example select</label>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="tope">
+            <label>Example textarea</label>
+            <textarea rows="5" cols="20"></textarea>
+        </div>
+        <div class="tope">
+            <input type="button" value="Save" name="btnSave" id="btnSave">
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>My first form</h1>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" placeholder="name@example.com" id="exampleFormControlInput1" name="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput2">Date</label>
+            <input type="date" class="form-control" name="exampleFormControlInput2" id="exampleFormControlInput2" placeholder="Date of bird">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" class="form-check-input" name="exampleCheck1">
+            <label for="exampleCheck1" class="form-check-label">Check me out</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" class="form-check-input" name="exampleCheck2">
+            <label for="exampleCheck2" class="form-check-label">Check me ouput</label>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" name="exampleFormControlSelect1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" rows="3"  name="exampleFormControlTextarea1"></textarea>
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend input-group-text">
+                <img src="../../../Common/img/usr2.svg" >
+            </div>
+                <input type="Email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        </div>
+        <div class="form-group">
+            <input type="button" id="btnSave" value="Save" class="btn btn-primary">
+            <input type="button" id="btnSave" value="Save" class="btn btn-primary btn-lg">
+          </div>
+          <div class="form-group btn-group">
+            <input type="button" id="btnSave" value="Save" class="btn btn-primary ">
+            <input type="button" id="btnSave" value="Modify" class="btn btn-warning ">
+            <input type="button" id="btnSave" value="Delete" class="btn btn-danger ">
+          </div>
+    </div>
+    
+</body>
+</html>
