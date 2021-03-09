@@ -10,12 +10,6 @@
     <script src="../../../Estefa/WebPages_FrontEnd/JQuery/js/05.ValidationComplexForm.js"></script>
     <title>COMPLEX</title>
 </head>
-<style>
-    .formnewknoeledge{
-        height:25%;
-        width:50%;
-    }
-</style>
 
 <body>
     <div class="container">
@@ -108,7 +102,7 @@
         </form>
     </div>
         <div class="container">
-            <form >
+            <form id="FormNewKnowledge">
                 <div class="mt-5 border border-warning rounded container text-center w-25">
                     <table class="table">
                         <div class="form-group">
@@ -132,7 +126,7 @@
                                 <input type="button" class="btn btn-success" name="btnSave" id="btnSave" value="Save">
                             </div>
                             <div class="col-4">
-                                <input type="button" class="btn btn-danger" name="btnCancelar" id="btnCancelar" value="Cancelar">
+                                <input type="button" class="btn btn-danger" name="btnCancelar" onclick="OcultarFormNewKnowledge()" id="btnCancelar" value="Cancelar">
                             </div>
                         </div>
                     </div>
