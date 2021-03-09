@@ -4,3 +4,6 @@ function MostrarFormNewKnowledge(){
 function OcultarFormNewKnowledge(){
     $("#FormNewKnowledge").hide('slow');
 }
+function CapturarValorFormKnowledge(){
+    
+}
