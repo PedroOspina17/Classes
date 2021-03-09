@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Complex Form</title>
     <script src="../../Common/js/jquery-3.5.1.min.js"></script>
@@ -7,7 +8,68 @@
     <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
     <script src="1.comflex_form.js"></script>
 </head>
-<body>
-    
+
+<body class="container">
+    <div class="jumbotron mt-5">
+        <div class="form-group row">
+            <h1 class="col-6">Knowledge</h1>
+            <h1 class="col-6"> Open Position</h1>
+        </div>
+
+        <div>
+            <input class="btn-success btn" type="button" value="Create New">
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="pl-5 col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Python" id="Python">
+                    <label class="form-check-label" for="Python">Python</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Javascript" id="Javascript">
+                    <label class="form-check-label" for="Javascript">Javascript</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="SQL" id="SQL">
+                    <label class="form-check-label" for="SQL">SQL</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="JQuery" id="JQuery">
+                    <label class="form-check-label" for="JQuery">JQuery</label>
+                </div>
+            </div>
+            <div class="pl-5 col-6">
+                <div>
+                    <input type="radio" name="Open Position" id="Backend Developer">
+                    <label for="Backend Developer">Backend Developer</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="Open Position" id="Frontend developer">
+                    <label for="Frontend developer">Frontend developer</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="Open Position" id="SQL Developer">
+                    <label for="SQL Developer">SQL Developer</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="Open Position" id="Fullstack Developer">
+                    <label for="Fullstack Developer">Fullstack Developer</label>
+                </div>
+            </div>
+            <div class="w-25 mx-auto pt-5"> 
+                <input class="btn-lg btn-success btn" type="button" value="Get The Job">
+            </div>
+
+        </div>
+    </div>
 </body>
+
 </html>
