@@ -24,7 +24,7 @@
                                 <div class="col-12 pr-0">
                                     <input type="button" class="btn btn-block btn-success btn-lg" onclick="MostrarFormNewKnowledge()" name="btnCreteNew" id="btnCreteNew" value="Create new">
                                 </div>
-                                <div class="col">
+                                <div id="checkbox" class="col">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="knowledge" id="Python" value="5">
                                         <label for="Python" class="form-check-label">Python</label>
@@ -73,28 +73,42 @@
                                                         
                             </div>
                         </div>
-                        <div class="col">
-                            <h3>Open positions</h3>
+                        <div class="col 6">
+                            <h3 class="text-center">Open positions</h3>
                             <br>
                             <br>
                             <br>
-                                <li>
-                                    <label>SQL Developer</label>
-                                </li>
-                                <li>
-                                    <label>Frontend Developer</label>
-                                </li>
-                                <li>
-                                    <label>Backend Developer</label>
-                                </li>
-                                <li>
-                                    <label>FullStack Developer</label>
-                                </li>
+                            <div class="text-center">
+                            <div class="form-group ">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '3' description="3" class="form-check-input">
+                                    <label for="radioJobs">SQL Developer</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '8' description="8" class="form-check-input">
+                                    <label for="radioJobs">Backend Developer</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '8' description="8" class="form-check-input">
+                                    <label for="radioJobs">Frontend Developer</label>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '13' description="13" class="form-check-input">
+                                    <label for="radioJobs">FullStack Developer</label>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <div class="row">
                             <div class="col">
-                                <input type="button" class="btn btn-block btn-success btn-lg" onclick="DOMManipulation()" name="btnGetJob" id="btnGetJob" value="Get the job">
+                                <input type="button" class="btn btn-block btn-success btn-lg" onclick="GetJob()" name="btnGetJob" id="btnGetJob" value="Get the job">
                             </div>
                     </div>
                 </table>
@@ -123,7 +137,7 @@
                             <br>
 
                             <div class="col-4">
-                                <input type="button" class="btn btn-success" name="btnSave" id="btnSave" value="Save">
+                                <input type="button" class="btn btn-success" name="btnSave" onclick="SaveKnowledge()" id="btnSave" value="Save">
                             </div>
                             <div class="col-4">
                                 <input type="button" class="btn btn-danger" name="btnCancelar" onclick="OcultarFormNewKnowledge()" id="btnCancelar" value="Cancelar">
