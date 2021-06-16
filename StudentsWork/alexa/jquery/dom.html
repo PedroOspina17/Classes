@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertar botones</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/sweetalert.min.js"></script>
+    <script src="../../Common/js/toastr.min.js"></script>
+    <script src="dom.js"></script>
+    
+</head>
+<body>
+    <div class="container text-center w-75" >
+        <H3>MI PRIMER DOM</H3>
+        <div id="adicionbottones" class="form-group ">
+            <label for="">ingreso de datos</label>
+            <input type="text" id="nombres"placeholder="ingrese por favor texto cc,ti,ce" class= "form-control">
+            <label for="" > ingrese numero a seleccionar</label>
+            <input type="number" id="valores" placeholder="Ingrese por favor numero 1 si es cedula, 2 si es ti,3 si es ce" class="form-control">
+            <input type="text" id="datocheck" placeholder="Ingrese nombre del campo" class="form-control">
+    
+        </div>
+        <div>
+            <div id=adicionbotones class=" text center form-group  row-cols-lg-2"></div>
+            <input type="button" class="btn btn-success btn-block" value="mostrardato" onclick="creardato()">
+            <input type="button" class="btn btn-success btn-block" value="limpiardato" onclick="eliminardato()">
+            <input type="button" class="btn btn-success btn-block" value="crearinput" onclick="crearinput()">
+            <input type="button" class="btn btn-success btn-block" value="borrarinput" onclick="borrarinput()">
+            
+
+        
+            <div id="selector" class="form-group col">
+                <label class="w-100 font-weight-bold">texto digitado </label>
+                <select nombre="tipodedocumento" id="tipodedocumento" class="form-control">
+                </select> 
+                <input type="button" id= "checked" class="btn btn-success btn-block" value="agregarchecked" onclick="agregarcheck()">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html> 
