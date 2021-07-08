@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Country</title>
+
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container ">
+        <h1>Form CRUD</h1>
+        <p>A crud is an acronym of <b>C</b>reate. <b>R</b>ead. <b>U</b>pdate. <b>D</b>elete.</p>
+        <p>
+            This is the very beggining of forms. Putting togeter all the knowledge, create a crud for countries.
+        </p>
+        <p>
+        <h3>Read operation:</h3>
+        This is the easiest operation. The purpose is to read all the information that is already registered and show it
+        in the form.
+        </p>
+        <ol>
+            <li><em>(HTML, css, bootstrap)</em> Create a table with three columns: Name, Description and status. This
+                step is just to create the table and the header columns (the structure only, the information goes later)
+                <br>
+                <em><b>Hint:</b> Remember to assign a table's Id to be able to fill it with the information in next
+                    steps</em>
+            </li>
+            <li><em>(Javascript variables)</em> Create a global javascript variable to store a list of json information.
+                The variable should have three rows with the following fake information (Id, Name, LongName, Description,
+                PopulationAprox, Status):
+                <ol>
+                    <li>
+                        <pre>2201   |   Colombia        |  Colombia's long Name        |   South-american country  |   15.000      |   Active</pre>
+                    </li>
+                    <li>
+                        <pre>2202   |   Brasil          |  Brasil's long Name          |   South-american country  |   150.000     |   Inactive</pre>
+                    </li>
+                    <li>
+                        <pre>2203   |   Peru            |  Peru's long Name            |   South-american country  |   5.000       |   Active</pre>
+                    </li>
+                    <li>
+                        <pre>2204   |   EEUU            |  EEUU's long Name            |   North-american country  |   1.500.000   |   Active</pre>
+                    </li>
+                    <li>
+                        <pre>2205   |   Argentina       |  Argentina's long Name       |   South-american country  |   500.000     |   Active</pre>
+                    </li>
+                </ol>
+                <em>
+                    <b>Remember:</b> To create a json list variable in javascript follow this notation: <br>
+                    <pre>
+                        var VariableName = [
+                            {
+                                "fieldName" : value,
+                                "fieldName" : value,
+                                "fieldName" : value
+                            },
+                            {
+                                "Name" : "Pedro",
+                                "Age" : 24,
+                                "Active" : True
+                            },
+                            {
+                                "Name" : "David",
+                                "Age" : 15,
+                                "Active" : False
+                            }
+                        ] 
+                    </pre>
+
+                </em>
+            </li>
+            <li><em>(Javascript events, on load functions)</em> When the page is loaded, iterate the variable created
+                above and take every row, one by one.
+                <em>(Try to check this by printing in the console each element while you are iterating and some useful
+                    messages such as the country's name or PopulationAprox to verify that you have access to the entire information.)</em>
+                <em>
+                    <br>
+                    <b>Hint:</b> To iterate a list use the jquery's foreach.
+                    <code>
+                            $.each(ListToIterate, function(index, value) {
+                                // All the code Goes here !!! 
+                            }                    
+                        </code>
+                    <br>
+                    <b>Hint 2:</b> To access to an specific field of the json use the dot. <b> Example:</b> To access to the field "Name"
+                    in a json use:
+                    <code>elementList.Name</code>
+                </em>
+            </li>
+            <li><em>(Javascript loops, DOM modifications)</em> Having the information one by one <em>(Inside the
+                    loop)</em> add a new row in the table <em>(DOM modification)</em> following the algorithm described
+                bellow:
+                <ol type="i">
+                    <li>
+                        Create the HTML for the row to be inserted in the table. <br>
+                        <em>
+                            <b>Hint:</b> Assign an specific and unique id for each row for next operations to be easy to
+                            identify among others. <br>
+                            Example:
+                            <pre>
+                            < table>
+                                < tr id="<b>Row_IDENTIFIER</b>"> < /tr>
+
+                                < tr id="Row_1520"> < /tr>
+                                < tr id="Row_2250"> < /tr>
+                            < /table>                            
+                        </pre>
+                        </em>
+                    </li>
+                    <li>Create a jquery selector to get the table created in step #1. <em>(Remember to use the id
+                            assigned.)</em></li>
+                    <li>Insert the html created in the first step into the table selected in the previous step</li>
+                </ol>
+            </li>
+        </ol>
+
+        <img src="../../Common/img/CountryCrud/07.CountryCrud_Read.png" alt="" srcset="" class="w-100">
+    </div>
+</body>
+
+</html>
