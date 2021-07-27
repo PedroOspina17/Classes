@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Web storage</h1>
+        <p>
+            There is a mechanism to storage information in the client side. This, similar as databases, is to allow to
+            persist <b>(to avoid losing data)</b> when the browser tab or the web page is closed.
+            there are two types of client storage:
+        <ul>
+            <li><b> local storage:</b> Store information until the window is closed</li>
+            <li><b> session storage:</b> Store information even when the window is close.</li>
+        </ul>
+
+        Both works almost in the same way, store a value based in a key <em>(Similar as Json "key": "Value")</em>. <br>
+        Both have the same methods to work with:
+
+        <ul>
+            <li>
+                <b>.getItem("key"):</b> This method allows you to get the value in the key specified in the parameter.
+                <br>
+                <em>Example:</em> The following code will obtain the information stored in the key
+                "firstName"<code>localStorage.getItem("FirstName")</code>
+            </li>
+            <li>
+                <b>.setItem("key","value"):</b> This method allows you to create a new entry and store the value or update the value of the key specified in the parameter. <br>
+                <em>Example:</em> 
+            </li>
+            <li>
+                <b>.key(position)</b>
+            </li>
+            <li>
+                <b>.removeItem("key")</b>
+            </li>
+            <li>
+                <b>.clear()</b>
+            </li>
+        </ul>
+
+        JSON.stringify()
+        JSON.parse()
+
+        </p>
+    </div>
+</body>
+
+</html>
