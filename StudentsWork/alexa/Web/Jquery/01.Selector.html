@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIMER TRABAJO </title>
+    <LINK rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="01.Selector.js" ></script>
+    <script src="02.GettingFormVales.js"></script>
+
+</head>
+
+<body class="container">
+    <h1 class="text-center">MI PRIMER TRABAJO JS</h1>
+    <div class="w-100 mx-auto mt-5 pt-4 jumbotron">
+        <div class="row">
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">usuario </label>
+                <input type="text" id="usuario" name="usuario" placeholder="por favor ingrese su usuario"
+                    class="form-control textclass">
+            </div>
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">nombre </label>
+                <input type="text" id="nombreusuario" name="nombreusuario" placeholder="por favor ingrese su nombre"
+                    class="form-control textclass">
+            </div>
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">edad </label>
+                <input type="number" id="edad" name="edad" placeholder="por favor ingrese su edad"
+                    class="form-control textclass">
+            </div>
+        </div>
+        <div id="selector"class="row">
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">tipo de documento </label>
+                <select nombre="tipodedocumento" id="tipodedocumento" class="form-control">
+                    <option value="0"> C.C</option>
+                    <option value="1"> TI</option>
+                    <option value="2"> C.E</option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">nivel educativo </label>
+                <select nombre="nivel educativo" id="nivel educativo" class="form-control">
+                    <option value="4"> primaria</option>
+                    <option value="5">secundaria</option>
+                    <option value="6"> universitario</option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold"> fecha nacimiento </label>
+                <DIV class="form-inline">
+                    <input type="number" id="dia" name=" dia" placeholder="dia" class="form-control w-25">
+                    <input type="number" id="mes" name=" mes" placeholder="mes" class="form-control w-25">
+                    <input type="number" id="año" name=" mes" placeholder="año" class="form-control w-25">
+                </div>
+            </DIV>
+        </div>
+        <div class="row">
+            <div class="form-group p-4 ">
+                <label class="w-100 font-weight-bold">genero </label>
+                <div class= "form-check">
+                    <input type="radio" name="genero" id="femenino" valor="1" descripcion= "femenino" class="form-check-input" checked> 
+                    <label for="femenino" class="form-check-label">femenino</label>
+                    <input type="radio" name="genero" id="masculino" valor="2" class=" form-check-input" descripcion="masculino" checked> 
+                    <label for="masculino" class="form-check-label">masculino</label>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">tipo de programa </label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tipodeprograma" id="phyton">
+                    <label class="form-check-label" for="phyton">python</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tipodeprograma" id="html">
+                    <label class="form-check-label" for="html">html</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tipodeprograma" id="css">
+                    <label class="form-check-label" for="css">css</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tipodeprograma" id="javascript">
+                    <label class="form-check-label" for="css">javascript</label>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label class="w-100 font-weight-bold">experiencia profesional </label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experiencia profesional" id="phyton">
+                    <label class="form-check-label" for="phyton">python</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experiencia profesional" id="html">
+                    <label class="form-check-label" for="html">html</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experiencia profesional" id="css">
+                    <label class="form-check-label" for="css">css</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="experiencia profesional" id="javascript">
+                    <label class="form-check-label" for="javascript">javascript</label>
+                </div>
+            </div>
+        </div>
+    <div class="form-group btn-group"></div>
+        <div>
+        <h5>ocultar</h5>
+        <input  type="button" value="ocultar input tipo texto" class="btn-group" onclick= "ocultarinput()">
+        <input  type="button" value="ocultar nombre" class="btn-group" onclick= "ocultarnombre()">
+        <input  type="button" value="ocultar checkbox" class="btn-group" onclick= "ocultarcheckbox()">
+        <input  type="button" value="ocultar controles" class="btn-group" onclick= "ocultarcontroles()">
+        
+        <h5>mostrar todo</h5>
+        <input type="button" value="mostrar texto" class="btn-group" onclick="mostrartexto()">
+        <input type="button" value="mostrar checkbox" class="btn-group" onclick="mostrarcheckbox()">
+        <input type="button" value="mostrar controles" class="btn-group" onclick="mostrarcontroles()">
+        
+        </div>
+    <div class="form-group"></div>
+        <input type="button" value= "datos cliente" class="btn btn-sm btn-success " onclick="datoscliente()">
+        <h5 class="p-1 w-75">informacion del usuario </h5>
+        <textarea name="informacion usuario" id="infocliente" cols="30" rows="10"></textarea>
+             
+    </div>
+</div>  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

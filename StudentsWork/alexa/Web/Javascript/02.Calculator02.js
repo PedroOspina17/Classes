@@ -25,8 +25,16 @@ function calculate(operacion){
     }
 }
  function result(numero){ 
-    var numero= parseintFloat(numero)
     document.getElementById("numero").value= numero;
 }
 
+
+function calculate(operacion){
+    var suma= "+"
+    var resta="-"
+    var multi="*"
+    var divi="/"
+    document.getElementById("numero").value= `${suma} (${resta})`;
+    }
+    
 

@@ -1,0 +1,45 @@
+que es sql, lenguaje estructura de consultas
+row o fila: izquierda a derecha 
+columna: de arriba hacia abajo columnas
+campo: cada uno de los datos que existe en la tabla 
+llaves primaria y foranea(llave primaria de otra tabla se agrega como columna en la tabla que queremos relacionar)
+int entero numeros (tinyint (numeros pequeños, bigint (enteros mas grandes, float(decimales)))
+varchar almacena string especificar cuantos caracteres vamos a tener varchar(50) texto (text, char (no necesita cantidad de caractees))
+date fechas y horas (date orden o compra, fecha y hora datetime,) 
+blob  para guardar archivos o datos json transporte de datos
+bit boleano 1/0 falso o verdadero
+-----------------------------------------------------------
+crear mi base de datos 
+SELECT*FROM (TABLA)
+WHERE BUSCAR (condicion) and /or (condicion falso o verdadero)
+CREATE DATABASE BASEPAISES
+crear tablas siempre (id, int,longitud(11),not null(no puede ir vacio,))
+CREATE TABLE PAISES(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) no null,
+    POBLACION FLOAT 
+    )
+crear campos 
+INSERT INTO PAISES (NAME,POBLACION) VALUES('COLOMBIA',50.34)
+ELIMINAR DROP TABLE (NOMBRE DE TABLA)
+AGREGAR ALTER TABLE (MNOMBRE TABLA) ADD NOMBRE VARCHAR(220)
+UPDATE (TABLA QUE VOY A MODIFICARCLIENTES) SET (COLUMMNA A ODIFICAR)ADDRES=DIRECCION QUE VOY A AGREGAR
+DELETE FROM (TABLA(CLIENTES)) WHERE (CAMPO A ELIMINAR ID=4)
+
+
+---------------------------------------------------------
+primary key 
+ID INT IDENTITY(1,1) PRIMARY KEY,
+------------------------------------------------------------
+identity(start increment) identity(1,1)
+----------------------------------------------------------------
+foreignkeys
+IdPAISES INT FOREIGN KEY REFERENCES PAISES(ID) NOT NULL
+campo que relaciona una tabla con otra. referencia de mi tabla hacia la otra. foreignkeys el nombre de la tabla y nombre del campo mi foreignkeys debe tener el mismo tipo de dato de mi tabla int, varchar o lo que sea
+(nombre campo como quiero que se llame )int foreignkeys referencia (nombre de la tabla(primary key))
+campo requerido not null 
+------------------------------------
+select id,nombre + '-colombia' as (nombre del campoque le quiero dar)
+where id*2=6 >10 comparar un campo, dos campos, una operacion con valor. cualquier operacion. 
+select*from 
+----------------------------------------------

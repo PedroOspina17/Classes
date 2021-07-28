@@ -1,4 +1,9 @@
-﻿<ul (un listado organizado)>  </li>(puntos en lista) br ralla para separar 
+﻿comienzo siempre en htlm con htm5
+en el head se coloca el 
+link boostrap
+scrip jss o js
+
+<ul (un listado organizado)>  </li>(puntos en lista) br ralla para separar 
 <h3>Inputs(controles)</h3>  <h3>Boxes</h3>    <h3>Inputs(controles)</h3>
  <h5>Textbox(caja tipotexto)</h5>
     <input type="text" name="txtFirstName" id="txtFirstName">
@@ -106,6 +111,20 @@ dark negro color secundario mas opaco
 
 tablas 
 
+yeicuery 
+para mostrar y ocultar controles u otro tipo de informacion se utilizan los siguientes comandos 
+show ocultar 
+hide mostrar 
+$("TAGNAME")
+$("input") todos los input 
+$(".CLASSNAME") 
+$(".testClass") solo la clase texto 
+ $("#ElementId") por numero de indentificacion 
+ $("[Property]") por propiedad 
+$("#user") usuario  
+$("[Property='Value']") por la propiedad y el valor de la propiedad 
+$("[type='number']") por tipo y que sea numerico 
+ $("input[name='dobDate']") por nombre del input particular 
 
 
 
