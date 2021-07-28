@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Country</title>
+
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container ">        
+        <p>
+        <h3>Update operation</h3>
+        The update operation is one of the most complex operations because it is divided in two steps:
+        <ol>
+            <li>Fill the form with the information to be changed</li>
+            <li>Modify the existing information with the new one</li>
+        </ol>
+        Please follow
+        the instructions bellow, based on the previous form created:
+        </p>
+        <ol>
+
+            <li>Add the functionality for Edit when you press the edit button, following the algorithm described bellow:
+                <ol type="i">
+                    <li>Identify which row was clicked. <em>(Similar how it was done in the delete algorithm.)</em>
+                    </li>
+                    <li>Having the the index of the row clicked go and find the information in the javascript
+                        variable which was used to draw the table. </li>
+                    <li>Fill all the form's fields with the information gotten from the ponit mentioned before</li>
+                    <li>Create a mechanism to specify that a modification is beign executed for following steps. <em>(A
+                            boolean global variable can be used to achieve this.)</em></li>
+                </ol>
+            </li>
+            <li>Collect and validate all the form's information. <em>(Identify if you can reuse some existing code from
+                    the create. )</em></li>
+            <li>Change the save's algorithm to identify if the operation is a create or a edit. <em>Move the existing
+                    code to the create path, only the one which is exclusive for creation </em> </li>
+            <li>In the path of edit operation, Delete the entry that is beign edited  <em>(The one used to fill the edit form).</em></li>
+            <li>Save the new information collected from the edit form</li>
+            <li>Update the table with the new information <em>(The way you did it when the page is loading the first time)</em></li>
+            <li>Show a toastr informing the results of the operation</li>
+        </ol>
+        <img src="../../Common/img/CountryCrud/07.CountryCrud_Update.png" alt="" srcset="" class="">
+    </div>
+</body>
+
+</html>

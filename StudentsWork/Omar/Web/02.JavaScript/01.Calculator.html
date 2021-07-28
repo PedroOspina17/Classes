@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <script src="01.Calculator.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="conatiner">
+        <h1 class="text-center">CALCULATOR</h1>
+        <div class="form-group w-25 mx-auto mt-5">
+          <label for="numb1" class="font-weight-bold">Numb 1</label>  
+          <input type="number" id="numb1" name="numb1" class="form-control">
+          <label for="numb2" class="font-weight-bold mt-5">Numb 2</label>  
+          <input type="number" id="numb2" name="numb2" class="form-control">
+          <label for="numb2" class="font-weight-bold mt-5">Result</label>  
+          <input type="number" id="result" name="result" class="form-control">
+          <div class="btn-group col-12">
+            <button type="submit" class="btn btn-success mt-3" onclick="result('+')">+</button>
+            <button type="submit" class="btn btn-danger mt-3" onclick="result('-')">-</button>
+            <button type="submit" class="btn btn-warning mt-3" onclick="result('*')">*</button>
+            <button type="submit" class="btn btn-primary mt-3" onclick="result('/')">/</button>
+          </div>  
+        </div>
+    </div>
+</body>
+</html>

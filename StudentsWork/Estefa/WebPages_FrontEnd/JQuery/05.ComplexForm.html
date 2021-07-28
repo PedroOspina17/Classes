@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">    
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Estefa/WebPages_FrontEnd/JQuery/js/05.ValidationComplexForm.js"></script>
+    <title>COMPLEX</title>
+    <script>
+        $(document).ready(function (){
+            $("#FormNewKnowledge").hide();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class=" mt-5 border border-warning rounded container  w-50">
+                <table class="table">              
+                    <h3 class="text-center">COMPLEX</h3>
+                    <div class="row 12">
+                        <div class="col-6 pr-0">
+                            <h3 class="text-center">Knowledge</h3>
+                            <div class="form-group">
+                                <div class="col-12 pr-0">
+                                    <input type="button" class="btn btn-block btn-success btn-lg" onclick="MostrarFormNewKnowledge()" name="btnCreteNew" id="btnCreteNew" value="Create new">
+                                </div>
+                                <div id="checkbox" class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Python" value="5">
+                                        <label for="Python" class="form-check-label">Python</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="C#" value="5">
+                                        <label for="C#" class="form-check-label">C#</label>
+                                    </div>                                
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Java" value="5">
+                                        <label for="Java" class="form-check-label">Java</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Php" value="4">
+                                        <label for="Php" class="form-check-label">PHP</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Html" value="3">
+                                        <label for="Html" class="form-check-label">HTML</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Css" value="2">
+                                        <label for="Css" class="form-check-label">CSS</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="JavaScript" value="3">
+                                        <label for="JavaScript" class="form-check-label">JavaScript</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Angular" value="4">
+                                        <label for="Angular" class="form-check-label">Angular</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="React" value="4">
+                                        <label for="React" class="form-check-label">React</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Sql" value="3">
+                                        <label for="Sql" class="form-check-label">SQL</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="knowledge" id="Go" value="4">
+                                        <label for="Go" class="form-check-label">Go</label>
+                                    </div>
+                                </div>
+                                                        
+                            </div>
+                        </div>
+                        <div class="col 6">
+                            <h3 class="text-center">Open positions</h3>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="text-center">
+                            <div class="form-group ">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '3' description="3" class="form-check-input">
+                                    <label for="radioJobs">SQL Developer</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '8' description="8" class="form-check-input">
+                                    <label for="radioJobs">Backend Developer</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '8' description="8" class="form-check-input">
+                                    <label for="radioJobs">Frontend Developer</label>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <div>
+                                    <input type="radio" id="radioJobs" name="radioJobs" value= '13' description="13" class="form-check-input">
+                                    <label for="radioJobs">FullStack Developer</label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col">
+                                <input type="button" class="btn btn-block btn-success btn-lg" onclick="GetJob()" name="btnGetJob" id="btnGetJob" value="Get the job">
+                            </div>
+                    </div>
+                </table>
+            </div>
+        </form>
+    </div>
+        <div class="container">
+            <form id="FormNewKnowledge">
+                <div class="mt-5 border border-warning rounded container text-center w-25">
+                    <table class="table">
+                        <div class="form-group">
+                            <div class="row justify-content-center">
+                                <h6>Form create new knowledge</h6>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="txtNameKnowledge" id="txtNameKnowledge" placeholder="Name new knowledge">
+                        </div>
+                        <div class="form-group"></div>
+                            <div class="col">
+                                <input type="number" class="form-control" name="numberPointKnowledge" id="numberPointKnowledge" placeholder="Point knowledge">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row justify-content-center">
+                            <br>
+
+                            <div class="col-4">
+                                <input type="button" class="btn btn-success" name="btnSave" onclick="SaveKnowledge()" id="btnSave" value="Save">
+                            </div>
+                            <div class="col-4">
+                                <input type="button" class="btn btn-danger" name="btnCancelar" onclick="OcultarFormNewKnowledge()" id="btnCancelar" value="Cancelar">
+                            </div>
+                        </div>
+                    </div>
+                    </table>
+                </div>
+            </form>
+        </div>  
+</body>
+</html>

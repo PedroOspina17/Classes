@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <script src="01.Calculator.js"></script>
+
+</head>
+
+<body>
+    <div class="container text-center w-25">
+        <div>
+        <img src="img20.jpg">
+           <br>
+            <div>
+            </div class="mx-auto m-5">
+                <label for="valor">MI PRIMERA CALCULADORA </label>
+                <br>
+                <input type="number" id="numero 1" class="form-control" placeholder="numero 1">
+                </div>
+                <br>
+                <input type="number" id="numero 2" class="form-control" placeholder="numero 2">
+                <br>
+                <input type="text" id="resultado" class="form-control" placeholder="resultado" >
+              
+            </div>
+        </div>
+        <div class="mx-auto w-50 btn-block mt-5">
+            <input type="button" class="bnt btn-success" value="SUMA" onclick="calculate('+')">
+            <input type="button" class="btn-danger" value="RESTA" onclick="calculate('-')">
+            <input type="button" class="btn-primary" value="MULTIPLICACION" onclick="calculate('*')">
+            <input type="button" class="bnt-light" value="DIVISION" onclick="calculate('/')">
+            <input type="button" class="btn-secondary" value="borrar" onclick="('.')">
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

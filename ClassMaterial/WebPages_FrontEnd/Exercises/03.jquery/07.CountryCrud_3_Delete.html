@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Country</title>
+
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container ">
+        <h1>Form CRUD</h1>
+        <p>A crud is an acronym of <b>C</b>reate. <b>R</b>ead. <b>U</b>pdate. <b>D</b>elete.</p>
+        <p>
+            This is the continuation for country's form crud.
+        </p>
+        <p>
+            In this exercise we are going to proceed with the <b> Update and the Delete.</b><br>
+            <em>
+                Need to be carefull because you will have to create new code to complete the new functionality but now
+                you have existing code that needs to keep working. <br>
+                <b>After every change make sure everything is working as expected, if not reverse the changes.</b>
+            </em>
+        </p>
+        <p>
+        <h3>Delete operation</h3>
+        </p>
+        <ol>
+            <li>Modify the existing code to add two buttons on each row of the table, one in orange color for Edit and
+                one in red for Delete.
+                <p>Make sure you modify the following parts:
+                <ol type="i">
+                    <li><b>HTML:</b> Modify the html to create one new columns in the header of the table. You can leave the column header blank if you want or name it "Actions"</li>
+                    <li><b>JAVASCRIPT:</b> When you are loading the table, remember to add those two buttons in the DOM
+                        modification. To make it easier, try to create the HTML in a different file and then try to fit
+                        it into the javascript. Also create two functions to handle each operation, Delete and Update, The Update function will be coded later. Those functions need to be called from the buttons that you just created. <br> 
+                        <em><b>Hint:</b> Remember to assign the unique id for each button and remember to send the row's specific id to it's onclick event to make the easy recognition in the next steps. </em>
+                    </li>
+                </ol>
+                </p>
+            </li>
+            <li>Inside the Delete function, Identify the row index of the button that was clicked. <em>(One possible way is using the parameter sent to the function and iterate the list to find its position inside the list, the way we did it in the
+                    valition inside the create method.)</em> </li>
+            <li>Having the row index that was clicked go and delete the information in the javascript variable
+                which was used to draw the table. <br>
+                <em>
+                    To delete a element in arrays use: <code>list.splice(index, howMany);</code>
+                    <br>
+                    <b>example:</b> having a list called 'information' with 7 elements delete the element with index 4.
+                    <code>information.splice(4,1)</code>
+                </em>
+            </li>
+            <li>Delete the row from the table by creating a selector with jquery to get the row clicked. <em>(Remember that we created an specific id for every row of the table.) </em>   </li>
+            <li>Show a toastr informing the results of the operation</li>
+        </ol>
+        <img src="../../Common/img/CountryCrud/07.CountryCrud_Delete.png" alt="" srcset="" class="">
+    </div>
+</body>
+
+</html>

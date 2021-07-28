@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="02.GettingFormValues_Validations.js"></script>
+    <title>Document</title>
+</head>
+<body class="container">
+    <div class="jumbotron pt-4 m-5">
+        <h3 class="text-center">Form test</h3>
+        <div class="form-group">
+            <label for="user" class="font-weight-bold">User</label>
+            <input type="text" id="user" name="user" class="form-control" placeholder="Please type the user">
+        </div>
+        <div class="form-group">
+            <label for="userName" class="font-weight-bold">User Name</label>
+            <input type="text" id="userName" name="user" class="form-control" placeholder="Please type the user name">
+        </div>
+        <div class="form-group">
+            <label for="userAge" class="font-weight-bold">User Age</label>
+            <input type="number" id="userAge" name="user" class="form-control" placeholder="Please type the user age">
+        </div>
+        <div class="form-group">
+            <label for="userDate" class="font-weight-bold">User date of birth</label>
+            <input type="date" id="userDate" name="user" class="form-control" placeholder="dd/mm/yyyy" >
+        </div>
+        <div class="form-group">
+            <label for="userCreditCard" class="font-weight-bold">Credit Card expiration month and year</label>
+            <div class="form-inline">
+                <input type="number" id="userCreditY" name="userCreditCard" class="col-6 form-control" placeholder="user DOB year">
+                <input type="number" id="userCreditM" name="userCreditCard" class="col-6 form-control" placeholder="user DOB month">
+            </div>  
+        </div>
+        <div class="form-group">
+            <label for="docType" class="font-weight-bold">Document Type</label>
+            <select name="docType" id="docType" class="form-control">
+                <option value="">--Select one--</option>
+                <option value="1">CC</option>
+                <option value="2">TI</option>
+                <option value="3">Passport</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="edLevel" class="font-weight-bold">Educational Level</label>
+            <select name="edLevel" id="edLevel" class="form-control">
+                <option value="">--Select one--</option>
+                <option value="1">Undergraduate</option>
+                <option value="2">Graduate</option>
+                <option value="3">Master</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="font-weight-bold">Gender</label>
+            <div class="form-check">
+                <input type="radio" id="m" name="gender" value="1" class="form-check-input" text="Male">
+                <label for="m" class="form-check-label">Male</label>
+                <input type="radio" id="f" name="gender" value="2" text="Female">
+                <label for="f">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="know" class="font-weight-bold">Knowledge</label>
+            <div class="form-check">
+                <input type="checkbox" id="python" name="know" class="form-check-input" value="Python">
+                <label for="python" class="form-check-label">Python</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="html" name="know" class="form-check-input" value="Html">
+                <label for="html" class="form-check-label">Html</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="css" name="know" class="form-check-input" value="CSS">
+                <label for="css" class="form-check-label">CSS</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="js" name="know" class="form-check-input" value="JavaScript">
+                <label for="css" class="form-check-label">JavaScript</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exp" class="font-weight-bold">Experience</label>
+            <div class="form-check">
+                <input type="checkbox" id="python" name="exp" class="form-check-input" value="Python">
+                <label for="python" class="form-check-label">Python</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="html" name="exp" class="form-check-input" value="Html">
+                <label for="html" class="form-check-label">Html</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="css" name="exp" class="form-check-input" value="CSS">
+                <label for="css" class="form-check-label">CSS</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="js" name="exp" class="form-check-input" value="JavaScript">
+                <label for="css" class="form-check-label">JavaScript</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="button" id="dispMess" value="Display Message" class="btn-success btn" onclick="msgValidation()">
+        </div>
+        <div class="form-group">
+            <h4>User's information:</h4>
+            <textarea id="usInfo" name="usInfo" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+</html>
