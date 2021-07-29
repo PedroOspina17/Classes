@@ -56,3 +56,75 @@ function addRow(){
         console.log(value);
     })
 }
+
+function msgValid(){
+    if ($("#id").val() == ""){
+        $("#idNumber").removeClass('text-hide');
+    }
+    else if($("#id").val() <= 0){
+        $("#idNumber2").removeClass('text-hide');
+    }
+    else{
+        $("#idNumber").addClass('text-hide');
+        $("#idNumber2").addClass('text-hide');
+    }
+
+    if ($("#countryName").val() == ""){
+        $("#Name").removeClass('text-hide');
+    }
+    else if($("#countryName").val().length > 15){
+        $("#Name2").removeClass('text-hide');
+    }
+    else{
+        $("#Name").addClass('text-hide');
+        $("#Name2").addClass('text-hide');
+    }
+
+    if ($("#longName").val().length > 50){
+        $("#long").removeClass('text-hide');
+    }
+    else{
+        $("#long").addClass('text-hide');
+    }
+   
+    if ($("#countryDesc").val().length < 10){
+        $("#countDesc").removeClass('text-hide');
+    }
+    else if($("#countryDesc").val().length > 250){
+        $("#countDesc2").removeClass('text-hide');
+    }
+    else{
+        $("#countDesc").addClass('text-hide');
+        $("#countDesc2").addClass('text-hide');
+    }
+    
+}
+
+function clearForm() {
+    $("#id").val("");
+    $("#countryName").val("");
+    $("#longName").val("");
+    $("#countryDesc").val("");
+    $("#population").val("");
+    $("#status").val("");
+    $("#idNumber").addClass('text-hide');
+    $("#idNumber2").addClass('text-hide');
+    $("#Name").addClass('text-hide');
+    $("#Name2").addClass('text-hide');
+    $("#long").addClass('text-hide');
+    $("#countDesc").addClass('text-hide');
+    $("#countDesc2").addClass('text-hide');
+}
+
+function create(){
+    var form=$("#form").val();
+    msgValid();
+    $.each(form, function(index, value){
+        $("#table").append("<tr>" +
+        "<td> " + value.countryName + "</td >" +
+        "<td>" + value.countryDesc + "</td>" +
+        "<td> " + value.status + "</td>" +
+        "</tr>"
+        )
+    })
+}
