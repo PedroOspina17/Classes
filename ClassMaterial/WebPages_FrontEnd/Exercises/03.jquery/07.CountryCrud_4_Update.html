@@ -37,9 +37,9 @@
                     the create. )</em></li>
             <li>Change the save's algorithm to identify if the operation is a create or a edit. <em>Move the existing
                     code to the create path, only the one which is exclusive for creation </em> </li>
-            <li>In the path of edit operation, Delete the entry that is beign edited  <em>(The one used to fill the edit form).</em></li>
+            <li>In the path of edit operation, Delete the entry that is beign edited  <em>(The one used to fill the edit form)</em>  in both sides, from the javascript global variable and from the table. <em>(The way you did it in the delete)</em></li>
             <li>Save the new information collected from the edit form</li>
-            <li>Update the table with the new information <em>(The way you did it when the page is loading the first time)</em></li>
+            <li>Add the new information to the table and to the global variable again. <em>(The way you did it in the create operation)</em></li>
             <li>Show a toastr informing the results of the operation</li>
         </ol>
         <img src="../../Common/img/CountryCrud/07.CountryCrud_Update.png" alt="" srcset="" class="">
