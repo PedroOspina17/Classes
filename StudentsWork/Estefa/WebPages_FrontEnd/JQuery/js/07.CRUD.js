@@ -71,7 +71,7 @@ function SaveField(){
    var radioActive =  $("input[name='Status']:checked").val();
    if(Id < 0){
        errorMsg += "Por favor el ID debe ser positivo \n"
-   }if(Id == ""){
+   }if(isNaN(Id)){
        errorMsg += "Por favor el ID debe tener informaición \n"
    }if(CountryName.length > 15){
        errorMsg += "Por favor Country name debe ser menor a 15 caracteres \n"
@@ -103,6 +103,8 @@ function SaveField(){
         $("#FormularioPaises").append(input);
         listaJson.push(InfoForm);// Adicionamos la nueva columna ingresada en la tabla
         console.log(listaJson);
+        ClearField();
+        toastr.info('Save information')
    }
 }
 
