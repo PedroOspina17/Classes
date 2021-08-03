@@ -52,27 +52,33 @@
             <div class="col-6 form-group">
                 <label for="Activo" class="form-check-label">Status</label>
                 <div class="form-check">
-                <input type="radio" class="form-check-input mt-3" name="Status" id="Activo" checked value="Activo">
-                <label for="Activo" class="form-check-label mr-5 mt-2">Active</label>
-                <input type="radio" class="form-check-input mt-3" name="Status" id="Inactive" value="Inactive">
-                <label for="Inactive" class="form-check-label mt-2">Inactive</label>
-            </div>
+                    <input type="radio" class="form-check-input mt-3" name="Status" id="Activo" checked value="Activo">
+                    <label for="Activo" class="form-check-label mr-5 mt-2">Active</label>
+                    <input type="radio" class="form-check-input mt-3" name="Status" id="Inactive" value="Inactive">
+                    <label for="Inactive" class="form-check-label mt-2">Inactive</label>
+                </div>
             </div>
         </div>
         <div class="btn-group">
             <input type="button" value="Save" class="btn btn-success" onclick="saveCountrys()">
             <input type="button" value="Cancel" class="btn btn-danger" onclick="cleanfields()">
         </div>
-        <table class="table mt-5">
+        <table class="table mt-5 table-striped table-hover ">
             <thead>
                 <tr>
                     <th>NAME</th>
                     <th>DESCRIPTION</th>
                     <th>STATUS</th>
+                    <th>ACTIONS</th>
                 </tr>
             </thead>
             <tbody id="country">
-
+                <td>
+                    <div class="btn-group">
+                        <input type="button" value="Save" class="btn btn-success" onclick="saveCountrys()">
+                        <input type="button" value="Cancel" class="btn btn-danger" onclick="cleanfields()">
+                    </div>
+                </td>
             </tbody>
         </table>
     </div>

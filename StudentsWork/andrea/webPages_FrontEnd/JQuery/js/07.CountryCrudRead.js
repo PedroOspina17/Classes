@@ -49,7 +49,7 @@ function cleanfields() {
     $("#longCountryName").val("");
     $("#countryDescription").val("");
     $("#PopulationAprox").val("");
-    $("#Status").val("");
+    $("#Activo").prop("checked", true);
 }
 
 function saveCountrys() {
@@ -60,7 +60,6 @@ function saveCountrys() {
     var PopulationAprox = $("#PopulationAprox").val();
     var Status = $('[name="Status"]:checked').val();
     var message = "";
-    console.log(Status)
 
     if (Id == "") {
         message += "El campo Id debe contener un valor \n"
@@ -74,11 +73,11 @@ function saveCountrys() {
         message += "El campo Name debe contener maximo 15 caracteres \n"
     }
 
-    if (LongName.length > 50) {
+    if (LongName != "" && LongName.length > 50) {
         message += "El campo LongName debe contener maximo 50 caracteres \n"
     }
 
-    if (Description.length < 10 || Description.length > 250) {
+    if (Description != "" && (Description.length < 10 || Description.length > 250)) {
         message += "El campo countryDescription debe contener minimo 10 caracteres y maximo 250 caracteres \n"
     }
 
@@ -86,15 +85,16 @@ function saveCountrys() {
         swal("validaciones", message, "error");
     } else {
         addTable(Id, Name, Description, Status);
-        var addjson = {
-            "Id": Id,
+        var addJsonCountry = {
+            "Id": parseInt(Id),
             "Name": Name,
             "LongName": LongName,
             "Description": Description,
-            "PopulationAprox": PopulationAprox,
+            "PopulationAprox": parseInt(PopulationAprox),
             "Status": Status
         }
-        countrysInformations.append(addjson);
+        countrysInformations.push(addJsonCountry);
+        console.log(countrysInformations);
         toastr.info('informacion guardada correctamente!');
         cleanfields();
     }
