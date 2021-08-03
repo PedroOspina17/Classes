@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+
+    <script src="07countrycrud.js"></script>
+</head>
+
+<body onload="tabla()">
+    <div class="container jumbotron">
+        <h3 class="text-center"> formulario funcional</h3>
+        <div class="row">
+            <div class="form-group col-4">
+                <label class="w-100 font-weight-bold" for="id">id</label>
+                <input type="number" name="identificacion" id=identificacion placeholder="ingrese su identificacion"
+                    class="form-control text class">
+            </div>
+            <br>
+            <div id= "country" class="form-group col-4">  
+                <label class="w-100 font-weight-bold" for="country">countryname</label>
+                <input type="text" name="country" id="country" placeholder="ingrese nombre del pais"
+                    class="form-control text-center">
+            </div>
+            <div id= " longcountrydescripcion"class="form-group col-4">
+                <label class="w-100 font-weight-bold" for="longcountrydescripcion">long country name</label>
+                <input type="text" name="countrycripcion" id="longcountrydescripcion" placeholder="descripcion de laciudad"
+                    class="form-control text-center">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-4">
+                <label class="w-100 font-weight-bold" for="countrydescripcion">country descripcion</label>
+                <input type="text" name="countrycripcion" id="countrydescripcion"
+                placeholder="descripcion de la ciudad" class="form-control text-center">
+            </div>
+            <div class="form-group col-4">
+                <label class="w-100 font-weight-bold" for="countrydescripcion">populationaproximad</label>
+                <input type="number" name="countrycripcion" id="countrydescripcion"
+                placeholder=" poblacion aproximada" class="form-control text-center">
+            </div>
+            <div class="form-group col-4">
+                <h5>Status</h5>
+                <input type="radio" name="Status" id="statusactivo"> activo
+                <input type="radio" name="Status" id="statusinactivo"> inactivo
+            </div>
+            <input type="button" class="w-25 btn-success" value="mostrar informacion" onclick="validaciones()">
+            <input type="button" class="w-25 btn-btn-ligth" value="limpiar informacion" onclick="limpiarinformacion()">
+            <br>
+            <table id="tabla" class=" table table-striped table-hover">
+                <tr id="tabla1">
+                    <th>name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+        </div>
+</body>
+
+</html>

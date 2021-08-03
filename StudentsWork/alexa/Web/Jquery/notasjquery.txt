@@ -279,3 +279,15 @@ para crear elementos en memoria
         $("#divToModify").append(container);
         idCounter++;
         toastr.success("The nested element was added in the second way")
+        --------------------------------------------------------------------------------
+     JUL-21   CLASE DE CRUD 
+     CREAR añade funcionalidad al formulario para que el usuario 
+     1 crear formulario 6 campos 
+     2 2 botones cancel limpia formulario vacio, 
+     3 boton save validar todos los campos, y lo queno este completo alerta. 
+     sino es correcto mostrar alerta con todas las validaciones que no cumplio 
+     si todo es correcto la informacion escrita debe ser mostrada en la tabla. 
+     4. limpiar el formulario 
+     5. mostrar un toostar alertas difeentes a swit alert
+
+
