@@ -45,13 +45,16 @@ var info =  [
 ]
 
 
+var table = $("#table").val();
 function addRow(){
     $.each(info, function(index, value){
-        $("#table").append("<tr id='row_id'>" +
+        
+        id = value.Id;
+        $("#table").append("<tr id='row"+ id +"'>" +
         "<td> " + value.Name + "</td >" +
         "<td>" + value.Description + "</td>" +
         "<td> " + value.Status + "</td>" +
-        "<td> " + "<input type = 'button' id='edit' class='btn btn-warning' value='Edit' onclick=''>" +"<input type = 'button' id='delete' class='btn btn-danger' value='Delete' onclick=''>" + "</td>" +
+        "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning' value='Edit'>" +"<input type = 'button' id='"+ id+"' class='btn btn-danger btn_remove' value='Delete'>" + "</td>" +
         "</tr>"
         )
         console.log(value);
@@ -61,7 +64,15 @@ function addRow(){
 function msgValid(infoValidate){
     var validation = true;
     
-
+    $.each(info, function(index, value){
+        if (value.Id == infoValidate.Id){
+            $("#idNumber3").removeClass('text-hide');
+            validation = false;
+            return false;
+        } else{
+            $("#idNumber3").addClass('text-hide');
+        }
+    })
     if (isNaN(infoValidate.Id) ){
         $("#idNumber").removeClass('text-hide');
         validation = false;
@@ -73,6 +84,7 @@ function msgValid(infoValidate){
     else{
         $("#idNumber").addClass('text-hide');
         $("#idNumber2").addClass('text-hide');
+        
     }
 
     if (infoValidate.Name == ""){
@@ -132,6 +144,7 @@ function clearForm() {
     $("#true").prop('checked', true);
 }
 
+var idRow=0;
 function create(){
     var formInfo = 
         {
@@ -143,20 +156,37 @@ function create(){
             "Status": $("input[name = 'status']:checked").val()
         };
 
+       
+
     var validations = msgValid(formInfo);
+
     
+    id = formInfo.Id;
     console.log(info);
     if (validations == true){
-        $("#table").append("<tr id='row_id'>" +
+        $("#table").append("<tr id='row"+ id +"'>" +
         "<td> " + formInfo.Name + "</td >" +
         "<td>" + formInfo.Description + "</td>" +
         "<td> " + formInfo.Status + "</td>" +
-        "<td> " + "<input type = 'button' id='edit' class='btn btn-warning' value='Edit' onclick=''>" +"<input type = 'button' id='delete' class='btn btn-danger' value='Delete' onclick=''>" + "</td>" +
+        "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning' value='Edit'>" +"<input type = 'button' id='"+ id +"' class='btn btn-danger btn_remove' value='Delete'>" + "</td>" +
         "</tr>")
         toastr.success("The country was created!");
         clearForm();
         info.push(formInfo);
     }
-    console.log(formInfo);
 }
 
+$(document).on('click', '.btn_remove', function () {
+    var button_id = $(this).attr("id");
+    $("#row"+button_id+"").remove();
+
+    var deleteRow = -1;
+    $.each(info, function(index, value){
+        if (value.Id == button_id){
+            deleteRow = index;
+        }
+    })
+    info.splice(deleteRow,1);
+    toastr.success("The country was eliminated!");
+    console.log(info);
+})
