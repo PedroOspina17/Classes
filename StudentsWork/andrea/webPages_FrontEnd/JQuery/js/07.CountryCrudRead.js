@@ -1,3 +1,5 @@
+var isEdit = false;
+var indexEdit = -1;
 var countrysInformations = [{
     "Id": 2201,
     "Name": "Colombia",
@@ -49,11 +51,11 @@ function cleanfields() {
     $("#longCountryName").val("");
     $("#countryDescription").val("");
     $("#PopulationAprox").val("");
-    $("#Activo").prop("checked", true);
+    $("#Active").prop("checked", true);
 }
 
 function saveCountrys() {
-    var Id = $("#countryId").val();
+    var Id = parseInt($("#countryId").val());
     var Name = $("#countryName").val();
     var LongName = $("#longCountryName").val();
     var Description = $("#countryDescription").val();
@@ -61,10 +63,21 @@ function saveCountrys() {
     var Status = $('[name="Status"]:checked').val();
     var message = "";
 
-    if (Id == "") {
+    if (isNaN(Id)) {
         message += "El campo Id debe contener un valor \n"
-    } else if (parseInt(Id) < 0) {
+    } else if (Id < 0) {
         message += "El campo Id debe ser un numero positivo \n"
+    } else {
+        var index = buscarIndex(Id);
+        console.log(index + "index buscar")
+
+        if (index != -1) {
+            if (isEdit == true && indexEdit != index) {
+                message += "El campo Id ya existe debe escribir un nuevo valor \n"
+            }else if (isEdit == false) {
+                message += "El campo Id ya existe debe escribir un nuevo valor 1 \n"
+            }
+        }
     }
 
     if (Name == "") {
@@ -84,9 +97,11 @@ function saveCountrys() {
     if (message != "") {
         swal("validaciones", message, "error");
     } else {
+
         addTable(Id, Name, Description, Status);
+
         var addJsonCountry = {
-            "Id": parseInt(Id),
+            "Id": Id,
             "Name": Name,
             "LongName": LongName,
             "Description": Description,
@@ -95,7 +110,14 @@ function saveCountrys() {
         }
         countrysInformations.push(addJsonCountry);
         console.log(countrysInformations);
-        toastr.info('informacion guardada correctamente!');
+        if (isEdit == true) {
+            deleteCountry(Id);
+            toastr.info('informacion editada correctamente!');
+            isEdit = false;
+        }else{
+            toastr.info('informacion guardada correctamente!');
+        }
+        
         cleanfields();
     }
 }
@@ -106,7 +128,57 @@ function addTable(Id, Name, Description, Status) {
         <td>${Name}</td>
         <td>${Description}</td>
         <td>${Status}</td>
+        <td>
+            <div class="btn-group">
+                <input type="button" id="Edit_${Id}" value="Edit" class="btn btn-warning" onclick="editCountry(${Id})">
+                <input type="button" id="Edit_${Id}" value="Delete" class="btn btn-danger" onclick="deleteCountry(${Id})">
+            </div>
+        </td>
         </tr>`
     )
 }
 
+function editCountry(Id) {
+    isEdit = true;
+    var index = buscarIndex(parseInt(Id));
+    console.log(index);
+    if (index != -1) {
+        indexEdit = index;
+        var value = countrysInformations[indexEdit];
+        console.log(value);
+        $("#countryId").val(value.Id);
+        $("#countryName").val(value.Name);
+        $("#longCountryName").val(value.LongName);
+        $("#countryDescription").val(value.Description);
+        $("#PopulationAprox").val(value.PopulationAprox);
+        console.log(value.Status);
+        if (value.Status == "Active") {
+            $("#Active").prop("checked", true);
+        } else {
+            $("#Inactive").prop("checked", true);
+        }
+    }
+}
+
+function deleteCountry(Id) {
+
+    var valorEliminar = buscarIndex(parseInt(Id));
+
+    if (valorEliminar != -1) {
+        countrysInformations.splice(valorEliminar, 1);
+        $(`#${Id}`).remove();
+    }
+}
+
+function buscarIndex(Id) {
+    var eliminar = -1;
+
+    $.each(countrysInformations, function (index, value) {
+        if (value.Id == Id) {
+            eliminar = index;
+            return false;
+        }
+    });
+
+    return eliminar;
+}
