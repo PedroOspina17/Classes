@@ -54,7 +54,7 @@ function addRow(){
         "<td> " + value.Name + "</td >" +
         "<td>" + value.Description + "</td>" +
         "<td> " + value.Status + "</td>" +
-        "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning' value='Edit'>" +"<input type = 'button' id='"+ id+"' class='btn btn-danger btn_remove' value='Delete'>" + "</td>" +
+        "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry("+id+")'>" +"<input type = 'button' id='"+ id+"' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow("+id+")'>" + "</td>" +
         "</tr>"
         )
         console.log(value);
@@ -128,7 +128,7 @@ function msgValid(infoValidate){
 }
 
 function clearForm() {
-    $("#id").val("");
+    $("#id").val("").prop('disabled', false);
     $("#countryName").val("");
     $("#longName").val("");
     $("#countryDesc").val("");
@@ -136,6 +136,7 @@ function clearForm() {
     $("#status").val("");
     $("#idNumber").addClass('text-hide');
     $("#idNumber2").addClass('text-hide');
+    $("#idNumber3").addClass('text-hide');
     $("#Name").addClass('text-hide');
     $("#Name2").addClass('text-hide');
     $("#long").addClass('text-hide');
@@ -144,7 +145,7 @@ function clearForm() {
     $("#true").prop('checked', true);
 }
 
-var idRow=0;
+var modify= false;
 function create(){
     var formInfo = 
         {
@@ -156,27 +157,45 @@ function create(){
             "Status": $("input[name = 'status']:checked").val()
         };
 
-       
-
     var validations = msgValid(formInfo);
 
-    
     id = formInfo.Id;
     console.log(info);
+    
     if (validations == true){
-        $("#table").append("<tr id='row"+ id +"'>" +
-        "<td> " + formInfo.Name + "</td >" +
-        "<td>" + formInfo.Description + "</td>" +
-        "<td> " + formInfo.Status + "</td>" +
-        "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning' value='Edit'>" +"<input type = 'button' id='"+ id +"' class='btn btn-danger btn_remove' value='Delete'>" + "</td>" +
-        "</tr>")
-        toastr.success("The country was created!");
-        clearForm();
-        info.push(formInfo);
+        
+        if (modify == true){
+            console.log("entró1");
+            
+            $("#table").append("<tr id='row"+ id +"'>" +
+            "<td> " + formInfo.Name + "</td >" +
+            "<td>" + formInfo.Description + "</td>" +
+            "<td> " + formInfo.Status + "</td>" +
+            "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry("+id+")'>" +"<input type = 'button' id='"+ id+"' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow("+id+")'>" + "</td>" +
+            "</tr>")
+            $("#row"+id+"").remove();
+            toastr.success("The country was edited!");
+            clearForm();
+            info.push(formInfo);
+        }
+        else{
+            console.log("entró2");
+            $("#table").append("<tr id='row"+ id +"'>" +
+            "<td> " + formInfo.Name + "</td >" +
+            "<td>" + formInfo.Description + "</td>" +
+            "<td> " + formInfo.Status + "</td>" +
+            "<td> " + "<input type = 'button' id='"+ id +"' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry("+id+")'>" +"<input type = 'button' id='"+ id+"' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow("+id+")'>" + "</td>" +
+            "</tr>")
+            toastr.success("The country was created!");
+            clearForm();
+            info.push(formInfo);
+        }
     }
+    console.log(info);
+    
 }
 
-$(document).on('click', '.btn_remove', function () {
+/*$(document).on('click', '.btn_remove', function () {
     var button_id = $(this).attr("id");
     $("#row"+button_id+"").remove();
 
@@ -189,4 +208,40 @@ $(document).on('click', '.btn_remove', function () {
     info.splice(deleteRow,1);
     toastr.success("The country was eliminated!");
     console.log(info);
-})
+})*/
+
+function deleteRow(id){
+    var deleterow = -1;
+    $.each(info, function(index, value){
+        if (value.Id == id){
+            deleterow = index;
+        }
+    })
+    $("#row"+id+"").remove();
+    info.splice(deleterow,1);
+    toastr.success("The country was eliminated!");
+    
+}
+
+
+function updateCountry(id){
+    var updateRow= -1;
+    modify= true;
+   $.each (info, function(index, value){
+        if (value.Id == id){
+            updateRow = index;
+            
+            $("#id").val(value.Id).prop('disabled', true);
+            $("#countryName").val(value.Name);
+            $("#longName").val(value.LongName);
+            $("#countryDesc").val(value.Description);
+            $("#population").val(value.PopulationAprox);
+            $("input[name = 'status']:checked").val(info.Status);
+            
+        }
+   })
+   /*deleteRow(id);*/
+   info.splice(updateRow,1);
+   console.log(info); 
+
+}
