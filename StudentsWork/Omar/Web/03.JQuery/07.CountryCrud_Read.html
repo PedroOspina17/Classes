@@ -20,13 +20,13 @@
             <form class="form" id="formCreate">
                 <div class="row mt-4"> 
                     <div class="col-4">
-                        <input type="number" id="id" name="country" placeholder="Id">
+                        <input type="number" id="id" name="country" placeholder="Id" min= 0>
                         <label class="text-hide text-danger form-text" id="idNumber">*Required</label>
                         <label class="text-hide text-danger form-text" id="idNumber2">*The id cannot be negative</label>
                         <label class="text-hide text-danger form-text" id="idNumber3">*Id already exists!</label>
                     </div>
                     <div class="col-4">
-                        <input type="text" id="countryName" name="country" placeholder="Country Name">
+                        <input type="text" id="countryName" name="country" placeholder="Country Name" required>
                         <label class="text-hide text-danger form-text" id="Name">*Required</label>
                         <label class="text-hide text-danger form-text" id="Name2">*Max 15 characters in the Name</label>
                     </div>
@@ -44,21 +44,19 @@
                     <div class="col-4">
                         <input type="number" id="population" name="country" placeholder="Population Aprox">
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 col-form-group">
                         <label class="text-center">STATUS</label>
-                        <div class="form-group" id="check">
-                            <input type="radio" id="true" name="status" value ="true" checked="checked">
-                            <label class="text-center">Active</label>
-                            <input type="radio" id="false" name="status" value ="false">
-                            <label class="text-center">Inactive</label>
+                        <div class="form-check" id="check">
+                            <input type="radio"class="form-check-input" id="true" name="status" value ="Active" checked="checked">
+                            <label class="text-center form-check-label">Active</label><br>
+                            <input type="radio"class="form-check-input" id="false" name="status" value ="Inactive">
+                            <label class="text-center form-check-label">Inactive</label>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5"> 
-                    <div class="col text-center">
-                        <input type="button" class="btn btn-success" id="save" name="country" value="SAVE" onclick="create()">
-                        <input type="button" class="btn btn-danger" id="cancel" name="country" value="CANCEL" onclick="clearForm()">
-                    </div>
+                <div class="row-col text-center mt-5"> 
+                    <input type="button" class="btn btn-success" id="save" name="country" value="SAVE" onclick="create()">
+                    <input type="button" class="btn btn-danger" id="cancel" name="country" value="CANCEL" onclick="clearForm()">
                 </div>
             </form>
         </div>
