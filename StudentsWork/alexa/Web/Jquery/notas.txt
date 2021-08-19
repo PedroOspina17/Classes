@@ -126,6 +126,21 @@ $("[Property='Value']") por la propiedad y el valor de la propiedad
 $("[type='number']") por tipo y que sea numerico 
  $("input[name='dobDate']") por nombre del input particular 
 
+ LLAMAR ONLOAD 
+ funciones anominas. 
+ $(DOCUMENT).READY(PREPARAGE);//LLAMAR A UNA FUNCION 
+ funcion anomina 
+ $(document).ready()
+
+atributos de html 5
+min="0"
+required
+si un numero es numerico y quiero hacer comparacion lo hago 
+isNAN
+frenar ciclo return true 
+debugger; al inicio del algoritmo para buscar errores en el jeicueri
+return para colocarlo y retornar una informacion y asi llamarlo desde otra parte y me funcione las fun ciones. 
+
 
 
 

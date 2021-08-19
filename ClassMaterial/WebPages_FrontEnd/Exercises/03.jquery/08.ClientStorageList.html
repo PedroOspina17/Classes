@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../../Common/css/rainbow.dreamweaver.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="jumbotron container">
+        <h1 class="text-center">Web storage</h1>
+        <p>In this exercise you will be apply the knowledge about local storage to create a simple application that
+            persist the information saved.</p>
+        <p>Please read and follow the requirements described bellow:</p>
+        <ol>
+            <li>Create a form with the following fields:
+                <ul>
+                    <li><b>Key:</b> A Text field, Required, Unique, 3 characters min and 10 max. Should be only one word </li>
+                    <li><b>Value:</b> A text field, Required and 250 character max.</li>
+                </ul>
+            </li>
+            <li>Create a button called "Create data" which needs to: 
+                <ul>
+                   <li>collect the fields created in the step #1</li> 
+                   <li>validate them</li>
+                   <li>if all the validations are met, create a definition list with the information collected.</li>                   
+                </ul>
+            </li>
+            <li>Inside every definition term create a button to allow the deletion of the item.</li>
+            <li>Create a button called "Clean data" to allow the user to delete all the entries.</li>        
+            <li>When the page is loaded the user should be able to see the information that was created before</li>
+        </ol>
+        <p>
+            <b>¡Important!</b> All the information saved should be persisted even if the user closes the window.
+        </p>
+        <p>
+            <b>Hint: </b> A definition list is just another type of list that follow this structure:
+            <pre><code>
+                &lt;dl>                                
+                    &lt;dt>Term:&lt;/dt>
+                    &lt;dd>Definition&lt;/dd>
+                    &lt;dt>Term:&lt;/dt>
+                    &lt;dd>Definition&lt;/dd>
+                &lt;/dl>
+            </code></pre>
+            <b>Example:</b><br><br>
+            <dl class="ml-5">                                
+                <dt>Term:</dt>
+                <dd>Definition</dd>                
+                <dt>Term:</dt>
+                <dd>Definition</dd>
+                <dt>Test:</dt>
+                <dd>This is the information for test word term</dd>
+                <dt>CSS:</dt>
+                <dd>Language to create styles for the web page</dd>
+            </dl>
+            
+
+        </p>        
+    </div>
+    <img src="../../Common/img/WebStorage_Mock.png" alt="" srcset="" class="d-block mb-5 mx-auto">
+</body>
+
+</html>
+
 List of keys and values persisted
