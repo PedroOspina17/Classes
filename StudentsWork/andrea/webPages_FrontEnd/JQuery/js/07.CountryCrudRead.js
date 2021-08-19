@@ -131,7 +131,7 @@ function addTable(Id, Name, Description, Status) {
         <td>
             <div class="btn-group">
                 <input type="button" id="Edit_${Id}" value="Edit" class="btn btn-warning" onclick="editCountry(${Id})">
-                <input type="button" id="Edit_${Id}" value="Delete" class="btn btn-danger" onclick="deleteCountry(${Id})">
+                <input type="button" id="Delete_${Id}" value="Delete" class="btn btn-danger" onclick="deleteCountry(${Id})">
             </div>
         </td>
         </tr>`
