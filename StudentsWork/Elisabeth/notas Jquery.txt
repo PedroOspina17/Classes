@@ -1,0 +1,11 @@
+NOTAS SOBRE SELECTORES
+
+$(#NombreDeLaTabla).append(´aqui va el valor que quiero agregar a mi html´)
+$("#NombredelId").val() para coger el dato del elemento que se le hizo el selector
+var nameCountry = $("#NombredelId").val();  para coger el dato del elemento que se le hizo el selector y guardarlo en una variable
+var idCountry = parseInt($("#idCountry").val());para coger el dato del elemento que se le hizo el selector y guardarlo en una variable conviertiendolo de string a entero
+listToModify.push(elementToAdd); el push sirve para agregar la información a la lista
+
+
+form group se le pone a los div sirve para serparar los campos unos de otros
+form control es la clase que se le pone a los imput texbox para darles estilos de boostrap
