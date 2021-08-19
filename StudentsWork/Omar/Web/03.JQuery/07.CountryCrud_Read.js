@@ -129,28 +129,7 @@ function msgValid(infoValidate){
 }
 
 function clearForm() {
-    if (modify == true){
-        var formInfo = 
-        {
-            "Id":parseInt($("#id").val()),
-            "Name": $("#countryName").val(),
-            "LongName": $("#longName").val(),
-            "Description": $("#countryDesc").val(),
-            "PopulationAprox": parseInt($("#population").val()),
-            "Status": $("input[name = 'status']:checked").val()
-        }
-        var id= formInfo.Id;
-        console.log(id);
-        var formData = `<tr id='row${id}'>
-        <td>${formInfo.Name}</td >
-        <td>${formInfo.Description}</td>
-        <td>${formInfo.Status}</td>
-        <td> <input type = 'button' id='${id}' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry(${id})'><input type = 'button' id='${id}' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow(${id})'></td>
-        </tr>`;
-
-        $("#table").append(formData);
-        info.push(formInfo);
-        $("#row"+id+"").remove();
+    
         $("#id").val("").prop('disabled', false);
         $("#countryName").val("");
         $("#longName").val("");
@@ -166,30 +145,11 @@ function clearForm() {
         $("#countDesc").addClass('text-hide');
         $("#countDesc2").addClass('text-hide');
         $("#true").prop('checked', true);
-    }
-    else{
-        $("#id").val("").prop('disabled', false);
-        $("#countryName").val("");
-        $("#longName").val("");
-        $("#countryDesc").val("");
-        $("#population").val("");
-        $("#status").val("");
-        $("#idNumber").addClass('text-hide');
-        $("#idNumber2").addClass('text-hide');
-        $("#idNumber3").addClass('text-hide');
-        $("#Name").addClass('text-hide');
-        $("#Name2").addClass('text-hide');
-        $("#long").addClass('text-hide');
-        $("#countDesc").addClass('text-hide');
-        $("#countDesc2").addClass('text-hide');
-        $("#true").prop('checked', true);
-    }
     console.log(info);
 }
 
 var modify = false;
 function create(){
-    //debugger;
     var formInfo = 
         {
             "Id":parseInt($("#id").val()),
@@ -207,22 +167,23 @@ function create(){
     <td>${formInfo.Status}</td>
     <td> <input type = 'button' id='${id}' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry(${id})'><input type = 'button' id='${id}' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow(${id})'></td>
     </tr>`;
-
+    //debugger;
     var validations = msgValid(formInfo);
+    if (modify == true){
+        console.log("entró1");
+        deleteRow(id);
+        $("#table").append(formData);
+    }
     if (validations == true){
-        if (modify == true){
-            console.log("entró1");
-            $("#row"+id+"").remove();
-            $("#table").append(formData);
-        }
-        else{
+        if (modify == false){
+           
             console.log("entró2");
             $("#table").append(formData);
         }
-        toastr.success("The country was saved!");
-        info.push(formInfo);
-        clearForm(); 
     }
+    toastr.success("The country was saved!");
+    info.push(formInfo);
+    clearForm(); 
     console.log(info);
 }
 
@@ -249,7 +210,6 @@ function findIdx(id){
 
 
 function updateCountry(id){
-    modify=true;
     toastr.info("Updating"+id)
     var idx = findIdx(id);
     var infoNew = info[idx];
@@ -266,7 +226,7 @@ function updateCountry(id){
         else{
             $("#false").prop('checked', true);
         }  
-        info.splice(idx,1);
     }
    console.log(info); 
+   modify=true;
 }
