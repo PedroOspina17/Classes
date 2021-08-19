@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CRUD</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/sweetalert.min.js"></script>
+    <script src="../../Common/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="../../Common/css/toastr.min.css">
+    <script src="07.Country_Crud.js"></script>
+</head>
+
+<body class="container" onload="loadInfo()">
+    <div class="jumbotron mt-5">
+        <div class="row form-inline mb-3">
+
+            <div class=" col-4 form-group">
+                <input class="form-control" type="number" name="Id" id="IdThing" placeholder="Id">
+            </div>
+            <div class="col-4 form-group">
+                <input class="form-control" type="text" name="CountryName" id="CountryName" placeholder="Country Name">
+            </div>
+            <div class="col-4 form-group">
+                <input class="form-control" type="text" name="LongCountryName" id="LongCountryName"
+                    placeholder="Long Country Name">
+            </div>
+
+        </div>
+        <div class="row form-inline mb-3">
+            <div class=" col-4 form-group">
+                <input class="form-control" type="text" name="CountryDscription" id="CountryDscription"
+                    placeholder="Country Dscription">
+            </div>
+            <div class=" col-4 form-group">
+                <input class="form-control" type="number" name="Populationaprox" id="Populationaprox"
+                    placeholder="Populationaprox">
+            </div>
+            <div class="col-1 form-check">
+                <input type="radio" id="Active" name="Status" value="Active" description="Male" class="form-check-input"
+                    checked>
+                <label for="male" class="form-check-label">Active</label>
+            </div>
+            <div class="col-2 form-check">
+                <input type="radio" id="Inactive" name="Status" value="Inactive" description="Female">
+                <label for="female">Inactive</label>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group text w-25">
+                <input class="btn btn-success" type="button" value="Save" onclick="ValidationSave()">
+
+                <input class="btn btn-danger" type="button" value="Cancel" onclick="CancelClean()">
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+        <table id="table1" class="table table-striped table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </table>
+        
+
+
+    </div>
+</body>
+
+</html>

@@ -5,8 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
     <title>Web Storage</title>
     <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Common/css/toastr.min.css">
+
+    <link rel="stylesheet" href="../Common/css/rainbow.dreamweaver.css">
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../Common/js/rainbow-custom.min.js"></script>
+    <script src="../Common/js/toastr.min.js"></script>
+
+    <script src="js/06.WebStorage.js"></script>
+
 </head>
 
 <body>
@@ -17,39 +27,145 @@
             persist <b>(to avoid losing data)</b> when the browser tab or the web page is closed.
             there are two types of client storage:
         <ul>
-            <li><b> local storage:</b> Store information until the window is closed</li>
-            <li><b> session storage:</b> Store information even when the window is close.</li>
+            <li><b> session storage:</b> Store information until the window is closed and only for that window</li>
+            <li><b> local storage:</b> Store information until it is explicitly deleted (persisted even when the window
+                is close.) <b>MOST COMMON !!</b></li>
         </ul>
 
         Both works almost in the same way, store a value based in a key <em>(Similar as Json "key": "Value")</em>. <br>
+
         Both have the same methods to work with:
 
         <ul>
+
             <li>
-                <b>.getItem("key"):</b> This method allows you to get the value in the key specified in the parameter.
+                <b>.setItem("key","value"):</b> This method allows you to create a new entry and store the value or
+                update the value of the key specified in the parameter. <br>
+                <b>Note:</b> You need to know that <b>It only store <em>string</em> values</b>. <br>
+                <em>Example:</em> The following code will create a new key called "MyKey" and saves the value "This is a
+                value"<br>
+                <code>localStorage.setItem("MyKey","This is a value")</code><br>
+                <b>Note 2:</b> Since it only allows strings to storage information in Json format or lists you need to
+                use the <code>JSON.stringify(VariableToConvert)</code> to convert a variable to string. <br>
+                <em>Example: </em> To save in the local storage a json list variable called "myJsonList" in the key
+                "PersonList" use:
+                <pre><code data-language="javascript">
+            var myJsonList = [
+                {
+                    "name":"Pedro",
+                    "lastName" : "Ospina"
+                },
+                {
+                    "name":"David",
+                    "lastName" : "Ossa"
+                }
+            ]
+            localStorage.setItem("PersonList", JSON.stringify(myJsonList))</code></pre>
+
+            </li>
+            <li>
+                <b>.getItem("key"):</b> This method allows you to get the value stored in the key specified in the
+                parameter.
                 <br>
                 <em>Example:</em> The following code will obtain the information stored in the key
-                "firstName"<code>localStorage.getItem("FirstName")</code>
+                "firstName"<code>localStorage.getItem("FirstName")</code><br>
+                <b>Remember:</b> Since the value stored in the local storage is a string, when the value is a list or a
+                json you need to convert the value again to its type with the function
+                <code>JSON.parse(ValueToParse)</code><br>
+                <b>Example:</b> To get the value saved in the key "PersonList" (saved in the item before). you need to
+                use:
+                <pre><code data-language="javascript">
+                var myJsonList = JSON.parse(localStorage.getItem("PersonList"))</code></pre>
             </li>
             <li>
-                <b>.setItem("key","value"):</b> This method allows you to create a new entry and store the value or update the value of the key specified in the parameter. <br>
-                <em>Example:</em> 
+                <b>.key(indexPosition)</b>: This is to get the key stored in the position specified in the
+                parameter.<br>
+                <b> Example: </b> To get the key located in the index 2 use: <code>localStorage.key(2)</code> <br>
+
             </li>
             <li>
-                <b>.key(position)</b>
+                <b>.removeItem("key")</b> To delete the key with it's value. <br>
+                <b>Example: </b> To delete the value stored in the key "MyKey" use:
+                <code>localStorage.removeItem("MyKey")</code>
             </li>
             <li>
-                <b>.removeItem("key")</b>
+                <b>.clear()</b>: To Delete all the keys and values. To clear all the info.
+                <code>localStorage.clear()</code>
             </li>
             <li>
-                <b>.clear()</b>
+                <b> localStorage.length: </b> To get how many keys have been saved. <code
+                    data-language="javascript">localStorage.length</code> returns an integer number. <br>
             </li>
         </ul>
+        <b> Note: </b>Using all the methods mentioned above you can iterate through the information stored
 
-        JSON.stringify()
-        JSON.parse()
+        <pre><code data-language="javascript">
+            for (var i = 0; i < localStorage.length; i++){
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);// If the value is a list or Json remember to do a JSON.parse()
+            toastr.info(`${key}: ${value}`);
+            }</code></pre>
+
+
 
         </p>
+    </div>
+
+    <div class="jumbotron container">
+        <h2>Create values</h2>
+        <div class="row mb-4">
+
+            <div class="col">
+                <label for="lsValue">local storage value</label>
+                <input type="text" name="lsValue" id="lsValue" class="form-control">
+            </div>
+            <div class="col">
+
+                <div class="btn-group  h-100 w-75 p-1">
+                    <input type="button" id="btnCreateLocal" value="Create local value"
+                        class="btn btn-success align-self-end w-50" onclick="createLocalStorage()">
+                    <input type="button" id="btnClearLocal" value="Clear local storage "
+                        class="btn btn-warning align-self-end w-50" onclick="clearLocalStorage()">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col">
+                <label for="ssValue">session storage value</label>
+                <input type="text" name="ssValue" id="ssValue" class="form-control">
+            </div>
+            <div class="col">
+
+                <div class="btn-group h-100 w-75 p-1">
+                    <input type="button" id="btnCreateSession" value="Create session value"
+                        class="btn btn-success align-self-end w-50" onclick="createSessionStorage()">
+                    <input type="button" id="btnClearSession" value="Clear session storage "
+                        class="btn btn-warning align-self-end w-50" onclick="clearSessionStorage()">
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="mt-5">Get values</h2>
+        <div class="row">
+            <div class="col">
+                <label for="lStoredValue"> Local storage value</label> <br>
+                <label id="lStoredValue"></label>
+            </div>
+            <div class="col">
+                <label for="sStoredValue"> Session storage value</label> <br>
+
+                <label  id="sStoredValue"></label>
+            </div>
+        </div>
+        <div class="row-col text-center">
+        <input type="button" value="Clear all " class="btn btn-danger mt-5 mx-auto" onclick="clearStorage()">
+    </div>
+
     </div>
 </body>
 

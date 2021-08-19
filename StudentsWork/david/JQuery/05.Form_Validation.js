@@ -1,4 +1,4 @@
-function Mostrar() {
+    function Mostrar() {
     console.log("Entor a la funcion")
     var Alert = ""
     var user = $("#user").val();
