@@ -32,7 +32,7 @@ function getSessionStorage(){
 
 function clearLocalStorage(){
 
-    
+    // localStorage.removeItem("MyKey")
     localStorage.clear()
     toastr.info("localStorage was cleared")
     getLocalStorage();
