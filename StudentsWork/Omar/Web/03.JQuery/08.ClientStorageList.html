@@ -27,37 +27,16 @@
                         <textarea class="form-control col-12" id="value" name="value" max="250" required placeholder="This is my value"></textarea>
                     </div>
                     <div class="col form-group btn-group mt-3">
-                        <input type="button" class="btn btn-danger col-6" id="btnClear" name="btnClear" value="Clear Data" onclick="clearField()">
+                        <input type="button" class="btn btn-danger col-6" id="btnClear" name="btnClear" value="Clear Fields" onclick="clearField()">
                         <input type="button" class="btn btn-success col-6" id="btnCreate" name="btnCreate" value="Create Data" onclick="create()">
                     </div>
                 </div>
                 <div class="col-4 mt-5 offset-4">
+                    <div class="row mt-2" id="newData">
+                        
+                    </div>
                     <div class="row mt-2">
-                        <div class="col-md-7">
-                            <dt>Key</dt>
-                            <dr>Value</dr>
-                        </div>
-                        <div class="col-2 mt-2">
-                            <input type="button" class="btn btn-outline-danger" id="" name="" value="Delete">
-                        </div>
-                    </div>
-                    <div class="row  mt-2">
-                        <div class="col-md-7">
-                            <dt>Key</dt>
-                            <dr>Value</dr>
-                        </div>
-                        <div class="col-2 mt-2">
-                            <input type="button" class="btn btn-outline-danger" id="" name="" value="Delete">
-                        </div>
-                    </div>
-                    <div class="row  mt-2">
-                        <div class="col-md-7">
-                            <dt>Key</dt>
-                            <dr>Value</dr>
-                        </div>
-                        <div class="col-2 mt-2">
-                            <input type="button" class="btn btn-outline-danger" id="" name="" value="Delete">
-                        </div>
+                        <input type="button" class="btn btn-warning col-6" id="btnClearData" name="btnClearData" value="Clear Data" onclick="clearLocStor()">
                     </div>
                 </div>
             </div>

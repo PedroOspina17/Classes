@@ -162,7 +162,7 @@ function create(){
     var id= formInfo.Id;
     console.log(id);
     var formData = `<tr id='row${id}'>
-    <td>${formInfo.Name}</td >
+    <td>${formInfo.Name}</td>
     <td>${formInfo.Description}</td>
     <td>${formInfo.Status}</td>
     <td> <input type = 'button' id='${id}' class='btn btn-warning btn_edit' value='Edit' onclick='updateCountry(${id})'><input type = 'button' id='${id}' class='btn btn-danger btn_remove' value='Delete' onclick='deleteRow(${id})'></td>
