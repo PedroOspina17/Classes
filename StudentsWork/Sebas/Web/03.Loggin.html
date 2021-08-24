@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/sweetalert.min.js"></script>
+    <script src="../Web/Js/03.Loggin.js"></script>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+
+<body class="container text-center w-25">
+    <div class="main">
+        <img src="../../Common/img/logo1-2.png" class="banner">
+
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">User name</label>
+            <input type="text" class="form-control" name="inputUser" id="inputUser" placeholder="Enter user">
+        </div>
+        <div class="form-group">
+            <label class="w-100 font-weight-bold">Password</label>
+            <input type="password" class="form-control" name="inputPassUser" id="inputPassUser" placeholder="Enter password">
+        </div>
+        <div class="form-group btn-group">
+            <input type="button" value="LOG IN" class="btn btn-sm btn-success testClass" onclick="ValidateLogIn()">
+        </div>
+    </div>
+</body>
+
+</html>
