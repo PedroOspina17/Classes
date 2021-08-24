@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../../Common/css/rainbow.dreamweaver.css"> -->
+    <link rel="stylesheet" href="../../Common/css/rainbow.dreamweaver.css">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/rainbow-custom.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -19,7 +21,7 @@
         <ol>
             <li>Create a form with the following fields:
                 <ul>
-                    <li><b>Key:</b> A Text field, Required, Unique, 3 characters min and 10 max. Should be only one word </li>
+                    <li><b>Key:</b> A Text field, Required, Unique, 3 characters min and 10 max. Should be only one word. </li>
                     <li><b>Value:</b> A text field, Required and 250 character max.</li>
                 </ul>
             </li>
@@ -37,26 +39,42 @@
         <p>
             <b>¡Important!</b> All the information saved should be persisted even if the user closes the window.
         </p>
+        <b>Hint 1:</b> You may find the function <code>.indexOf()</code>  useful. This function is to identify the index of a string inside another string. <br>
+            If the function find the string sent in the parameter returns the index found, if not returns -1. <br>
+            <b>Example: </b> In the variable my string which contains <em> "In this variable i have some examples. This contains The string im looking for and some other text"</em> <br>
+            you need to identify if the variable contains the text <em>"The string im looking" </em>. Show a toastr with the results <br>
+            The example should show a toastr saying "The text was found at index 53"
+            <pre><code data-language="javascript"> var MyString = "In this variable i have some examples. This contains The string im looking for and some other text";
+            var idx = MyString.indexOf("The string im looking"); // Return the index found or -1 if the text is not present
+            if(idx>-1) 
+            {
+                // The function found the text specified in the parameter.
+                toastr.info("The text was found at index " + idx);
+            }else{
+                toastr.info("The text was not found");
+            }</code></pre>
         <p>
-            <b>Hint: </b> A definition list is just another type of list that follow this structure:
-            <pre><code>
-                &lt;dl>                                
-                    &lt;dt>Term:&lt;/dt>
-                    &lt;dd>Definition&lt;/dd>
-                    &lt;dt>Term:&lt;/dt>
-                    &lt;dd>Definition&lt;/dd>
-                &lt;/dl>
+            <b>Hint 2: </b> A definition list is just another type of list that follow this structure:
+            <pre><code data-language="HTML">
+                &lt;dl&gt;                             
+                    &lt;dt&gt;Term:&lt;/dt&gt;
+                    &lt;dd&gt;Definition&lt;/dd&gt;
+                    &lt;dt&gt;Term:&lt;/dt&gt;
+                    &lt;dd&gt;Definition&lt;/dd&gt;
+                &lt;/dl&gt;
             </code></pre>
             <b>Example:</b><br><br>
             <dl class="ml-5">                                
                 <dt>Term:</dt>
-                <dd>Definition</dd>                
+                <dd>Definition </dd>
                 <dt>Term:</dt>
-                <dd>Definition</dd>
+                <dd>Definition </dd>
+                <dt>Term:</dt>
+                <dd>Definition </dd>
                 <dt>Test:</dt>
-                <dd>This is the information for test word term</dd>
+                <dd>This is the information for test word term </dd>
                 <dt>CSS:</dt>
-                <dd>Language to create styles for the web page</dd>
+                <dd>Language to create styles for the web page </dd>
             </dl>
             
 
