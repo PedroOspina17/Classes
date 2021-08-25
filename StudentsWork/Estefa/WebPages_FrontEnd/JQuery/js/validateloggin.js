@@ -3,7 +3,8 @@ function ValidateData(){
     var pss  = $("#pssUser").val();
 
    if (user == 'Admin' && pss == '123'){
-        window.location.href = "PaginaNueva.html";
+        window.location.href = "../JQuery/08.ClientStorageList.html";
+        localStorage.setItem(user,pss);
    }else{
        swal("Credenciales incorrectas");
    }
