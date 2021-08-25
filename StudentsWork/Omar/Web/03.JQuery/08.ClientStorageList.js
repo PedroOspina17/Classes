@@ -2,6 +2,7 @@
 var countId = 1;
 $(document).ready(function () {
     readStor();
+    
 });
  
 
@@ -57,12 +58,16 @@ function clearLocStor(){
 }
 
 function readStor(){
+    localStorage.setItem("Admin", "123")
     for (var id = 0; id < localStorage.length; id++){
         var key = localStorage.key(id);
-        var value = localStorage.getItem(key);// If the value is a list or Json remember to do a JSON.parse()
-        //toastr.info(`${key}: ${value}`);
+        var value = localStorage.getItem(key);
         $("#newData").append("<div class='form-inline mt-3 col-lg-12' style='height:60px' id='"+countId+"' value='"+key+"'><dl><dt id='keys"+countId+"'>"+key+":</dt><dd id='val"+countId+"'>"+value+"</dd></dl><div class='mt-lg-n3 ml-auto p-5'><input type='button' class='btn btn-outline-danger' id='"+countId+"' value='Delete' onclick='deleteData("+countId+")'></div></div>");
         countId = countId +1;
         }
        
+}
+
+function logOut(){
+    window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
 }
