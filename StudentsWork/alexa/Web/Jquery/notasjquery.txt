@@ -237,9 +237,7 @@ swal y mensaje que quiero mostrar swal("este es mi mensaje")
 swal("titulo, mensaje, color ") me muestra la alerta en toda la pantalla 
 --------------------------------------------------------------------------
 DOM JAVA O JQCUERY ME LE BRINDA A MI PAGINA INTERACTIVIDAD. 
-preprend agrega al inicio
-append agrega al fInal 
-empty() lo limpia 
+preprend agrega al inicion 
 
     var idCounter = 5;
     function createInput(){(PARA CREAR UN IMPUT)
@@ -290,4 +288,21 @@ para crear elementos en memoria
      4. limpiar el formulario 
      5. mostrar un toostar alertas difeentes a swit alert
 
+
+cuando quiero seleccionar un radio button inactivo se coje por id no por nombre checked
+. val es acceder al htm 
+para acceder a un jaison 
+debugger; para validar cada error en la consola 
+
+web storage mecanismo para almacenar informacion en el lado del cliente base de datos en el navegador esta almacenado en el 
+computador del usuario que lo va a manejar. se puede manipular para persistir datos y evitar que se me pierdan mis datos 
+session storage datos almacenados en la pestaña y no puede ser compartido 
+local storage dura hasta que se borre la informacion si cierro el navegador o abro la pestaña tengo acceso a la informacion guardada 
+en forma local 
+
+document ready cuando se carga la pagina 
+xtext.para rexto $(variable).text(valor)$().ready(function){}
+definicion list es otro tipo de lista glosario como titulo o definicicion 
+<dl></dl>
+ejercicio.. 
 

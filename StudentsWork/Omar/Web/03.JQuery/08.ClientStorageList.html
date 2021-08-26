@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="08.ClientStorageList.js"></script>
+    <title>STORAGE</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron p-4 m-5">
+            <h4 class="text-center">WEB STORAGE</h4>
+            <div class="row">
+                <div class="offset-lg-10">
+                    <input type="button" class="btn btn-outline-primary col-12" id="btnLogOut" name="btnLogOut" value="LogOut" onclick="logOut()">
+                </div>
+                <div class="col-4 mt-5">
+                    <div class="col form-group">
+                        <label class="col-1 h6">KEY</label>
+                        <input type="tyext" class="form-control col-12" id="key" name="key" min="3" required placeholder="Key example">
+                    </div>
+                    <div class="col form-group">
+                        <label class="col-1 h6">VALUE</label>
+                        <textarea class="form-control col-12" id="value" name="value" max="250" required placeholder="This is my value"></textarea>
+                    </div>
+                    <div class="col form-group btn-group mt-3">
+                        <input type="button" class="btn btn-danger col-6" id="btnClear" name="btnClear" value="Clear Fields" onclick="clearField()">
+                        <input type="button" class="btn btn-success col-6" id="btnCreate" name="btnCreate" value="Create Data" onclick="create()">
+                    </div>
+                </div>
+                <div class="col-4 mt-5 offset-4">
+                    <div class="row mt-2" id="newData">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
