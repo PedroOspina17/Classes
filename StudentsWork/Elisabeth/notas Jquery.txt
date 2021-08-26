@@ -9,3 +9,50 @@ listToModify.push(elementToAdd); el push sirve para agregar la información a la 
 
 form group se le pone a los div sirve para serparar los campos unos de otros
 form control es la clase que se le pone a los imput texbox para darles estilos de boostrap
+
+dom modification es coger un elemento contedor y empezar a insertarle otro elemento se hace con appen. se coloca un id unico
+cuando hay un 
+
+para crear listas de definiciones
+
+dl (definicion list) es el contenedor el papa de todos los hijitos es la lista 
+dt (definicion term) es el hijito que lleva el termino 
+dd (definicion definicion) es el hijito que lleva el termino 
+
+el .remove lo que hace es borrar todo el elemento del html
+como hacer para borrar la fila que le dieron click
+
+
+eun un for each el return true es para romper el ciclo
+
+para meter dentro de una lista un jaison, creo por fuera una variable global asi:
+
+var nameList = []; se crea vacia
+
+para ingresarle un jason se crea en una variable el Jaison asi:
+
+var nameJaison = {
+            "key": varKey,
+            "value": varValue,
+        };
+
+luego se le hace un .push a la lista global que esta vacia
+
+nameList.push(nameJaison)
+
+ offset sirve para mover las columnas a la derecha 
+
+
+bostrap forms
+form grup se le pone al div que contiene el input y el label
+
+toaster para notificaciones
+
+swalter para validaciones importantes, congela la pagina, asi  swal()
+.trim() sirve para limpiar el espacios de un string al principio y al final no elimina el espacio que separa dos string
+
+
+
+
+
+
