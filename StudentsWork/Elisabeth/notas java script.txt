@@ -11,3 +11,10 @@ eventos son las acciones que me dispara el usuario para yo desencadenar otra acc
 onclick evento en el que me dice cuando un usuario le da un click
 onChange dispara el evento cuando se cambia el texto  
 onKeyPress dispara el evento cuando se apreta una letra
+
+
+
+en el punto 3 de leer hacer lo siguiente 
+
+en el java scrip insertar las filas con un dom modification de tal manera que los datos se vayan añadiendo automaticamente
+
