@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Common/css/toastr.min.css">
+    <link rel="stylesheet" href="../Common/css/rainbow.dreamweaver.css">
+    <script src="../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../Common/js/rainbow-custom.min.js"></script>
+    <script src="../Common/js/toastr.min.js"></script>
+    <script src="js/07.Ajax.js"></script>
+</head>
+<body>
+    <div class="container jumbotron">
+        <h1 class="text-center">Ajax</h1>
+        <h2>Http requests</h2>
+        <p>
+            An http request is a call between a client and a server. This is used to create a communication between two computers. <br>
+            The http is a protocol to define how the communication should be established. 
+            <img src="../Common/img/http.jpg" class="d-block mx-auto w-50">           
+
+        </p>
+        
+        <p>
+            Ajax is a mechanism to make async calls. <br>
+            When you need to call your backend use the Ajax to start a background process to hit an endpoint. <br>
+
+
+            <b> http status codes:</b>
+            <ol>
+                <li>Informative responses (100–199)</li>
+                <li>Success response (200–299)</li>
+                <li>Redirections (300–399)</li>
+                <li>Client errors, controlled errors (400–499)</li>
+                <li>Server errors, unexpected errors (500–599)</li>
+            </ol>
+
+             for more information see <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status"> Status codes</a>
+
+           
+            To use ajax with jquery call the method <code>$.ajax();</code>
+            This method receives a json object as a parameter, here we specify how the ajax is going to behave. in those configurations we need to fill the following fields: 
+            <ul>
+                <li><b>URL:</b>To specify the endpoint. </li>
+                <li><b>Type:</b>The type of request. <b>GET</b> or <b>POST</b> normally.</li>
+                <li><b>Data:</b>Information to send to the server. Used in <b>POST</b> requests</li>
+                <li><b>DataType:</b> To specify the data format sent.</li>
+                <li><b>Success:</b>To specify the function to be executed when the request was successfully. </li>
+                <li><b>Error:</b>To specify the function to be executed when the request was <b> not</b> successfully. </li>
+
+            </ul>
+            
+            <p>To create an ajax request use the following code: </p>
+            <ul>
+                <li>GET:
+                    <pre><code data-language="javascript">
+                        $.ajax({
+                            url: "http://localhost:8080/healthcheck",
+                            type: "GET",
+                            data: {"id": 1, "name": "test"},
+                            dataType: "json"
+                            Success: function(response){
+                                console.log(response);
+                            },
+                            Error: function (response){
+                                console.log(response);
+                            }
+                        });
+                    </code></pre>
+                </li>
+                <li>POST:
+                    <pre><code data-language="javascript">
+                        $.ajax({
+                            url: "http://localhost:8080/healthcheck",
+                            type: "GET",
+                            data: {"id": 1, "name": "test"},
+                            dataType: "json"
+                            Success: function(response){
+                                console.log(response);
+                            },
+                            Error: function (response){
+                                console.log(response);
+                            }
+                        });
+                    </code></pre>
+                </li>
+            </ul>
+            
+        </p>
+        <div class="jumbotron container">
+            <h1 class="text-center">AJAX</h1>
+            <div class="form-group">
+                <label for="">ID</label>
+                <input type="text" name="txtId" id="txtId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="txtName" id="txtName" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="button" value="Get request" class="btn btn-success" onclick="GetInfo()">
+                <input type="button" value="Get request with params" class="btn btn-success" onclick="SendGETRequest()">
+                <input type="button" value="Post request" class="btn btn-success" onclick="SendPOSTRequest()"> 
+            </div>
+
+        </div>
+
+        <table id="mytable" class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>email</th>
+                <th>First name</th>
+                <th>actions</th>
+            </tr>
+            
+        </table>
+
+    </div>
+</body>
+</html>
