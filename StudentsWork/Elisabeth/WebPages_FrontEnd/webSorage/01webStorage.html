@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webStorage</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/jquery.dataTables.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+    <script src="../../WebPages_FrontEnd/webSorage/01clientStorage.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center text-danger mb-5">Web Storage</h1>
+        <div class="row">
+            <div class="col-5">
+                <div class="form-group">
+                    <label for="key">key</label>
+                    <input type="text" name="key" id="idInputkey" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="value">value</label>
+                    <input type="text" name="value" id="idInputValue" class="form-control">
+                </div>
+                <div class="btn-group">
+                    <input type="button" value="Clear Data" name="key" id="idButton_ClearData"
+                        class="btn btn-danger form-control" onclick="ClearInfoStorage()">
+                    <input type="button" value="Create Data" name="key" id="idButton_CeatedData"
+                        class="btn btn-success form-control" onclick="SaveInfoStorage()">
+                </div>
+            </div>
+            <div class="col-5 offset-2">
+                <dl id="listKeyValues">
+                    
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

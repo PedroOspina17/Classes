@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountryCrud</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Common/js/jquery.dataTables.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+    <script src="../JQuery/07CountryCrud.js"></script>
+</head>
+<body onload="readCountryList()">
+    <h1 class="text-center text-danger">COUNTRY</h1>
+    <div class="container">
+        <div class="row mb-3" >
+            <div class="form-group col">
+                <label for="idCountry">Id</label>
+                <input type="number" name="" id="idCountry" class="form-control">
+            </div>
+            <div class="form-group col">
+                <label for="nameCountry">Name Country</label>
+                <input type="text" name="nameCountry" id="nameCountry" class="form-control">
+            </div>
+            <div class="form-group col">
+                <label for="longCountryName">Long Country Name</label>
+                <input type="text" name="longCountryName" id="longCountryName" class="form-control">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="form-grup col">
+                <label for="countryDescription">Country Description</label>
+                <input type="text" name="countryDescriptione" id="countryDescription" class="form-control">
+            </div>
+            <div class="form-grup col">
+                <label for="populationAprox">Population Aprox </label>
+                <input type="number" name="populationAprox" id="populationAprox" class="form-control">
+            </div>
+            <div class="form-check col-3 ml-5">
+                <input type="radio" id="statusActive" name="status" value="Active" class="form-check-input" checked>
+                <label for="statusActive" class="form-check-label">Active</label> <br>
+                <input type="radio" id="statusInactive" name="status" value="Inactive" class="form-check-input">
+                <label for="statusInctive" class="form-check-label">Inactive</label>
+            </div>
+        </div>
+        <div class="container form-group">
+            <input type="button" value="save" id="saveInformationCountry" class="btn btn-success" onclick="saveInformationCountry()">
+            <input type="button" value="cancel" id="deleteInformationCountry" class="btn btn-danger" onclick="deleteInformationCountry()">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col" mb-5>
+                <table id= "CountryTable" class="table">
+                    <tr id="row-id">
+                        <th>Id</th>
+                        <th>CountryName</th>
+                        <th>CountryDescription</th>
+                        <th>Status</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col" mr-3>
+            
+        </div>
+       
+    </div>
+    
+</body>
+</html>
