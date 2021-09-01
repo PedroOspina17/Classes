@@ -64,38 +64,37 @@ function saveCountrys() {
     var message = "";
 
     if (isNaN(Id)) {
-        message += "El campo Id debe contener un valor \n"
+        message += "The Id field must contain a value \n"
     } else if (Id < 0) {
-        message += "El campo Id debe ser un numero positivo \n"
+        message += "The Id field must be a positive number \n"
     } else {
-        var index = buscarIndex(Id);
-        console.log(index + "index buscar")
+        var index = findIndex(Id);
 
         if (index != -1) {
             if (isEdit == true && indexEdit != index) {
-                message += "El campo Id ya existe debe escribir un nuevo valor \n"
+                message += "The Id field already exists you must write a new value \n"
             }else if (isEdit == false) {
-                message += "El campo Id ya existe debe escribir un nuevo valor 1 \n"
+                message += "The Id field already exists you must write a new value \n"
             }
         }
     }
 
     if (Name == "") {
-        message += "El campo Name debe contener un valor \n"
+        message += "The Name field must contain a value \n"
     } else if (Name.length > 15) {
-        message += "El campo Name debe contener maximo 15 caracteres \n"
+        message += "The Name field must contain a maximum of 15 characters \n"
     }
 
     if (LongName != "" && LongName.length > 50) {
-        message += "El campo LongName debe contener maximo 50 caracteres \n"
+        message += "The LongName field must contain a maximum 50 characters \n"
     }
 
     if (Description != "" && (Description.length < 10 || Description.length > 250)) {
-        message += "El campo countryDescription debe contener minimo 10 caracteres y maximo 250 caracteres \n"
+        message += "The countryDescription field must contain a minimum of 10 characters and a maximum of 250 characters \n"
     }
 
     if (message != "") {
-        swal("validaciones", message, "error");
+        swal("validations", message, "error");
     } else {
 
         addTable(Id, Name, Description, Status);
@@ -112,10 +111,10 @@ function saveCountrys() {
         console.log(countrysInformations);
         if (isEdit == true) {
             deleteCountry(Id);
-            toastr.info('informacion editada correctamente!');
+            toastr.info('information edited correctly!');
             isEdit = false;
         }else{
-            toastr.info('informacion guardada correctamente!');
+            toastr.info('information saved correctly!');
         }
         
         cleanfields();
@@ -140,8 +139,7 @@ function addTable(Id, Name, Description, Status) {
 
 function editCountry(Id) {
     isEdit = true;
-    var index = buscarIndex(parseInt(Id));
-    console.log(index);
+    var index = findIndex(parseInt(Id));
     if (index != -1) {
         indexEdit = index;
         var value = countrysInformations[indexEdit];
@@ -162,23 +160,23 @@ function editCountry(Id) {
 
 function deleteCountry(Id) {
 
-    var valorEliminar = buscarIndex(parseInt(Id));
+    var index = findIndex(parseInt(Id));
 
-    if (valorEliminar != -1) {
-        countrysInformations.splice(valorEliminar, 1);
+    if (index != -1) {
+        countrysInformations.splice(index, 1);
         $(`#${Id}`).remove();
     }
 }
 
-function buscarIndex(Id) {
-    var eliminar = -1;
+function findIndex(Id) {
+    var remove = -1;
 
     $.each(countrysInformations, function (index, value) {
         if (value.Id == Id) {
-            eliminar = index;
+            remove = index;
             return false;
         }
     });
 
-    return eliminar;
+    return remove;
 }
