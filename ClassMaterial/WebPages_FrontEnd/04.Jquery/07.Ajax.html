@@ -59,11 +59,11 @@
             <ul>
                 <li>GET:
                     <pre><code data-language="javascript">
+                        var myParam = "Test";
+                        var myParam2 = "Test 2";
                         $.ajax({
-                            url: "http://3.14.144.130:8080/Healthcheck",
+                            url: "http://3.14.144.130:8080/Healthcheck?parameter="+myParam+"&anotherParam="+myParam2,
                             type: "GET",
-                            data: {"id": 1, "name": "test"},
-                            dataType: "json"
                             success: function(response){
                                 console.log(response);
                             },
@@ -80,7 +80,7 @@
                             url: "http://3.14.144.130:8080/Healthcheck",
                             type: "POST",
                             data: JSON.stringify(dataToSend),
-                            dataType: "json"
+                            dataType: "json",
                             success: function(response){
                                 console.log(response);
                             },
