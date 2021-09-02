@@ -1,8 +1,10 @@
 
 var countId = 1;
 $(document).ready(function () {
+    if (localStorage.getItem("Security" ) == null){
+        window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
+    }
     readStor();
-    
 });
  
 
@@ -11,7 +13,7 @@ function create(){
     var msg = "";
     var key = $("#key").val();
     var value = $("#value").val();
-     
+    countId = countId +1;
     if(key == ""){
         msg+= "The field 'KEY' is required \n";
     }else if (key.length < 3 || key.length > 10){
@@ -57,7 +59,7 @@ function clearLocStor(){
 }
 
 function readStor(){
-    
+    localStorage.removeItem("Security")
     for (var id = 0; id < localStorage.length; id++){
         var key = localStorage.key(id);
         var value = localStorage.getItem(key);
@@ -70,15 +72,20 @@ function readStor(){
 }
 
 function logOut(){
+    var sec =localStorage.getItem("Security")
+    localStorage.removeItem("Security")
+    window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
+}
+
+/*function logIn (){
     for (var id = 0; id < localStorage.length; id++){
         var key = localStorage.key(id);
         
-        if(key == "Admin"){ 
-            localStorage.removeItem("Admin")
+        if(key != "Admin"){ 
+            window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
         }
-        else if(key == "Admin2"){
-            localStorage.removeItem("Admin2")
+        else if (key != "Admin2"){ 
+            window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
         }
     }
-    window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
-}
+}*/

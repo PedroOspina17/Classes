@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    clear();
+})
+
 function save(){
     var msg = "";
     var email = $("#inputEmail").val();
@@ -20,14 +24,19 @@ function save(){
     }
     if(email == "Admin" && password == "123"){
         window.location.href="../../Web/03.JQuery/08.clientStorageList.html"
-        localStorage.setItem("Admin", "123")
+        localStorage.setItem("Security", "Admin")
     }
     else if(email == "Admin2" && password == "admin123"){
         window.location.href="../../Web/03.JQuery/08.clientStorageList.html"
-        localStorage.setItem("Admin2", "admin123")
+        localStorage.setItem("Security", "Admin2")
     }
 
     if(msg != ""){
         swal(msg);
     }
+}
+
+function clear(){
+    $("#inputEmail").val("");
+    $("#inputPass").val("");
 }

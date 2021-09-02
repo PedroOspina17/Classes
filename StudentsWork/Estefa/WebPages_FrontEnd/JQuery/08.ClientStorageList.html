@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/toastr.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Estefa/WebPages_FrontEnd/JQuery/js/08.ClientStorageList.js"></script>
+    <title>Client Storage List</title>
+</head>
+
+<body>
+    <h1 class="text-center">Web storage</h1>
+    <div class="container">
+        <form>
+        <div class="row-col offset-11">
+            <input type="button" class="btn btn-danger" id="btnClearData" name="btnClearData"
+            value="Logout" onclick="Logout()">
+        </div>
+            <div class="row form-group">
+                
+                <div class="col-4 form-group offset-1">
+                    <div class="form-group">
+                        <label>Key</label>
+                        <input type="text" class="form-control" id="txtKey" name="txtKey" placeholder="KeyExample">
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="text" class="form-control" id="txtValue" name="txtValue"
+                            placeholder="This is my value">
+                    </div>
+                    <div class="form-group offset-1">
+                        <input type="button" class="btn btn-danger" id="btnClearData" name="btnClearData"
+                            value="Clear data" onclick="LimpiarData()">
+                        <input type="button" class="btn btn-success" id="btnCreateData" name="btnCreateData"
+                            value="Create data" onclick="CreateData()">
+                    </div>
+                </div>
+                <div class="col-4 form-group offset-1">
+                    <div class="row">
+                        <div class="col">
+                            <dl id="ListadoKey">
+                                
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <div class="col-2 form-group" id="btnListadoKey">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

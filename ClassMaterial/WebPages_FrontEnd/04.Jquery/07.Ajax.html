@@ -59,15 +59,15 @@
             <ul>
                 <li>GET:
                     <pre><code data-language="javascript">
+                        var myParam = "Test";
+                        var myParam2 = "Test 2";
                         $.ajax({
-                            url: "http://localhost:8080/healthcheck",
+                            url: "http://3.14.144.130:8080/Healthcheck?parameter="+myParam+"&anotherParam="+myParam2,
                             type: "GET",
-                            data: {"id": 1, "name": "test"},
-                            dataType: "json"
-                            Success: function(response){
+                            success: function(response){
                                 console.log(response);
                             },
-                            Error: function (response){
+                            error: function (response){
                                 console.log(response);
                             }
                         });
@@ -75,15 +75,16 @@
                 </li>
                 <li>POST:
                     <pre><code data-language="javascript">
+                        var dataToSend = {"id": 1, "name": "test"};
                         $.ajax({
-                            url: "http://localhost:8080/healthcheck",
-                            type: "GET",
-                            data: {"id": 1, "name": "test"},
-                            dataType: "json"
-                            Success: function(response){
+                            url: "http://3.14.144.130:8080/Healthcheck",
+                            type: "POST",
+                            data: JSON.stringify(dataToSend),
+                            dataType: "json",
+                            success: function(response){
                                 console.log(response);
                             },
-                            Error: function (response){
+                            error: function (response){
                                 console.log(response);
                             }
                         });
