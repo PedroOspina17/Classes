@@ -45,7 +45,6 @@ function Out() {
 }
 
 function RLS() {
-    console.log("AAAAAAAA")
 
     if (localStorage.getItem("User") == null) {
         window.location.href = "03.Loguin_FALENA.html"
@@ -54,7 +53,11 @@ function RLS() {
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
-            AL(key,value)
+            if (key != "User") {
+                AL(key,value) 
+            }
+            
         }
+        $("#Welco").text("Welcome: "+localStorage.getItem("User"))
     }
 }
