@@ -1,7 +1,11 @@
 var countId = 1;
 $(document).ready(function () {
-    if (localStorage.getItem("Security" ) == null){
+    var userW = localStorage.getItem("Security" );
+    if (userW == null){
         window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
+    }
+    else if (localStorage.getItem("Security" ) != null){
+        $("#user").append("<h2 class='text-primary'>Welcome "+userW +"</h2>");
     }
     readStor();
 });
@@ -10,13 +14,16 @@ $(document).ready(function () {
 var id = 0;
 function create(){
     var msg = "";
-    var key = $("#key").val();
-    var value = $("#value").val();
+    var key = $("#key").val().trim();
+    var value = $("#value").val().trim();
     countId = countId +1;
     if(key == ""){
         msg+= "The field 'KEY' is required \n";
     }else if (key.length < 3 || key.length > 10){
         msg+= "The field 'key' min 3 characters and max 10 \n";
+    }
+    if(key.indexOf(" ") > -1){
+        msg += "The key should be single word. \n"
     }
 
     if (value == ""){

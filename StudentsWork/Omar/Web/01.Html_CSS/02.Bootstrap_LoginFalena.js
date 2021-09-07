@@ -4,11 +4,14 @@ $(document).ready(function(){
 
 function save(){
     var msg = "";
-    var email = $("#inputEmail").val();
-    var password = $("#inputPass").val();
+    var email = $("#inputEmail").val().trim();
+    var password = $("#inputPass").val().trim();
    
     if(email == ""){
         msg += "The field 'Username' is required. \n"
+    }
+    if(email.indexOf(" ") > -1){
+        msg += "The email should be single word. \n"
     }
 
     if(password == ""){
@@ -33,7 +36,7 @@ function save(){
             data: JSON.stringify(jsonUser),
             dataType: "JSON",
             success: function(response){
-                debugger;
+                //debugger;
                 console.log(response);
                 if(response.result==true){
                     localStorage.setItem("Security", email)
