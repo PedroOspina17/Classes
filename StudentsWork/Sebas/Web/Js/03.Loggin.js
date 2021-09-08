@@ -1,10 +1,27 @@
-function ValidateLogIn() {
-    var user = $("#inputUser").val();
-    var pss = $("#inputPassUser").val();
 
-    if (user == 'Admin' && pss == 'Admin123!') {
-        window.location.href = "theOtherPage.html";
-    } else {
-        swal("El usuario y / o la contraseña son incorrectos");
+function ValidateLogIn() {
+
+    dataToSend = {
+        "userName": $("#inputUser").val(),
+        "password": $("#inputPassUser").val()
     }
+
+    $.ajax({
+        url: "http://3.14.144.130/SingIn",
+        type: "POST",
+        data: JSON.stringify(dataToSend),
+        dataType: "json",
+        success: function (response) {
+            if (response.result == true) {
+                window.location.href = "04.ClientStorageList.html";
+                localStorage.setItem("Security_validation",1);
+            }
+            else {
+                swal("Incorrect user or password");
+            }
+        },
+        error: function (response) {
+            swal("Try again");
+        }
+    });
 }
