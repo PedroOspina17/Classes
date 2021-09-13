@@ -4,13 +4,14 @@ $(document).ready(function(){
 
 function save(){
     var msg = "";
-    var email = $("#inputEmail").val();
-    var password = $("#inputPass").val();
+    var email = $("#inputEmail").val().trim();
+    var password = $("#inputPass").val().trim();
+   
     if(email == ""){
         msg += "The field 'Username' is required. \n"
     }
-    else if (email != "Admin" && email != "Admin2"){
-        msg += "Username incorrect! \n"
+    if(email.indexOf(" ") > -1){
+        msg += "The email should be single word. \n"
     }
 
     if(password == ""){
@@ -19,23 +20,40 @@ function save(){
     else if (password.length < 3){
         msg += "The field 'Password' min 3 characters. \n"
     }
-    else if (password != "123" || password != "admin123"){
-        msg += "Password incorrect! \n"
-    }
-    if(email == "Admin" && password == "123"){
-        window.location.href="../../Web/03.JQuery/08.clientStorageList.html"
-        localStorage.setItem("Security", "Admin")
-    }
-    else if(email == "Admin2" && password == "admin123"){
-        window.location.href="../../Web/03.JQuery/08.clientStorageList.html"
-        localStorage.setItem("Security", "Admin2")
-    }
-
+   
     if(msg != ""){
         swal(msg);
     }
+    else{
+        var jsonUser = {
+            "userName": email,
+            "password": password
+        }
+    
+        $.ajax({
+            url: "http://3.14.144.130/SingIn",
+            type: "POST",
+            data: JSON.stringify(jsonUser),
+            dataType: "JSON",
+            success: function(response){
+                //debugger;
+                console.log(response);
+                if(response.result==true){
+                    localStorage.setItem("Security", email)
+                    window.location.href="../../Web/03.JQuery/08.clientStorageList.html"  
+                }else{
+                    swal("User or Password incorrect.")
+                }
+            },
+            error: function(response){
+                console.log(response);
+               
+            }
+        })
+    }
 }
-
+    
+    
 function clear(){
     $("#inputEmail").val("");
     $("#inputPass").val("");

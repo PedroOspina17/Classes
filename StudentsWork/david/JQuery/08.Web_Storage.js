@@ -1,7 +1,7 @@
 var contador = 0;
 function deleteKey(Key) {
     localStorage.removeItem(Key);
-    $("#"+Key).remove()
+    $("#" + Key).remove()
 }
 
 function Validation() {
@@ -15,7 +15,10 @@ function Validation() {
         swal("SORRY", "The value can't be null or can't have cero characters", "error");
     }
     localStorage.setItem(Key, Value);
+    AL(Key,Value)
+}
 
+function AL(Key,Value) {
     var code =
         `<div id="${Key}">
             <dt class="pt-3">${Key}</dt>
@@ -29,6 +32,32 @@ function Validation() {
     $("#Guardar").append(code)
 }
 
+
+
 function EliminateLS() {
     localStorage.clear()
+}
+
+function Out() {
+    console.log("entro")
+    localStorage.removeItem("User");
+    window.location.href = "03.Loguin_FALENA.html"
+}
+
+function RLS() {
+
+    if (localStorage.getItem("User") == null) {
+        window.location.href = "03.Loguin_FALENA.html"
+    }
+    else { 
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            if (key != "User") {
+                AL(key,value) 
+            }
+            
+        }
+        $("#Welco").text("Welcome: "+localStorage.getItem("User"))
+    }
 }
