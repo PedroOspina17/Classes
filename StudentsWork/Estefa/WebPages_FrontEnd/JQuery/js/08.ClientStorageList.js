@@ -1,11 +1,13 @@
 var countRow = 1;
 $(document).ready(PageLoad);
 function PageLoad (){
-    if(localStorage.getItem("Admin") != null){
+    if(localStorage.getItem("Logueado") != null){
+        var UsuarioLogueado = localStorage.getItem("Logueado");
+        $('#NombreUser').append(`<h5 class="text-right">Bienvenido: ${UsuarioLogueado}</h5>`);
         for(var i = 0; i<localStorage.length;i++){
             var keyOpen = localStorage.key(i);
             var valueOpen = localStorage.getItem(keyOpen);
-            if(keyOpen != 'Admin'){
+            if(keyOpen != 'Logueado'){
                 ListadoKeyOpen =`
                     <dt id="dtRow_${countRow}">${keyOpen}</dt>
                     <dd id="ddRow_${countRow}">${valueOpen}</dd>`
@@ -22,7 +24,7 @@ function PageLoad (){
 }
 
 function Logout(){
-    localStorage.removeItem("Admin");
+    localStorage.removeItem("Logueado");
     window.location.href = "../../WebPages_FrontEnd/01.HTML_CSS/04.loggin.html";
     
 }
@@ -57,7 +59,7 @@ function CreateData(){
         $('#ListadoKey').append(ListadoKeyTem);
 
         var btnListadoKeyTem = `
-            <input type="button" class="btn btn-danger form-group" id="btnClearDataKeyRow_${countRow}" name="btnClearDataKey" value="Delete" onclick="DeleRow('${countRow}')">`
+            <input type="button" class="btn btn-outline-danger form-group" id="btnClearDataKeyRow_${countRow}" name="btnClearDataKey" value="Delete" onclick="DeleRow('${countRow}')">`
         $('#btnListadoKey').append(btnListadoKeyTem);
         localStorage.setItem(key,value) //Se agregan registros al Local storage
         $('#txtKey').val("");

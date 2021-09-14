@@ -1,8 +1,11 @@
-
 var countId = 1;
 $(document).ready(function () {
-    if (localStorage.getItem("Security" ) == null){
+    var userW = localStorage.getItem("Security" );
+    if (userW == null){
         window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
+    }
+    else if (localStorage.getItem("Security" ) != null){
+        $("#user").append("<h2 class='text-primary'>Welcome "+userW +"</h2>");
     }
     readStor();
 });
@@ -11,13 +14,16 @@ $(document).ready(function () {
 var id = 0;
 function create(){
     var msg = "";
-    var key = $("#key").val();
-    var value = $("#value").val();
+    var key = $("#key").val().trim();
+    var value = $("#value").val().trim();
     countId = countId +1;
     if(key == ""){
         msg+= "The field 'KEY' is required \n";
     }else if (key.length < 3 || key.length > 10){
         msg+= "The field 'key' min 3 characters and max 10 \n";
+    }
+    if(key.indexOf(" ") > -1){
+        msg += "The key should be single word. \n"
     }
 
     if (value == ""){
@@ -29,7 +35,8 @@ function create(){
 
     if(msg != ""){
         swal(msg);
-    }else{
+    }
+    else{
         clearField();
         localStorage.setItem(key, value)
         $("#val").text(value)
@@ -59,11 +66,11 @@ function clearLocStor(){
 }
 
 function readStor(){
-    localStorage.removeItem("Security")
+   
     for (var id = 0; id < localStorage.length; id++){
         var key = localStorage.key(id);
         var value = localStorage.getItem(key);
-        if(key != "Admin" && key != "Admin2"){
+        if(key != "Security"){
             $("#newData").append("<div class='form-inline mt-3 col-lg-12' style='height:60px' id='"+countId+"' value='"+key+"'><dl><dt id='keys"+countId+"'>"+key+":</dt><dd id='val"+countId+"'>"+value+"</dd></dl><div class='mt-lg-n3 ml-auto p-5'><input type='button' class='btn btn-outline-danger' id='"+countId+"' value='Delete' onclick='deleteData("+countId+")'></div></div>");
             countId = countId +1;
         }
@@ -72,20 +79,8 @@ function readStor(){
 }
 
 function logOut(){
-    var sec =localStorage.getItem("Security")
+    localStorage.getItem("Security")
     localStorage.removeItem("Security")
     window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
 }
 
-/*function logIn (){
-    for (var id = 0; id < localStorage.length; id++){
-        var key = localStorage.key(id);
-        
-        if(key != "Admin"){ 
-            window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
-        }
-        else if (key != "Admin2"){ 
-            window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
-        }
-    }
-}*/
