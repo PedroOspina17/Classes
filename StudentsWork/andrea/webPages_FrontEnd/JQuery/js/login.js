@@ -1,15 +1,27 @@
 function validaciones() {
+    debugger;
     var user = $("#txtUser").val();
     var Password = $("#txtPassword").val();
 
-    if (user == "admin" & Password == "admin123") {
-        window.location.href = "08.ClientStorage.html"
-        localStorage.setItem("user", "Admin" );
-    } else if (user == "andrea" & Password == "andrea123") {
-        window.location.href = "08.ClientStorage.html"
-        localStorage.setItem("user", "Andrea" );
-    }else {
-        swal("Error","usuario o contraseña invalidas", "error")
-    }
+    $.ajax({
+        url: "http://3.14.144.130/SingIn",
+        type: "POST",
+        data: JSON.stringify({ "userName": user, "password": Password }),
+        dataType: "json",
+        success: function(response) {
+            debugger;
+            if (response.result == true) {
+                localStorage.setItem("user", response.user[0].userName);
+                window.location.href = "08.ClientStorage.html"
+            } else {
+                swal("Error", "usuario o contraseña invalidas", "error")
+            }
+        },
+        error: function(response) {
+            debugger;
+            swal("Error", response, "error")
+        }
+
+    });
 
 }
