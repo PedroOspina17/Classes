@@ -3,8 +3,9 @@ $(document).ready(function(){
 })
 
 function save(){
+    console.log("Entra");
     var msg = "";
-    var email = $("#inputEmail").val().trim();
+    var email = $("#inputUser").val().trim();
     var password = $("#inputPass").val().trim();
    
     if(email == ""){
@@ -40,7 +41,7 @@ function save(){
                 console.log(response);
                 if(response.result==true){
                     localStorage.setItem("Security", email)
-                    window.location.href="../../Web/03.JQuery/08.clientStorageList.html"  
+                    window.location.href="../../Web/03.JQuery/09.ListUsers.html"  
                 }else{
                     swal("User or Password incorrect.")
                 }
@@ -55,6 +56,6 @@ function save(){
     
     
 function clear(){
-    $("#inputEmail").val("");
+    $("#inputUser").val("");
     $("#inputPass").val("");
 }

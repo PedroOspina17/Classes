@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Common/css/rainbow.dreamweaver.css">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/rainbow-custom.min.js"></script>
+    <title>Ajax</title>
+</head>
+
+<body>
+    <div class="jumbotron container">
+        <h1 class="text-center">AJAX</h1>
+        <p>In this exercise you will be applying the knowledge about http requests and ajax.</p>
+        <p>Using the localstorage result form, change it to use the security backend provided.
+            In the following URL is published the security api ready to use. <a href="http://3.14.144.130">Security
+                API</a> <br>
+            this api has the following endpoints:</p>
+        <ul>
+            <li>URL: <b>/Healthcheck</b> - Type: <b>GET</b>: to identify if the api is working with get. </li>
+            <li>URL: <b>/LogIn</b> - Type: <b>POST</b>: to validate if the user is register in the application and
+                verify if the password is right. <br>
+                <em>POST: </em><code>http://3.14.144.130/LogIn</code>
+                <br><em>Data:</em>
+                <pre><code data-language="json">
+                    {                
+                        "userName": "PedroOspina172",
+                        "password": "Admin1234"
+                    }</code></pre>
+            </li>
+            <li>URL: <b>/GetUsers</b> - Type: <b>GET</b>: to get all the existing users. returns a list of users that
+                are already created. Use this to see how is the information stored. <br>
+                <em>GET:</em><code>http://3.14.144.130/GetUsers</code>
+            </li>
+            <li>URL: <b>/GetUser</b> - Type: <b>GET</b>: to get an specific user already exists by its username.
+                <br><em>GET:</em> <code>http://3.14.144.130/GetUser?userName=PedroOspina17</code>
+            </li>
+            <li>URL: <b>/CreateUser</b> - Type: <b>POST</b>: to register a new user.
+                <br><em>POST: </em><code>http://3.14.144.130/CreateUser</code>
+                <br><em>Data:</em>
+                <pre><code data-language="json">
+                {
+                    "age": 3, 
+                    "lastName": "Ospina 2", 
+                    "name": "Pedro 2", 
+                    "password": "Admin1234", 
+                    "userName": "PedroOspina172"
+                }</code></pre>
+            </li>
+            <li>URL: <b>/DeleteUser</b> - Type: <b>POST</b>: to delete an existing user.
+                <br><em>POST: </em><code>http://3.14.144.130/DeleteUser</code>
+                <br><em>Data:</em>
+                <pre><code data-language="json">
+                    {
+                        "userName": "PedroOspina172"
+                    }</code></pre>
+            </li>
+        </ul>
+
+
+    </div>
+</body>
+
+</html>
