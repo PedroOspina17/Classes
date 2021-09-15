@@ -22,12 +22,30 @@ def index():
         This api contains the following endpoints:
         <ul>
             <li>URL: /Healthcheck - Type: GET: to identify if the api is working with get. </li>
+            <li>URL: /LogIn - Type: POST: to validate if the user is register in the application and verify if the password is right. 
+            <pre><code data-language="json">
+                {
+                    "password": "Admin1234", 
+                    "userName": "PedroOspina172"
+                }</code></pre></li>
             <li>URL: /GetUsers - Type: GET: to get all the existing users.</li>
-            <li>URL: /GetUser - Type: GET: to verify if a user already exists by username</li>
-            <li>URL: /CreateUser - Type: POST: to register a new user. </li>
-            <li>URL: /LogIn - Type: POST: to validate if the user is register in the application and verify if the password is right. </li>
+            <li>URL: /GetUser - Type: GET: to verify if a user already exists by 'userName'</li>
+            <li>URL: /CreateUser - Type: POST: to register a new user.  
+            <pre><code data-language="json">
+                {
+                    "age": 3, 
+                    "lastName": "Ospina 2", 
+                    "name": "Pedro 2", 
+                    "password": "Admin1234", 
+                    "userName": "PedroOspina172"
+                }</code></pre></li>
+            <li>URL: /DeleteUser - Type: POST: to eliminate the user specified. 
+            <pre><code data-language="json">
+                {
+                    "userName": "PedroOspina172"
+                }</code></pre></li>
         </ul>
-        <b>Example: </b> http://3.14.144.130/Healthcheck <a href="http://3.14.144.130/Healthcheck">Test healthcheck from browser</a>
+        <b>Example: </b> http://3.14.144.130/Healthcheck <a href="http://3.14.144.130/Healthcheck" target="_blank">Test healthcheck from browser</a>
     </p>
 
     '''
