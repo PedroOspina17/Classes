@@ -34,7 +34,7 @@
                     <input class="form-control" type="text" name="UserName" id="UserName" placeholder="User Name">
                 </div>
                 <div class="pt-2 col-6 pl-0">
-                    <input class="form-control" type="number" name="Age" id="Age" placeholder="Age">
+                    <input class="form-control" type="number" name="Age" id="Age" placeholder="Age" required>
                 </div>
             </div>
 
@@ -44,8 +44,7 @@
             </div>
 
             <div class="pt-2 pl-0">
-                <input class="form-control" type="password" name="Confirmation" id="Confirmation"
-                    placeholder="Confirmation">
+                <input class="form-control" type="password" name="Confirmation" id="Confirmation" placeholder="Confirmation">
             </div>
 
 
@@ -55,7 +54,7 @@
         <div class="border-bottom"></div>
         <br>
         <div class="container text-center pb-4">
-            <input type="button" value="Sing Up" class="btn btn-success w-50">
+            <input type="button" value="Sing Up" class="btn btn-success w-50" onclick="SaveInfo()">
         </div>
     </div>
 </body>
