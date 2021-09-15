@@ -52,6 +52,15 @@ swalter para validaciones importantes, congela la pagina, asi  swal()
 .trim() sirve para limpiar el espacios de un string al principio y al final no elimina el espacio que separa dos string
 
 
+local storage
+localStorage.setItem("MyKey","This is a value") para crear una nueva entrada y almacenar el valor o actualizar el valor de la clave especificada en el parámetro.
+
+localStorage.setItem("PersonList", JSON.stringify(myJsonList)) para guardarlo en formato Json
+
+localStorage.getItem("FirstName") obtener el valor almacenado en la clave especificada en el parámetro
+var myJsonList = JSON.parse(localStorage.getItem("PersonList"))
+
+localStorage.key(2)
 
 
 

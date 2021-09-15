@@ -47,7 +47,6 @@ function SaveInfoStorage(){
         listClients_webStorage.push(jaisonClients)
 
         localStorage.setItem("jaisonClients_LocalStorage", JSON.stringify(listClients_webStorage))
-        localStorage.setItem("Clients_LocalStorafe", JSON.stringify(jaisonClients))
 
         $("#listKeyValues").append(`
             <div class="row" id="row_${infoKey}">
@@ -70,12 +69,11 @@ function SaveInfoStorage(){
 }
 
 function deleteKeyValue(info) {
-    debugger;
+    //debugger;
     $.each(listClients_webStorage, function(index,value){
         debugger;
         if(info==value.key){
             listClients_webStorage.splice(index, 1);
-            localStorage.removeItem("Clients_LocalStorafe")
             return true
         }
     });
@@ -83,15 +81,11 @@ function deleteKeyValue(info) {
 
 }
 
-function ClearInfoStorage() {
+function ClearInfoStorage(info) {
     //debugger;
     if (listClients_webStorage!="") {
-        $("#row_"+info).empty()
-        //localStorage.clean()
+        $("#IdElementToChange").empty()
     }
 
 
 }
-
-
-
