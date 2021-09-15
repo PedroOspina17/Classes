@@ -1,4 +1,7 @@
-from flask import Flask, jsonify, request
+from os import abort
+import time
+from flask import Flask, json, jsonify, request
+from flask.wrappers import Response
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -21,8 +24,8 @@ def index():
             <li>URL: /Healthcheck - Type: GET: to identify if the api is working with get. </li>
             <li>URL: /GetUsers - Type: GET: to get all the existing users.</li>
             <li>URL: /GetUser - Type: GET: to verify if a user already exists by username</li>
-            <li>URL: /SingUp - Type: POST: to register a new user. </li>
-            <li>URL: /SingIn - Type: POST: to validate if the user is register in the application and verify if the password is right. </li>
+            <li>URL: /CreateUser - Type: POST: to register a new user. </li>
+            <li>URL: /LogIn - Type: POST: to validate if the user is register in the application and verify if the password is right. </li>
         </ul>
         <b>Example: </b> http://3.14.144.130/Healthcheck <a href="http://3.14.144.130/Healthcheck">Test healthcheck from browser</a>
     </p>
@@ -40,6 +43,21 @@ def GetUsers():
     print(userList)
     return jsonify({"users": userList})
 
+@app.route("/DeleteUser",methods=["POST"])
+def DeleteUser():
+    
+    data = request.get_json(force=True)
+    print(data)
+    if("userName" in data):
+        print("Checking the user name ... " + data["userName"] )
+        for element in userList:
+            if(element["userName"] == data["userName"]):
+                userList.remove(element)    
+                return jsonify({"result": True, "message": "The user was deleted"})
+        return jsonify({"result": False, "message": "The user was not found"})
+    else:
+        return jsonify({"result": False, "message": "The user name was not sent"})
+
 @app.route("/GetUser",methods=["GET"])
 def CheckUser():
     # userName = request.args.get("userName")
@@ -48,25 +66,49 @@ def CheckUser():
     print("Checking the user name ... " + userName )
     result = [user for user in userList if userName == user["userName"].lower()]
     print(result)
-    return jsonify({"result": userName in result, "user": result})
+    if(len(result) > 0):
+        return jsonify({"result": True, "user": result[0], "message":"The user was found."})
+    else:
+        return jsonify({"result":False, "message":"The user was not found."})
 
-@app.route("/SingUp",methods=["POST"])
+@app.route("/CreateUser",methods=["POST"])
 def SignUp():
     print("Saving info... ")
     data = request.get_json(force=True)
-    if(len([user for user in userList if data["userName"] == user["userName"].lower()])> 0):
+    if(not ("userName" in data and "name" in data and "lastName" in data and "age" in data and "password" in data  )):
+        return jsonify({"result":False, "message":"Please provide all the required fields."})
+
+    if(len([user for user in userList if data["userName"].lower() == user["userName"].lower()])> 0):
         return jsonify({"result": False, "message" : "The username already exists."})
 
-    userList.append(data)
-    return jsonify({"result": True, "message" : "The user was saved successfully"})
+    if("role" not in data):
+        data["role"] = "Employee"
 
-@app.route("/SingIn",methods=["POST"])
+    data["id"] = len(userList) + 1
+
+    userList.append(data)
+    print(data)
+    return jsonify({"result": True, "message" : "The user was saved successfully", "userInfo": data})
+
+@app.route("/LogIn",methods=["POST"])
 def SingIn():
-    userName = request.get_json(force=True)["userName"].strip().lower()
-    password = request.get_json(force=True)["password"].strip().lower()
+    # time.sleep(5)
+    data = request.get_json(force=True)
+    if("userName" not in data or "password" not in data):
+        return Response("The username or password was not provided", 400)
+
+    userName = data["userName"].strip().lower()
+    password = data["password"].strip().lower()
     print("Checking the user name ... " + userName + " and password ... " + password )
-    result = [user for user in userList if user["userName"].lower() == userName and user["password"].lower() == password]
-    return jsonify({"result": len(result) > 0, "user": result})
+    users = [user for user in userList if user["userName"].lower() == userName and user["password"].lower() == password]
+    if(len(users)> 0):
+        result = True
+        users = users[0]
+        del users["password"]
+    else:
+        result = False
+        users = None
+    return jsonify({"result": result, "user": users})
 
 
 if __name__ == '__main__':
