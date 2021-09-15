@@ -123,7 +123,20 @@ $(document).ready(function() {
           {title: "Balance", data: "balance", render: function(data){
               return "$ " + data
             }
+          },
+          {title: "Actions", data:"name", render: function(name){
+            return `
+              <div class="btn-group d-flex m-auto w-50">
+                <input type="button" value="Create" class="btn btn-success" onclick="testFunction('${name}')">
+                <input type="button" value="Clear all" class="btn btn-danger" onclick="testFunction('${name}')">
+              </div>
+            `
           }
+        }
       ]
     })
 } );
+
+function testFunction(id){
+  alert("calling with name " + id);
+}
