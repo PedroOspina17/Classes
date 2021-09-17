@@ -11,6 +11,7 @@ function info(){
             $.each(response.users, function(index, value){
                 debugger;
                 var tableRow= "<tr class='text-secondary' id='"+ value.id +"'>" +
+                "<td> " + value.id + "</td>" +
                 "<td> " + value.name + "</td>" +
                 "<td>" + value.lastName + "</td>" +
                 "<td> " + value.age + "</td>" +
