@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var userW = localStorage.getItem("Security" );
     if (localStorage.getItem("Security" ) != null){
-        $("#user").append("<h1 class='font-weight-bolder text-center' style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;'>Welcome " +userW+"</h1>");
+        $("#user").append("<h1 class='font-weight-bolder text-center' style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;margin-left: 18rem'>Welcome " +userW+"</h1>");
     }
     userLog()
 })
@@ -21,5 +21,5 @@ function userLog(){
 function logOut(){
     localStorage.getItem("Security")
     localStorage.removeItem("Security")
-    window.location.href="../../Web/01.Html_CSS/09.Login.html"
+    window.location.href="09.Login.html"
 }
