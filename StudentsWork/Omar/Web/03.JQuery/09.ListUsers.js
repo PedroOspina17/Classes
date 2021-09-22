@@ -9,7 +9,7 @@ function info(){
         success: function(response){
             
             $.each(response.users, function(index, value){
-                debugger;
+                
                 var tableRow= "<tr class='text-secondary' id='"+ value.id +"'>" +
                 "<td> " + value.id + "</td>" +
                 "<td> " + value.name + "</td>" +
@@ -17,7 +17,7 @@ function info(){
                 "<td> " + value.age + "</td>" +
                 "<td> " + value.role + "</td>" +
                 "<td> " + value.userName + "</td>" +
-                "<td> " + "<input type = 'button' id='"+ value.id +"' class='btn btn_edit' style='background: mistyrose;border:outset' value='Edit' onclick='update("+value.id+")'>" +"<input type = 'button' id='"+value.id+"' class='btn btn_remove' style='background: mediumpurple;border:outset'  value='Delete' onclick='delete("+value.id+")'>" + "</td>" +
+                "<td> " + "<input type = 'button' id='update"+ value.id +"' class='btn btn_edit' style='background: mistyrose;border:outset' value='Edit' onclick='update("+value.id+")'>" +"<input type = 'button' id='remove"+value.id+"' class='btn btn_remove' style='background: mediumpurple;border:outset'  value='Delete' onclick='deleteUser("+value.id+")'>" + "</td>" +
                 "</tr>";
                 $("#table").append(tableRow);
             })
@@ -25,6 +25,28 @@ function info(){
         error: function(response){
             console.log(response);
            
+        }
+    })
+}
+
+function deleteUser(id, userName){
+    console.log("delete");
+    $("#"+id+"").remove();
+
+   
+    debugger
+    $.ajax({
+        url: "http://3.14.144.130/DeleteUser",
+        type: "POST",
+        data: JSON.stringify(data),
+        dataType: "JSON",
+        success: function(response){
+            console.log(response);
+            swal("User delete.")
+        },
+        error: function(response){
+            console.log(response);
+            swal("User not delete.")
         }
     })
 }
