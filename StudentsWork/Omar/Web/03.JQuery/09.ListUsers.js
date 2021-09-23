@@ -29,11 +29,12 @@ function info(){
     })
 }
 
-function deleteUser(id, userName){
+function deleteUser(id){
     console.log("delete");
     $("#"+id+"").remove();
-
-   
+    data = {
+            "userName": "Omarendon"
+        }
     debugger
     $.ajax({
         url: "http://3.14.144.130/DeleteUser",
@@ -41,6 +42,7 @@ function deleteUser(id, userName){
         data: JSON.stringify(data),
         dataType: "JSON",
         success: function(response){
+           data = 
             console.log(response);
             swal("User delete.")
         },

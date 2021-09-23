@@ -7,16 +7,14 @@ $(document).ready(function () {
 
 function save(){
     var msg="";
-    var id = $("#id").val();
-    var role = $("#role").val();
+    
     var age = $("#age").val();
     var lastName = $("#lastName").val();
     var name = $("#name").val();
     var password = $("#password").val();
     var userName = $("#userName").val();
     var users = {
-        "id": id,
-        "role": role,
+        
         "age": age,
         "lastName": lastName,
         "name": name,
