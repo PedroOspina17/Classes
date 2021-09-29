@@ -4,7 +4,7 @@ function pageLoad() {
 
     var security = localStorage.getItem("Security_validation");
 
-    if (security != 1) {
+    if (security == null) {
         window.location.href = "03.Loggin.html"
     }
     var list = JSON.parse(localStorage.getItem("data"));

@@ -1,13 +1,12 @@
-
 function ValidateLogIn() {
 
     dataToSend = {
-        "userName": $("#inputUser").val(),
-        "password": $("#inputPassUser").val()
+        "userName": $("#inputUserName").val(),
+        "password": $("#inputPassword").val()
     }
 
     $.ajax({
-        url: "http://3.14.144.130/SingIn",
+        url: "http://3.14.144.130/LogIn",
         type: "POST",
         data: JSON.stringify(dataToSend),
         dataType: "json",
@@ -25,7 +24,3 @@ function ValidateLogIn() {
         }
     });
 }
-function RegisterUser(){
-    window.location.href = "Sign_Up.html";
-}
-
