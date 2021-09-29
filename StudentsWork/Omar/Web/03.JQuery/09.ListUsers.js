@@ -10,15 +10,16 @@ function info(){
             
             $.each(response.users, function(index, value){
                 
-                var tableRow= "<tr class='text-secondary' id='"+ value.id +"'>" +
-                "<td> " + value.id + "</td>" +
-                "<td> " + value.name + "</td>" +
-                "<td>" + value.lastName + "</td>" +
-                "<td> " + value.age + "</td>" +
-                "<td> " + value.role + "</td>" +
-                "<td> " + value.userName + "</td>" +
-                "<td> " + "<input type = 'button' id='update"+ value.id +"' class='btn btn_edit' style='background: mistyrose;border:outset' value='Edit' onclick='update("+value.id+")'>" +"<input type = 'button' id='remove"+value.id+"' class='btn btn_remove' style='background: mediumpurple;border:outset'  value='Delete' onclick='deleteUser("+value.id+")'>" + "</td>" +
-                "</tr>";
+                var tableRow= `<tr class='text-secondary' id='${value.userName}'>
+                <td>${value.id}</td>
+                <td>${value.name}</td>
+                <td>${value.lastName}</td>
+                <td>${value.age}</td>
+                <td>${value.role}</td>
+                <td>${value.userName}</td>
+                <td><a href='09.EditUser.html' type = 'button' id='update${value.userName}' class='btn btn_edit' style='background: mistyrose;border:double;width:75px' value='Edit' onclick='update("${value.userName}")'>Edit</a>
+                    <input type = 'button' id='remove${value.userName}' class='btn btn_remove' style='background: mediumpurple;border:double' value='Delete' onclick='deleteUser("${value.userName}")'></td>
+                </tr>`;
                 $("#table").append(tableRow);
             })
         },
@@ -29,20 +30,19 @@ function info(){
     })
 }
 
-function deleteUser(id){
+function deleteUser(userName){
+    debugger;
     console.log("delete");
-    $("#"+id+"").remove();
-    data = {
-            "userName": "Omarendon"
-        }
-    debugger
+    $("#"+userName+"").remove();
+    var dataUser = {
+        "userName": userName
+    }
     $.ajax({
         url: "http://3.14.144.130/DeleteUser",
         type: "POST",
-        data: JSON.stringify(data),
+        data: JSON.stringify(dataUser),
         dataType: "JSON",
-        success: function(response){
-           data = 
+        success: function(response){ 
             console.log(response);
             swal("User delete.")
         },
