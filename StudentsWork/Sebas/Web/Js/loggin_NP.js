@@ -12,8 +12,9 @@ function ValidateLogIn() {
         dataType: "json",
         success: function (response) {
             if (response.result == true) {
+                localStorage.setItem("Security_validation",response.user.name);
+                localStorage.setItem("Role",response.user.role);
                 window.location.href = "04.ClientStorageList.html";
-                localStorage.setItem("Security_validation",response.user[0].name);
             }
             else {
                 swal("Incorrect user or password");
