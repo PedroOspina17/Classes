@@ -18,7 +18,7 @@ function Validation() {
     AL(Key,Value)
 }
 
-function AL(Key,Value) {
+function AL(Key,Value,code) {
     var code =
         `<div id="${Key}">
             <dt class="pt-3">${Key}</dt>
@@ -34,7 +34,8 @@ function AL(Key,Value) {
 
 
 
-function EliminateLS() {
+function EliminateLS(code) {
+    $("#Guardar").empty()
     localStorage.clear()
 }
 
@@ -60,4 +61,12 @@ function RLS() {
         }
         $("#Welco").text("Welcome: "+localStorage.getItem("User"))
     }
+    
+
+
+
+}
+
+function Teletransportation() {
+    window.location.href = "04.User_Admin.html"
 }
