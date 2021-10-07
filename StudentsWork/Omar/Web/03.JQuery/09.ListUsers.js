@@ -76,7 +76,7 @@ function updateUser(userName){
                 $("#password").val(response.user.password);
                 $("#role").val(response.user.role);
          
-                window.location.href="09.EditUser.html"  
+                // window.location.href="09.EditUser.html"  
             }
         },
         error: function(response){
