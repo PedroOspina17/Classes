@@ -1,20 +1,20 @@
-
 function ValidateLogIn() {
 
     dataToSend = {
-        "userName": $("#inputUser").val(),
-        "password": $("#inputPassUser").val()
+        "userName": $("#inputUserName").val(),
+        "password": $("#inputPassword").val()
     }
 
     $.ajax({
-        url: "http://3.14.144.130/SingIn",
+        url: "http://3.14.144.130/LogIn",
         type: "POST",
         data: JSON.stringify(dataToSend),
         dataType: "json",
         success: function (response) {
             if (response.result == true) {
+                localStorage.setItem("Security_validation",response.user.name);
+                localStorage.setItem("Role",response.user.role);
                 window.location.href = "04.ClientStorageList.html";
-                localStorage.setItem("Security_validation",response.user[0].name);
             }
             else {
                 swal("Incorrect user or password");
@@ -25,7 +25,3 @@ function ValidateLogIn() {
         }
     });
 }
-function RegisterUser(){
-    window.location.href = "Sign_Up.html";
-}
-

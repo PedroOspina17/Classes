@@ -4,15 +4,22 @@ function pageLoad() {
 
     var security = localStorage.getItem("Security_validation");
 
-    if (security != 1) {
-        window.location.href = "03.Loggin.html"
+    if (security == null) {
+        window.location.href = "loggin_NP.html"
     }
     var list = JSON.parse(localStorage.getItem("data"));
     $.each(list, function (index, value) {
         createHtmlItem(value);
     });
+    
+    var user = localStorage.getItem("Security_validation");
+    if (localStorage.getItem("Security_validation") != null) {
+        $("#user").append("<h3 >Welcome " + user + " !</h3>");
+    }
+    if (localStorage.getItem("Role") == 'Admin') {
+        $("#Admin").append(`<a class="nav-link active" href="#">List Users</a>`);
+    }
 }
-
 
 function validateForm() {
 
@@ -119,4 +126,10 @@ function clearData() {
         $("#dt_" + value.key).remove();
     });
     localStorage.clear();
+}
+
+function LogOut(){
+    localStorage.removeItem("Role")
+    localStorage.removeItem("Security_validation")    
+    window.location.href="loggin_NP.html"
 }

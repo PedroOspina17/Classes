@@ -10,7 +10,8 @@
     <script src="../../../Common/js/toastr.min.js"></script>
     <script src="../../../Common/js/sweetalert.min.js"></script>
     <script src="09.ListUsers.js"></script>
-    <title>Document</title>
+    <script src="09.EditUser.js"></script>
+    <title>ListUsers</title>
 </head>
 <body background="../imgs/Video-Chat-Operator-Tips.jpg">
     <div class="container">
@@ -18,6 +19,79 @@
             <div class="col-12 text-center">
                 <h1 class="font-weight-bolder" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">List Users</h1>
             </div>
+            <div class="container">
+                <table class="table table-striped table-hover text-center display" id="table">
+                    <tr style="background: mediumpurple;">
+                        <th class="border">ID</th>
+                        <th class="border">NAME</th>
+                        <th class="border">LASTNAME</th>
+                        <th class="border">AGE</th>
+                        <th class="border">ROLE</th>
+                        <th class="border">USERNAME</th>
+                        <th class="border">ACTIONS</th>
+                    </tr>
+                </table>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row-col text-center mt-5">
+                    <h1 class="font-weight-bolder" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">Edit User</h1>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4">
+                       <input type="hidden" name="id" id="id"> 
+                        <div class="row-col">
+                            <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="name" name="name" placeholder="Name">
+                        </div>
+                        <div class="row-col mt-5">
+                            <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="password" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row-col">
+                            <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="lastName" name="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="row-col mt-5">
+                            <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="role" name="role" placeholder="Role">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row-col">
+                            <input type="number" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="age" name="age" placeholder="Age">
+                        </div>
+                        <div class="row-col mt-5">
+                            <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="userName" name="userName" placeholder="User Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    
+                </div>
+                <div class="row mt-5 text-center">
+                    <div class="col-12">
+                        <input type="button" class="btn btn-outline-secondary" id="save" name="save" value="Save" style="border: solid; width: 100px; background: mistyrose;border:outset" onclick="create()">
+                        <input type="button" class="btn btn-outline-light" id="cancel" name="cancel" value="Cancel" style="border: solid; width: 100px;background: mediumpurple;border:outset">
+                    </div>
+                </div>
         </div>
     </div>
 </body>

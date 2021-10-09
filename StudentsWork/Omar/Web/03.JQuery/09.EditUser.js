@@ -1,17 +1,15 @@
-var countId = 1;
-$(document).ready(function () {
+$(document).ready(function(){
    
-});
+})
 
-
-
-function save(){
+function create(){
     var msg="";
     
     var age = $("#age").val();
     var lastName = $("#lastName").val();
     var name = $("#name").val();
     var password = $("#password").val();
+    var role = $("#role").val();
     var userName = $("#userName").val();
     var users = {
         
@@ -19,6 +17,7 @@ function save(){
         "lastName": lastName,
         "name": name,
         "password": password,
+        "role": role,
         "userName": userName
     }
     var id = users.id
@@ -42,3 +41,5 @@ function save(){
     })
     console.log(users);
 }
+
+//https://getbootstrap.com/docs/4.0/components/modal/

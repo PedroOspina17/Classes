@@ -122,7 +122,7 @@ def SingIn():
     if(len(users)> 0):
         result = True
         users = users[0]
-        del users["password"]
+        # del users["password"]
     else:
         result = False
         users = None

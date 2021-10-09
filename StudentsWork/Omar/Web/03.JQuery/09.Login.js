@@ -32,7 +32,7 @@ function save(){
         }
     
         $.ajax({
-            url: "http://3.14.144.130/SingIn",
+            url: "http://3.14.144.130/LogIn",
             type: "POST",
             data: JSON.stringify(jsonUser),
             dataType: "JSON",
@@ -41,7 +41,7 @@ function save(){
                 console.log(response);
                 if(response.result==true){
                     localStorage.setItem("Security", email)
-                    window.location.href="../../Web/03.JQuery/09.ListUsers.html"  
+                    window.location.href="09.Welcome.html"  
                 }else{
                     swal("User or Password incorrect.")
                 }
