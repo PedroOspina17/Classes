@@ -101,8 +101,20 @@ var dataListJson = [
     }
   ];
 
+  var tableReference;
+
 $(document).ready(function() {
-    $('#example2').DataTable({
+  loadTable();
+});
+
+ var  datatableRef;
+function loadTable(){
+
+  if(datatableRef){
+    datatableRef.destroy();
+  }
+
+  datatableRef = $('#example2').DataTable({
       data: dataListJson,
       columns: [
           {title:"Name", data: "name"},
@@ -135,7 +147,7 @@ $(document).ready(function() {
         }
       ]
     })
-} );
+} 
 
 function testFunction(id){
   alert("calling with name " + id);
