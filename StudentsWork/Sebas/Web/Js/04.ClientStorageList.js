@@ -17,7 +17,7 @@ function pageLoad() {
         $("#user").append("<h3 >Welcome " + user + " !</h3>");
     }
     if (localStorage.getItem("Role") == 'Admin') {
-        $("#Admin").append(`<a class="nav-link active" href="#">List Users</a>`);
+        $("#Admin").append(`<a class="nav-link active" href="09.listUsers.html">List Users</a>`);
     }
 }
 
@@ -131,5 +131,5 @@ function clearData() {
 function LogOut(){
     localStorage.removeItem("Role")
     localStorage.removeItem("Security_validation")    
-    window.location.href="loggin_NP.html"
+    window.location.href="09.loggin.html"
 }
