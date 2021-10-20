@@ -13,12 +13,13 @@ $(document).ready(function () {
 });
 
 var datatableRef;
+const URL_LOCAL = "http://3.14.144.130";
 
 function loadTable() {
 
     $.ajax({
 
-        url: "http://3.14.144.130/GetUsers",
+        url: URL_LOCAL.concat("/GetUsers"),
         type: "GET",
         success: function (response) {
             if (datatableRef) {
@@ -37,7 +38,7 @@ function loadTable() {
                         title: "Actions", data: "userName", render: function (userName) {
                             return `
                       <div class="btn-group d-flex m-auto w-50">
-                        <input type="button" value="Edit" class="btn btn-warning" onclick="EditUser('${userName}')">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="editUser('${userName}')">
                         <input type="button" value="Delete" class="btn btn-danger" onclick="deleteUser('${userName}')">
                       </div>
                     `
@@ -53,25 +54,23 @@ function loadTable() {
     })
 }
 
+
 function deleteUser(UserName) {
 
     var User = {
         "userName": UserName
     }
 
-    debugger;
     $.ajax({
-        url: "http://3.14.144.130/DeleteUser",
+        url: URL_LOCAL.concat("/DeleteUser"),
         type: "POST",
         data: JSON.stringify(User),
         dataType: "JSON",
         success: function (response) {
             if (response.result == true) {
-                debugger;
                 swal("The user:" + User.userName + " has been removed");
                 location.reload();
             } else {
-                debugger;
                 swal("The user: " + User.userName + " could not be successfully removed");
             }
         },
@@ -92,6 +91,93 @@ function LogOut() {
     window.location.href = "09.loggin.html"
 }
 
-function EditUser() {
-    
+function editUser(UserName) {
+
+    var User = {
+        "userName": UserName
+    }
+
+    $.ajax({
+        url: URL_LOCAL.concat("/GetUser?userName=" + User.userName),
+        type: "GET",
+        data: JSON.stringify(User),
+        dataType: "JSON",
+        success: function (response) {
+            if (response.result == true) {
+                formEdit();
+                $("#inputUserName").val(response.user.userName);
+                $("#inputName").val(response.user.name);
+                $("#inputLastName").val(response.user.lastName);
+                $("#inputAge").val(response.user.age);
+                $("#inputPassword").val(response.user.password);
+                $("#inputRole").val(response.user.role);
+            }
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    })
+}
+
+function cancelEdit(){
+    window.location.reload();
+}
+
+function formEdit() {
+    $("#EditUser").append(` 
+    <form>
+        <div class="mt-5 border border-dark rounded container  w-70">
+            <br>
+            <div class="row mb-3">
+
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">User Name</label>
+                    <input type="text" class="form-control" name="inputUserName" id="inputUserName"
+                        placeholder="UserName"  disabled=false>
+                </div>
+
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">Name</label>
+                    <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Name">
+                </div>
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">Last Name</label>
+                    <input type="text" class="form-control" name="inputLastName" id="inputLastName"
+                        placeholder="Last Name">
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">Age</label>
+                    <input type="number" class="form-control" name="inputAge" id="inputAge" placeholder="Age">
+                </div>
+
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">Password</label>
+                    <input type="text" class="form-control" name="inputPassword" id="inputPassword"
+                        placeholder="Password">
+                </div>
+
+                <div class="col-4">
+                    <label class="w-100 font-weight-bold">Role</label>
+                    <select id="inputRole" class="form-control">
+                        <option selected>Employee</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row 2 form-group justify-content-center">
+                <div class="col-1">
+                    <input type="button" class="btn btn-warning" name="btnSave" onclick="CreateUser()"
+                        id="btnSave" value="Edit">
+                </div>
+                <div class="col-1">
+                    <input type="button" class="btn btn-danger" name="btnCancelar" onclick="cancelEdit()"
+                        id="btnCancelar" value="Cancel">
+                </div>
+            </div>
+        </div>
+    </form>
+    <br>`);
 }

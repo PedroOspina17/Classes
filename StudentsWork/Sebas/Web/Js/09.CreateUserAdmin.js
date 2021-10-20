@@ -16,6 +16,7 @@ function cancel() {
 }
 
 function CreateUser() {
+     debugger;
 
     var errorMsg = "";
 

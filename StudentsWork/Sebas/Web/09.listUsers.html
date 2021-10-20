@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
     <script src="../../Common/js/sweetalert.min.js"></script>
     <script src="../Web/Js/09.listUsers.js"></script>
-    <title>list Users</title>
+    <title>List Users</title>
 </head>
 
 <body>
@@ -42,15 +42,17 @@
             </div>
         </div>
     </nav>
+
     <div class="container w-100">
         <h1 class="text-center m-3">List Users</h1>
+        <div class="container" id="EditUser">
+        </div>
         <div class="">
             <input type="button" value="Create User" class="btn btn-outline-dark ml-lg-n1 m-2 "
                 onclick="CreateUserAdmin()">
             <table id="UsersTable" class="display" style="width:100%">
             </table>
         </div>
-
     </div>
 </body>
 
