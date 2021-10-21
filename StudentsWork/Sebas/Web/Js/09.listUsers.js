@@ -16,7 +16,6 @@ var datatableRef;
 const URL_LOCAL = "http://3.14.144.130";
 
 function loadTable() {
-
     $.ajax({
 
         url: URL_LOCAL.concat("/GetUsers"),
@@ -38,8 +37,8 @@ function loadTable() {
                         title: "Actions", data: "userName", render: function (userName) {
                             return `
                       <div class="btn-group d-flex m-auto w-50">
-                        <input type="button" value="Edit" class="btn btn-warning" onclick="editUser('${userName}')">
-                        <input type="button" value="Delete" class="btn btn-danger" onclick="deleteUser('${userName}')">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="editUserInterface('${userName}')">
+                        <input type="button" value="Delete" class="btn btn-danger" onclick="deleteUser('${userName}'), localtion.reload()">
                       </div>
                     `
                         }
@@ -54,9 +53,7 @@ function loadTable() {
     })
 }
 
-
 function deleteUser(UserName) {
-
     var User = {
         "userName": UserName
     }
@@ -69,7 +66,6 @@ function deleteUser(UserName) {
         success: function (response) {
             if (response.result == true) {
                 swal("The user:" + User.userName + " has been removed");
-                location.reload();
             } else {
                 swal("The user: " + User.userName + " could not be successfully removed");
             }
@@ -91,8 +87,7 @@ function LogOut() {
     window.location.href = "09.loggin.html"
 }
 
-function editUser(UserName) {
-
+function editUserInterface(UserName) {
     var User = {
         "userName": UserName
     }
@@ -112,6 +107,7 @@ function editUser(UserName) {
                 $("#inputPassword").val(response.user.password);
                 $("#inputRole").val(response.user.role);
             }
+
         },
         error: function (response) {
             console.log(response);
@@ -119,8 +115,77 @@ function editUser(UserName) {
     })
 }
 
-function cancelEdit(){
-    window.location.reload();
+function cancelEdit() {
+    location.reload();
+}
+
+function editUser() {
+    var errorMsg = "";
+
+    dataToSend = {
+        "age": $("#inputAge").val(),
+        "lastName": $("#inputLastName").val().trim(),
+        "name": $("#inputName").val().trim(),
+        "password": $("#inputPassword").val(),
+        "userName": $("#inputUserName").val(),
+        "role": $("#inputRole").val()
+    }
+
+    if (dataToSend.name == "") {
+        errorMsg += "The name field cannot be empty. \n";
+    }
+    if (dataToSend.name =! "" && dataToSend.name.length < 3) {
+        errorMsg += "The name field must contain more than 3 characters. \n"
+    }
+
+    if (dataToSend.lastName == "") {
+        errorMsg += "The lastName field cannot be empty. \n";
+    }
+    if ( dataToSend.lastName =! "" && dataToSend.lastName.length < 3) {
+        errorMsg += "The lastName field must contain more than 3 characters. \n"
+    }
+
+    if (dataToSend.age == "") {
+        errorMsg += "You must enter an age. \n";
+    }
+
+    if (parseInt(dataToSend.age) < 1 && parseInt(dataToSend.age) > 150) {
+        errorMsg += "You have entered an invalid age. \n";
+    }
+
+    if (dataToSend.userName == "") {
+        errorMsg += "The userName field cannot be empty. \n";
+    }
+
+    if (dataToSend.userName.indexOf(' ') != -1) {
+        errorMsg += "Username must not contain spaces. \n"
+    }
+    if (dataToSend.password.length < 5) {
+        errorMsg += "The password is very weak. \n"
+    }
+
+    if (errorMsg != "") {
+        swal(errorMsg);
+    } else {
+        deleteUser($("#inputUserName").val());
+        $.ajax({
+            url: URL_LOCAL.concat("/CreateUser"),
+            type: "POST",
+            data: JSON.stringify(dataToSend),
+            dataType: "JSON",
+            success: function (response) {
+                if (response.result == true) {
+                    swal("The user has been modified successfully");
+                    location.reload();
+                } else {
+                    swal("Please validate that the data is correct");
+                }
+            },
+            error: function (response) {
+                swal("Try again");
+            }
+        });
+    }
 }
 
 function formEdit() {
@@ -169,7 +234,7 @@ function formEdit() {
             </div>
             <div class="row 2 form-group justify-content-center">
                 <div class="col-1">
-                    <input type="button" class="btn btn-warning" name="btnSave" onclick="CreateUser()"
+                    <input type="button" class="btn btn-warning" name="btnSave" onclick="editUser()"
                         id="btnSave" value="Edit">
                 </div>
                 <div class="col-1">

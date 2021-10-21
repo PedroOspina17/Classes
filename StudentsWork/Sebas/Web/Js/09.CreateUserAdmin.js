@@ -5,8 +5,10 @@ $(document).ready(function () {
     if (security == null) {
         window.location.href = "09.loggin.html"
     }
+    
+    var role = localStorage.getItem("Role");
 
-    if (localStorage.getItem("Role") =! 'Admin') {
+    if (role = ! 'Admin') {
         window.location.href = "04.ClientStorageList.html"
     }
 });
@@ -16,13 +18,12 @@ function cancel() {
 }
 
 function CreateUser() {
-     debugger;
 
     var errorMsg = "";
 
     dataToSend = {
-        "age": $("#userAge").val(),
-        "lastName": $("#inputlastName").val().trim(),
+        "age": $("#inputAge").val(),
+        "lastName": $("#inputLastName").val().trim(),
         "name": $("#inputName").val().trim(),
         "password": $("#inputPassword").val(),
         "userName": $("#inputUserName").val(),
@@ -36,7 +37,7 @@ function CreateUser() {
         dataType: "json",
 
         success: function (response) {
-     
+
             if (response.result == true) {
                 errorMsg += "The userName: " + dataToSend.userName + " you are already registered \n";
             }
@@ -60,7 +61,7 @@ function CreateUser() {
         errorMsg += "the user must contain more than 3 characters. \n"
     }
 
-    if (dataToSend.age == "" ) {
+    if (dataToSend.age == "") {
         errorMsg += "Ah ingresado una edad no valida \n";
     }
 
@@ -91,8 +92,8 @@ function CreateUser() {
                 if (response.result == true) {
                     swal("User created successfully");
                     window.location.href = "09.listUsers.html";
-                }else{
-                    swal("The user was not created successfully, please validate that the data is correct");
+                } else {
+                    swal("Please validate that the data is correct");
                 }
             },
             error: function (response) {
