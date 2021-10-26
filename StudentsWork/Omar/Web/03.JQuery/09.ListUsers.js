@@ -1,5 +1,8 @@
 $(document).ready(function(){
     info();
+    $('#exampleModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
 })
 
 function info(){
@@ -17,7 +20,7 @@ function info(){
                 <td>${value.age}</td>
                 <td>${value.role}</td>
                 <td>${value.userName}</td>
-                <td><input type = 'button' id='update${value.userName}' class='btn btn_edit' style='background: mistyrose;border:double;width:75px' value='Edit' onclick='updateUser("${value.userName}")'>
+                <td><button type = 'button' id='update${value.userName}' class='btn btn_edit' style='background: mistyrose;border:double;width:75px' data-toggle="modal" data-target="#exampleModalCenter" value='Edit' onclick='updateUser("${value.userName}")'>Edit</button>
                     <input type = 'button' id='remove${value.userName}' class='btn btn_remove' style='background: mediumpurple;border:double' value='Delete' onclick='deleteUser("${value.userName}")'></td>
                 </tr>`;
                 $("#table").append(tableRow);
@@ -66,18 +69,18 @@ function updateUser(userName){
         dataType: "JSON",
         success: function(response){
         debugger;
-            if(response.result==true){
-               
-                $("#userName").val(response.user.userName);
-                $("#id").val(response.user.id);
-                $("#age").val(response.user.age);
-                $("#name").val(response.user.name);
-                $("#lastName").val(response.user.lastName);
-                $("#password").val(response.user.password);
-                $("#role").val(response.user.role);
-         
-                // window.location.href="09.EditUser.html"  
-            }
+        if(response.result==true){
+            
+            $("#userName").val(response.user.userName);
+            $("#id").val(response.user.id);
+            $("#age").val(response.user.age);
+            $("#name").val(response.user.name);
+            $("#lastName").val(response.user.lastName);
+            $("#password").val(response.user.password);
+            $("#role").val(response.user.role);
+        
+            // window.location.href="09.EditUser.html"  
+        }
         },
         error: function(response){
             console.log(response);
