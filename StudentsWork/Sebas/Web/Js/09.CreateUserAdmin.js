@@ -1,5 +1,20 @@
+$(document).ready(function () {
+
+    var security = localStorage.getItem("Security_validation");
+
+    if (security == null) {
+        window.location.href = "09.loggin.html"
+    }
+    
+    var role = localStorage.getItem("Role");
+
+    if (role = ! 'Admin') {
+        window.location.href = "04.ClientStorageList.html"
+    }
+});
+
 function cancel() {
-    window.location.href = "loggin_NP.html";
+    window.location.href = "09.listUsers.html";
 }
 
 function CreateUser() {
@@ -7,11 +22,12 @@ function CreateUser() {
     var errorMsg = "";
 
     dataToSend = {
-        "age": $("#userAge").val(),
-        "lastName": $("#inputlastName").val().trim(),
+        "age": $("#inputAge").val(),
+        "lastName": $("#inputLastName").val().trim(),
         "name": $("#inputName").val().trim(),
         "password": $("#inputPassword").val(),
-        "userName": $("#inputUserName").val()
+        "userName": $("#inputUserName").val(),
+        "role": $("#inputRole").val()
     }
 
     $.ajax({
@@ -21,7 +37,7 @@ function CreateUser() {
         dataType: "json",
 
         success: function (response) {
-     
+
             if (response.result == true) {
                 errorMsg += "The userName: " + dataToSend.userName + " you are already registered \n";
             }
@@ -45,7 +61,7 @@ function CreateUser() {
         errorMsg += "the user must contain more than 3 characters. \n"
     }
 
-    if (dataToSend.age == "" ) {
+    if (dataToSend.age == "") {
         errorMsg += "Ah ingresado una edad no valida \n";
     }
 
@@ -73,11 +89,11 @@ function CreateUser() {
             data: JSON.stringify(dataToSend),
             dataType: "JSON",
             success: function (response) {
-                debugger
                 if (response.result == true) {
-                    swal("Usuario creado");
-                }else{
-                    swal("Pailas");
+                    swal("User created successfully");
+                    window.location.href = "09.listUsers.html";
+                } else {
+                    swal("Please validate that the data is correct");
                 }
             },
             error: function (response) {
