@@ -23,7 +23,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent" >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="04.ClientStorageList.html">Web Storage</a>
@@ -32,7 +32,7 @@
                         
                     </li>
                 </ul>
-                <form class="d-flex">
+                <form class="d-flex ml-auto">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -47,7 +47,7 @@
     <div id="user" >
 
     </div>
-    <div class="container jumbotron">
+    <div class="container jumbotron pt-2">
         <h1 class="text-center mb-5">Web storage</h1>
         <div class="row">
             <div class="col">
@@ -63,7 +63,7 @@
                         placeholder="This is my value">
                 </div>
 
-                <div class="form-group offset-2">
+                <div class="form-group offset-0">
                     <input type="button" class="btn btn-success" id="btn_Create" name="btn_Create_data"
                         value="Create data" onclick="validateForm()">
                     <input type="button" class="btn btn-danger" id="btn_Clear" name="btn_Clear_data" value="Clear data"
