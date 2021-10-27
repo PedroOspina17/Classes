@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../../../Common/css/jquery.dataTables.min.css">
+    <script src="../../../Common/js/jquery.dataTables.min.js"></script>
+    <script src="../JQuery/js/ValidationAdiministration.js"></script>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <title>Administration</title>
+</head>
+
+<body style="background-size: cover; background-image: url('../../../../ClassMaterial/WebPages_FrontEnd/Common/img/Fondo_Menu_ERL1.jpg');">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-2">
+                <a href="../JQuery/8.1.MenuAdmin.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                      </svg>
+                </a>
+            </div>
+            <div class="col-10">
+                <h1 class="text-center">Administration Web Storage</h1>
+            </div>
+        </div>
+        <div>
+            <table id="ListEmployee" class="display" style="width:100%"></table>
+        </div>
+        <div id="ContenModify">
+            <div class="row">
+                <div class="col-4">
+                    <label>User Name</label>
+                    <input type="text" autofocus name="txtUserName" id="txtUserName" class="form-control" readonly>
+                </div>
+                <div class="col-4">
+                    <label>Name</label>
+                    <input type="text" name="txtName" id="txtName" class="form-control">
+                </div>
+                <div class="col-4 form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="txtLastName" id="txtLastName" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label>Age</label>
+                    <input type="number" name="numAge" id="numAge" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label>Password</label>
+                    <input type="password" name="pss" id="pss" class="form-control">
+                </div>
+                <div class="col-4 form-group">
+                    <label>Role</label>
+                    <select name="SlcRole" id="SlcRole" class="form-control">
+                        <option value="0">.:.Select.:.</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Employee">Employee</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-1 offset-5">
+                    <input type="button" value="Save" id="brnSave" name="brnSave" class="btn btn-success" onclick="ModifyInfo()">
+                </div>
+                <div class="col-1 form-group">
+                    <input type="button" value="Cancel" id="btnCancel" name="btnCancel" class="btn btn-danger" onclick="Cancel()">
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
