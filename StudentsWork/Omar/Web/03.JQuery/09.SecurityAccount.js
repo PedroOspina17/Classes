@@ -1,4 +1,3 @@
-var countId = 1;
 $(document).ready(function () {
    
 });
@@ -31,14 +30,26 @@ function save(){
         success: function(response){
             //debugger;
             console.log(response);
-            swal("User Save Succesfull.")
+            if(response.result==true){
+                swal("User Save Succesfull.");
+                window.location.href="09.Login.html"
+            }else{
+                swal("User not save. \n The user already exist!")
+            } 
         },
         error: function(response){
-            console.log(response);
-            swal("User not save.")
-            
+            console.log(response); 
         }
         
     })
     console.log(users);
+    cancel();  
+}
+
+function cancel(){
+    $("#age").val("");
+    $("#lastName").val("");
+    $("#name").val("");
+    $("#password").val("");
+    $("#userName").val("");
 }

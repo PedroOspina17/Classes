@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    var userW = localStorage.getItem("Security" );
+    if (userW == null){
+        window.location.href="09.login.html"
+    }
     info();
     $('#exampleModal').on('shown.bs.modal', function () {
         $('#myInput').trigger('focus')
@@ -88,4 +92,7 @@ function updateUser(userName){
         }  
     })
 }
-//localStorage.setItem("Security", userName)
+
+function back(){
+    window.location.href="09.Welcome.html"
+}

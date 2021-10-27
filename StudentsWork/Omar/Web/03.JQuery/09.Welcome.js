@@ -1,6 +1,9 @@
 $(document).ready(function(){
     var userW = localStorage.getItem("Security" );
-    if (localStorage.getItem("Security" ) != null){
+    if (userW == null){
+        window.location.href="09.login.html"
+    }
+    else if (localStorage.getItem("Security" ) != null){
         $("#user").append("<h1 class='font-weight-bolder text-center' style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;margin-left: 18rem'>Welcome " +userW+"</h1>");
     }
     userLog()

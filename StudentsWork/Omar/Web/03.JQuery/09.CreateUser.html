@@ -10,13 +10,16 @@
     <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
     <script src="../../../Common/js/toastr.min.js"></script>
     <script src="../../../Common/js/sweetalert.min.js"></script>
-    <script src="09.EditUser.js"></script>
-    <script src="09.ListUsers.js"></script>
-    <title>EditUser</title>
+    <script src="09.CreateUser.js"></script>
+ 
+    <title>CreatetUser</title>
 </head>
 <body background="../imgs/img_3.jpg" style="background-repeat: no-repeat;background-size: cover;">
     <div class="container">
         <div class="row-col text-center mt-5">
+            <div class="col-12">
+                <input type="button" class="btn btn-outline-primary col-2 offset-10" id="btnBack" name="btnBack" value="Back" onclick="back()">
+            </div>
             <h1 class="font-weight-bolder" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">Create User</h1>
         </div>
         <div class="row mt-5">
@@ -34,7 +37,11 @@
                     <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="lastName" name="lastName" placeholder="Last Name">
                 </div>
                 <div class="row-col mt-5">
-                    <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="role" name="role" placeholder="Role">
+                    <select class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="role" name="role" placeholder="Role">
+                        <option value="">Select a role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Employ">Employee</option>
+                    </select>
                 </div>
             </div>
             <div class="col-4">
@@ -52,7 +59,7 @@
         <div class="row mt-5 text-center">
             <div class="col-12">
                 <input type="button" class="btn btn-outline-secondary" id="save" name="save" value="Save" style="border: solid; width: 100px; background: mistyrose;border:outset" onclick="create()">
-                <input type="button" class="btn btn-outline-light" id="cancel" name="cancel" value="Cancel" style="border: solid; width: 100px;background: mediumpurple;border:outset">
+                <input type="button" class="btn btn-outline-light" id="cancel" name="cancel" value="Cancel" style="border: solid; width: 100px;background: mediumpurple;border:outset" onclick="cancel()">
             </div>
         </div>
     </div>

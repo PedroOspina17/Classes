@@ -1,5 +1,8 @@
 $(document).ready(function(){
-   
+    var userW = localStorage.getItem("Security" );
+    if (userW == null){
+        window.location.href="09.login.html"
+    }
 })
 
 function create(){
@@ -30,16 +33,33 @@ function create(){
         success: function(response){
             //debugger;
             console.log(response);
-            swal("User Save Succesfull.")
+            if(response.result==true){
+                swal("User create Succesfull.");
+                window.location.href="09.Login.html"
+            }else{
+                swal("The user already exist!")
+            } 
+            
         },
         error: function(response){
             console.log(response);
-            swal("User not save.")
             
         }
         
     })
     console.log(users);
+    cancel()
 }
 
+function cancel(){
+    $("#age").val("");
+    $("#lastName").val("");
+    $("#name").val("");
+    $("#password").val("");
+    $("#userName").val("");
+}
+
+function back(){
+    window.location.href="09.Welcome.html"
+}
 //https://getbootstrap.com/docs/4.0/components/modal/
