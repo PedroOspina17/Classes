@@ -4,9 +4,9 @@ $(document).ready(function(){
         window.location.href="09.login.html"
     }
     info();
-    $('#exampleModal').on('shown.bs.modal', function () {
+   /* $('#exampleModal').on('shown.bs.modal', function () {
         $('#myInput').trigger('focus')
-      })
+      })*/
 })
 
 function info(){
@@ -38,7 +38,7 @@ function info(){
 }
 
 function deleteUser(userName){
-    debugger;
+    //debugger;
     console.log("delete");
     $("#"+userName+"").remove();
     var dataUser = {
@@ -62,7 +62,8 @@ function deleteUser(userName){
 
 
 function updateUser(userName){
-    debugger;
+      
+    //debugger;
     var dataUser = {
         "userName": userName
     }
@@ -72,7 +73,7 @@ function updateUser(userName){
         data: JSON.stringify(dataUser),
         dataType: "JSON",
         success: function(response){
-        debugger;
+        //debugger;
         if(response.result==true){
             
             $("#userName").val(response.user.userName);
