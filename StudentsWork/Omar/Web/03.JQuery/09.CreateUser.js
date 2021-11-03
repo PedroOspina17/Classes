@@ -7,13 +7,34 @@ $(document).ready(function(){
 
 function create(){
     var msg="";
-    
+    if (age == 0){
+        msg += "The field 'Age' is required \n"
+    }
+    if (lastName == "" || name == "" || userName == ""){
+        msg += "The field 'LastName' is required \n"
+    }
+    if (name == ""){
+        msg += "The field 'Name' is required \n"
+    }
+    if (userName == ""){
+        msg += "The field 'UserName' is required \n"
+    }
+    if (role == ""){
+        msg += "The field 'Role' is required \n"
+    }
+    if (password.length<4 || password == ""){
+        msg += "The field 'Password' cannot be less than 4 characters \n"
+    }
+    if(msg != ""){
+        swal(msg);
+    }
     var age = $("#age").val();
     var lastName = $("#lastName").val();
     var name = $("#name").val();
     var password = $("#password").val();
     var role = $("#role").val();
     var userName = $("#userName").val();
+    
     var users = {
         
         "age": age,
