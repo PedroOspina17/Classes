@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../JQuery/js/validateloggin.js"></script>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <title>Document</title>
+    <script>
+        $(document).ready(function (){
+            $("#FormSignUp").hide();
+        });
+    </script>
+</head>
+<body   style="background-repeat: no-repeat; background-size: cover; background-image: url('../../../Common/img/Fondo_ERL2.jpg');">
+    <div class="container mt-xl-4"> 
+        <div class="form-group offset-lg-1 row-col">
+            <input type="button" value="Login" class="bg-secondary btn btn-outline-warning offset-5" id="btnLogin" onclick="ShowHideForm('Login')">
+            <input type="button" value="Registration" class="bg-secondary btn btn-outline-warning" onclick="ShowHideForm('Registration')">
+        </div>
+        <div id="Contenedor" class="row m-2 row">                      
+            <div class="col-1 badge-warning offset-4"></div>
+            <div id="FormLogin" class="col-4 border p-3">
+                <div class="row-cols">
+                    <div class="form-group">
+                        <label class="w-100 font-weight-bold">User name</label>
+                        <input type="text" class="form-control" name="txtUser" id="txtUser" placeholder="Ingresar usurio">
+                    </div>           
+                </div>
+                <div class="row-col">
+                    <div class="form-group">
+                        <label class="w-100 font-weight-bold">Password</label>
+                        <input type="password" class="form-control" name="pssUser" id="pssUser" placeholder="Igresar contraseña">
+                    </div>
+                </div>  
+                <div class="row-col offset-3">
+                    <input type="button" value="Sign in" class="btn btn-outline-warning" onclick="LoginUsuario()">
+                    <input type="button" value="Cancel" class="btn btn-outline-warning" onclick="CloseForm('FormLogin')">        
+                </div>
+            </div> 
+            <div id="FormSignUp" class="col-4 border p-3">
+                <div class="row-cols">
+                    <div class="form-group">
+                        <label class="text-light">Name</label>
+                        <input type="text" class="form-control" name="txtName" id="txtName" placeholder="Enter Name">
+                    </div>           
+                </div>
+                <div class="row-cols">
+                    <div class="form-group">
+                        <label class="text-light">Last name</label>
+                        <input type="text" class="form-control" name="txtLastName" id="txtLastName" placeholder="Enter Lasta name">
+                    </div>           
+                </div>
+                <div class="row-cols">
+                    <div class="form-group">
+                        <label class="text-light">Age</label>
+                        <input type="number" class="form-control" name="numberAge" id="numberAge" placeholder="Enter Age">
+                    </div>           
+                </div>
+                <div class="row-cols">
+                    <div class="form-group">
+                        <label class="text-light">User name</label>
+                        <input type="text" class="form-control" name="txtUserName" id="txtUserName" placeholder="Enter User name">
+                    </div>           
+                </div>
+                <div class="row-col">
+                    <div class="form-group">
+                        <label class="text-light">Password</label>
+                        <input type="password" class="form-control" name="pssUserSignUp" id="pssUserSignUp" placeholder="Igresar contraseña">
+                    </div>
+                </div>  
+                <div class="row-col offset-3">
+                    <input type="button" value="Save" class="btn btn-outline-warning" onclick="CreateUser()">
+                    <input type="button" value="Cancel" class="btn btn-outline-warning" onclick="CloseForm('FormSignUp')">        
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
+

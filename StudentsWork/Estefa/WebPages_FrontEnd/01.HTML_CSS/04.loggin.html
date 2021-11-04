@@ -11,22 +11,26 @@
     
     <title>Document</title>
 </head>
-<body class="container text-center w-25">
-    <div class="main">        
+<body class="container">
+    <div class="main"> 
+        <div class="row-col offset-4 mt-5 form-group">
             <img src="../../../Common/img/logo1-2.png" class="banner">
-                
+        </div>
+        <div class="row-cols-2 offset-4">
             <div class="form-group">
                 <label class="w-100 font-weight-bold">User name</label>
                 <input type="text" class="form-control" name="txtUser" id="txtUser" placeholder="Ingresar usurio">
-            </div>
+            </div>           
+        </div>
+        <div class="row-cols-2 offset-4">
             <div class="form-group">
                 <label class="w-100 font-weight-bold">Password</label>
                 <input type="password" class="form-control" name="pssUser" id="pssUser" placeholder="Iglresa contraseña">
             </div>
-            <div class="form-group btn-group">
-            <input type="button" value="Continue" class="btn btn-sm btn-success testClass"
-                onclick="validarUsuario()">
-            </div>
+        </div>  
+        <div class="row-col offset-4">
+             <input type="button" value="Continue" class="btn btn-success testClass w-100" onclick="validarUsuario()">
+        </div>
     </div>
 </body>
 </html>

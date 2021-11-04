@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="09.Welcome.js"></script>
+    <title>Welcome</title>
+</head>
+<body background="../imgs/img_2.jpg" style="background-repeat: no-repeat;background-size: cover;">
+    <div class="row">
+        <div class="col-10" id="user">
+            
+        </div>
+        <div class="col-2 mt-2 pr-4">
+            <input type="button" class="btn btn-outline-success col-12" id="btnLogOut" name="btnLogOut" value="LogOut" onclick="logOut()">
+        </div>
+        <div class="col-6">
+            <input type="text" class="btn form-control" style='margin-top: -10px; height: 45px; background-color: #fbfcfe'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6" name="admin">
+            <a href="08.ClientStorageList.html" class="offset-3 text-white btn btn-outline-primary text-primary" style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;'>Web Storage</a>
+        </div>
+        <div class="col-6" name="admin">
+            <a href="09.ListUsers.html" class="offset-5 text-white btn btn-outline-success text-success" style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;'>List Users</a>
+        </div>
+    </div>
+    <div class="row mt-5">
+        >
+    </div>
+    <div class="row mt-5">
+        
+    </div>
+    <div class="row mt-5">
+        <div class="col-12" name="admin">
+            <a href="09.CreateUser.html" class="offset-5 text-white btn btn-outline-warning text-warning mt-5" style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;'>Create Users</a>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 mt-5" id="employee">
+            <a href="08.ClientStorageList.html" class="offset-5 mt-5 text-white btn btn-outline-success text-success" style='font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;'>Web Storage</a>
+        </div>
+    </div>
+</body>
+</html>

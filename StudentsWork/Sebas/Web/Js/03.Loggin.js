@@ -14,7 +14,7 @@ function ValidateLogIn() {
         success: function (response) {
             if (response.result == true) {
                 window.location.href = "04.ClientStorageList.html";
-                localStorage.setItem("Security_validation",1);
+                localStorage.setItem("Security_validation",response.user[0].name);
             }
             else {
                 swal("Incorrect user or password");
@@ -25,3 +25,7 @@ function ValidateLogIn() {
         }
     });
 }
+function RegisterUser(){
+    window.location.href = "Sign_Up.html";
+}
+

@@ -18,3 +18,5 @@ en el punto 3 de leer hacer lo siguiente
 
 en el java scrip insertar las filas con un dom modification de tal manera que los datos se vayan añadiendo automaticamente
 
+localStorage.removeItem(info")
+

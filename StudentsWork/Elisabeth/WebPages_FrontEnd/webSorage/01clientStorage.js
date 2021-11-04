@@ -29,7 +29,7 @@ function SaveInfoStorage(){
     }
 
     $.each(listClients_webStorage, function(index,value){
-        debugger;
+        //debugger;
         if(infoKey==value.key){
             msgError+=("The key is repeat \n")
             return true
@@ -38,12 +38,16 @@ function SaveInfoStorage(){
     });
 
     if (msgError == "") {
+        //debugger;
         var jaisonClients = {
             "key": infoKey,
             "value": infoValue,
         };
 
         listClients_webStorage.push(jaisonClients)
+
+        localStorage.setItem("jaisonClients_LocalStorage", JSON.stringify(listClients_webStorage))
+        localStorage.setItem("Clients_LocalStorafe", JSON.stringify(jaisonClients))
 
         $("#listKeyValues").append(`
             <div class="row" id="row_${infoKey}">
@@ -57,6 +61,8 @@ function SaveInfoStorage(){
                 </div>
             </div>
         `)
+        $("#idInputkey").val("");
+        $("#idInputValue").val("");
     }
     else {
         swal("validation: ", msgError, "error")
@@ -69,11 +75,21 @@ function deleteKeyValue(info) {
         debugger;
         if(info==value.key){
             listClients_webStorage.splice(index, 1);
+            localStorage.removeItem("Clients_LocalStorafe")
             return true
         }
-
     });
     $("#row_"+info).remove();
+
+}
+
+function ClearInfoStorage() {
+    //debugger;
+    if (listClients_webStorage!="") {
+        $("#row_"+info).empty()
+        //localStorage.clean()
+    }
+
 
 }
 

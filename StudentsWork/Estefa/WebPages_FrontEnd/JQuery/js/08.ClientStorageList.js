@@ -7,7 +7,7 @@ function PageLoad (){
         for(var i = 0; i<localStorage.length;i++){
             var keyOpen = localStorage.key(i);
             var valueOpen = localStorage.getItem(keyOpen);
-            if(keyOpen != 'Logueado'){
+            if(keyOpen != 'Logueado' && keyOpen != 'Role'){//Se hace esta condición para que no muestre la data que estaLogueado y el rol
                 ListadoKeyOpen =`
                     <dt id="dtRow_${countRow}">${keyOpen}</dt>
                     <dd id="ddRow_${countRow}">${valueOpen}</dd>`
@@ -19,13 +19,13 @@ function PageLoad (){
             }          
         }
     }else{        
-        window.location.href = "../../WebPages_FrontEnd/01.HTML_CSS/04.loggin.html";
+        window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
     }
 }
 
 function Logout(){
     localStorage.removeItem("Logueado");
-    window.location.href = "../../WebPages_FrontEnd/01.HTML_CSS/04.loggin.html";
+    window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
     
 }
 

@@ -1,4 +1,5 @@
 function validar_usuario() {
+    debugger;
     console.log("entro")
     var Almacenar_Correo = $("#email").val();
     var Almacenar_contrasena = $("#pss").val();
@@ -8,12 +9,13 @@ function validar_usuario() {
         "userName": Almacenar_Correo,
         "password": Almacenar_contrasena
     };
-    $.ajax({
-        url: "http://3.14.144.130/SingIn",
+    $.ajax({ 
+        url: "http://3.14.144.130/LogIn",
         type: "POST",
         data: JSON.stringify(dataToSend),
         dataType: "json",
         success: function (response) {
+            debugger;
             if (response.result == true) {
                 localStorage.setItem("User", Almacenar_Correo);
                 swal("CORRECT", "WELCOME TO THE PAGE", "success").then(function () {
@@ -44,7 +46,21 @@ function SaveInfo() {
                 "password": $("#password").val(),
                 "userName": $("#UserName").val()
             }
-            
+            $.ajax({
+                url: "http://3.14.144.130/CreateUser",
+                type: "POST",
+                data: JSON.stringify(ITS),
+                dataType: "json",
+                success: function(response){
+                    console.log(response);
+                },
+                error: function (response){
+                    console.log(response);
+                }
+
+            })
+
+
             console.log(ITS)
             $("#Age").val("")
             $("#LastName").val("")

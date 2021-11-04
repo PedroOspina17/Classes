@@ -31,7 +31,7 @@ function save(){
         }
     
         $.ajax({
-            url: "http://3.14.144.130/SingIn",
+            url: "http://3.14.144.130/LogIn",
             type: "POST",
             data: JSON.stringify(jsonUser),
             dataType: "JSON",
