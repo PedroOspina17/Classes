@@ -5,7 +5,7 @@ $(document).ready(function () {
     if (security == null) {
         window.location.href = "09.loggin.html"
     }
-    
+
     var role = localStorage.getItem("Role");
 
     if (role = ! 'Admin') {
@@ -29,23 +29,6 @@ function CreateUser() {
         "userName": $("#inputUserName").val(),
         "role": $("#inputRole").val()
     }
-
-    $.ajax({
-        url: "http://3.14.144.130/GetUser?userName=" + dataToSend.userName,
-        type: "GET",
-        data: JSON.stringify(dataToSend),
-        dataType: "json",
-
-        success: function (response) {
-
-            if (response.result == true) {
-                errorMsg += "The userName: " + dataToSend.userName + " you are already registered \n";
-            }
-        },
-        error: function (response) {
-            swal("Try again");
-        }
-    });
 
     if (dataToSend.name == "") {
         errorMsg += "The user cannot be null. \n";
@@ -90,10 +73,11 @@ function CreateUser() {
             dataType: "JSON",
             success: function (response) {
                 if (response.result == true) {
-                    swal("User created successfully");
-                    window.location.href = "09.listUsers.html";
+                    swal("User created successfully").then(function () {
+                        window.location.href = "09.listUsers.html";
+                    });
                 } else {
-                    swal("Please validate that the data is correct");
+                    swal(response.message);
                 }
             },
             error: function (response) {

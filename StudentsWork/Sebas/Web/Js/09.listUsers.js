@@ -66,6 +66,7 @@ function deleteUser(UserName) {
         success: function (response) {
             if (response.result == true) {
                 swal("The user:" + User.userName + " has been removed");
+                loadTable();
             } else {
                 swal("The user: " + User.userName + " could not be successfully removed");
             }
@@ -120,6 +121,7 @@ function cancelEdit() {
 }
 
 function editUser() {
+
     var errorMsg = "";
 
     dataToSend = {
@@ -134,14 +136,14 @@ function editUser() {
     if (dataToSend.name == "") {
         errorMsg += "The name field cannot be empty. \n";
     }
-    if (dataToSend.name =! "" && dataToSend.name.length < 3) {
+    if (dataToSend.name = ! "" && dataToSend.name.length < 3) {
         errorMsg += "The name field must contain more than 3 characters. \n"
     }
 
     if (dataToSend.lastName == "") {
         errorMsg += "The lastName field cannot be empty. \n";
     }
-    if ( dataToSend.lastName =! "" && dataToSend.lastName.length < 3) {
+    if (dataToSend.lastName = ! "" && dataToSend.lastName.length < 3) {
         errorMsg += "The lastName field must contain more than 3 characters. \n"
     }
 
@@ -176,7 +178,8 @@ function editUser() {
             success: function (response) {
                 if (response.result == true) {
                     swal("The user has been modified successfully");
-                    location.reload();
+                    $("#formEdit").remove();
+                    loadTable();
                 } else {
                     swal("Please validate that the data is correct");
                 }
@@ -189,8 +192,11 @@ function editUser() {
 }
 
 function formEdit() {
+
+    /*$("#EditUser").empty();*/
+
     $("#EditUser").append(` 
-    <form>
+    <form id = "formEdit">
         <div class="mt-5 border border-dark rounded container  w-70">
             <br>
             <div class="row mb-3">

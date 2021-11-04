@@ -84,3 +84,7 @@ function logOut(){
     window.location.href="../../Web/01.Html_CSS/02.Bootstrap_LoginFalena.html"
 }
 
+function back(){
+    window.location.href="09.Welcome.html"
+}
+
