@@ -89,6 +89,7 @@ function LogOut() {
 }
 
 function editUserInterface(UserName) {
+
     var User = {
         "userName": UserName
     }
@@ -121,6 +122,8 @@ function cancelEdit() {
 }
 
 function editUser() {
+
+    debugger;
 
     var errorMsg = "";
 
