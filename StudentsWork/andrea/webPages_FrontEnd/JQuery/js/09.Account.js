@@ -53,7 +53,7 @@ function guardar() {
             success: function(response) {
                 if (response.result == true) {
                     toastr.success(response.message)
-                    window.location.href = "login.html"
+                        //window.location.href = "login.html"
                 } else {
                     swal("warning", response.message, "warning")
                 }

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
     <link rel="stylesheet" href="../../../Common/css/jquery.dataTables.min.css">
     <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
-    <script src="js/09.Account.js"></script>
     <script src="js/09.AdminUsers.js"></script>
     <script src="../../../Common/js/sweetalert.min.js"></script>
     <script src="../../../Common/js/toastr.min.js"></script>
@@ -19,6 +18,29 @@
 </head>
 
 <body>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto mr-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-secondary">Usuarios</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">CLientes</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="container">
         <h1 class="text-center my-3">Usuarios</h1>
 
@@ -32,8 +54,8 @@
                 <input type="text" name="txtApellido" id="txtApellido" placeholder="ingrese apellido" class="form-control">
             </div>
             <div class="col form-group">
-                <label for="txtEdad">Fecha de nacimiento</label>
-                <input type="date" name="txtEdad" id="txtEdad" class="form-control">
+                <label for="txtEdad">Edad</label>
+                <input type="number" name="txtEdad" id="txtEdad" class="form-control">
             </div>
         </div>
         <div class="row">
@@ -55,7 +77,9 @@
             <input type="button" value="Cancelar" class="btn btn-danger" onclick="cancelar()">
         </div>
         <div class="mt-4">
-            <table id="users" style="width: 100%" class="display"></table>
+            <table id="users" style="width: 100%" class="display">
+
+            </table>
         </div>
     </div>
 </body>
