@@ -5,7 +5,7 @@ function pageLoad() {
     var security = localStorage.getItem("Security_validation");
 
     if (security == null) {
-        window.location.href = "loggin_NP.html"
+        window.location.href = "09.loggin.html"
     }
     var list = JSON.parse(localStorage.getItem("data"));
     $.each(list, function (index, value) {
