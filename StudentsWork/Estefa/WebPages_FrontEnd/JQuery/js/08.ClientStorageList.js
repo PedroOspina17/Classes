@@ -74,9 +74,14 @@ function CreateData(){
 }
 
 function LimpiarData(){
+    var user = localStorage.getItem('Logueado'); // Se optiene el usaurio loquedo    
+    var role = localStorage.getItem('Role'); // Se optiene el rol loquedo
     localStorage.clear();
     $('#ListadoKey').empty();
     $('#btnListadoKey').empty();
+    localStorage.setItem("Logueado", user); // Crear el usuario loquedo en el local storage
+    localStorage.setItem("Role", role); // Crear el rol loquedo en el local storage
+    
 }
 
 function DeleRow (id){

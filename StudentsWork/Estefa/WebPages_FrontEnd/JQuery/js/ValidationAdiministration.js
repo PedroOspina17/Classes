@@ -1,6 +1,7 @@
 var table;// Se intacia variable global indefinido
 // Función la cual busa la info de la API de todos los usuarios  y oculta el contenedor de los campos para modificar la info
-function TableListUsers(){
+
+function TableListUsers() {
     $('#ContenModify').hide();
     var ListUsers = '';
     $.ajax({
@@ -8,7 +9,7 @@ function TableListUsers(){
         type: "GET",
         success: function (response) {
             ListUsers = response.users
-            if (table){// De esta forma indica si esa variable tiene algo
+            if (table) {// De esta forma indica si esa variable tiene algo
                 table.destroy(); // Destruye la creación de la DataTable y la recarga
             }
             table = $('#ListEmployee').DataTable({ //Cuando se cargue por primera vez la tabla se la asigna a la variable global
@@ -21,8 +22,9 @@ function TableListUsers(){
                     { title: "Password", data: "password" },
                     { title: "Role", data: "role" },
                     { title: "User Name", data: "userName" },
-                    {title: "Actions", data:"userName", render: function(userName){
-                        return `
+                    {
+                        title: "Actions", data: "userName", render: function (userName) {
+                            return `
                           <div class="btn-group d-flex m-auto">
                             <button value="Modify" class="btn  btn-warning" id="ModifyLabel('${userName}')" onclick="ModifyLabel('${userName}')">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush" viewBox="0 0 16 16">
@@ -37,7 +39,7 @@ function TableListUsers(){
                             </button>
                           </div>
                         `
-                      }
+                        }
                     }
                 ]
             })
@@ -45,17 +47,28 @@ function TableListUsers(){
         error: function (response) {
             swal("Ups.. Error");
         }
-    })  
+    })
 }
-
 // Funcion que carga la pagina cada vez que se recarga la tabla de los usuarios 
 $(document).ready(function () {
-    TableListUsers();
+    debugger
+    if (localStorage.length != 0) {
+        for (var i = 0; i < localStorage.length; i++) {
+            var keyLogin = localStorage.key(i);
+            if (keyLogin == 'Logueado') {
+                TableListUsers();
+            }
+        }
+        window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
+    } else {
+        window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
+    }
 });
+
 
 // Función creada para mostrar el contenerdor de los campos que contiene la info 
 // y le envia los datos que tiene en la API
-function ModifyLabel(IntroUserName){
+function ModifyLabel(IntroUserName) {
     $.ajax({
         url: `http://3.14.144.130/GetUser?userName=${IntroUserName}`,
         type: "GET",
@@ -75,7 +88,7 @@ function ModifyLabel(IntroUserName){
     })
 }
 
-function Delete(userName){
+function Delete(userName) {
     var jsonDelete = {
         "userName": userName
     }
@@ -86,12 +99,12 @@ function Delete(userName){
         dataType: "json",
         success: function (response) {
             TableListUsers();
-            swal(`User ${userName}  Deleted`);            
+            swal(`User ${userName}  Deleted`);
         },
         error: function (response) {
             swal("Ups.. Error");
         }
-    })    
+    })
 }
 
 // Función creada para cuado va a guardar la info que va modificar
@@ -99,7 +112,7 @@ function Delete(userName){
 // 2. Valida que el campo de edad no tenga (. ó ,)
 // 3. Si la info está bien ingresada elimina el usuario que está en el API y crea uno nuevo...
 // con la info ingresada y el mismo USERNAME que no cambia
-function ModifyInfo(){
+function ModifyInfo() {
     var errorMsg = "";
     var userName = $("#txtUserName").val();
     var name = $("#txtName").val();
@@ -108,12 +121,12 @@ function ModifyInfo(){
     var pss = $("#pss").val();
     var role = $("#SlcRole").val();
     var jsonCreate = {
-        "userName":userName,
+        "userName": userName,
         "name": name,
         "lastName": lastName,
         "age": Age,
         "password": pss,
-        "role": role        
+        "role": role
     }
 
     if (name == '' || lastName == '' || isNaN(Age) || pss == '' || role == '0') {
@@ -122,19 +135,19 @@ function ModifyInfo(){
     if (Age.includes(".") || Age.includes(",")) {
         errorMsg += "El valor del campo Age debe de ser entero \n";
     }
-    if (errorMsg != "" ) {
+    if (errorMsg != "") {
         swal(errorMsg);
-    }else {
+    } else {
         Delete(userName);
         $.ajax({
             url: "http://3.14.144.130/CreateUser",
             type: "POST",
             data: JSON.stringify(jsonCreate),
             dataType: "json",
-            success: function (response) {   
-                    Cancel();// La función borra el contenido de los campos y oculta el contenerdor
-                    TableListUsers(); // Función la cual actualiza la infomación de la tabla
-                    swal("User creating correct");
+            success: function (response) {
+                Cancel();// La función borra el contenido de los campos y oculta el contenerdor
+                TableListUsers(); // Función la cual actualiza la infomación de la tabla
+                swal("User creating correct");
             },
             error: function (response) {
                 swal("Ups.. Error");
@@ -143,7 +156,7 @@ function ModifyInfo(){
     }
 }
 
-function Cancel(){
+function Cancel() {
     $('#txtUserName').val('');
     $('#txtName').val('');
     $('#txtLastName').val('');
