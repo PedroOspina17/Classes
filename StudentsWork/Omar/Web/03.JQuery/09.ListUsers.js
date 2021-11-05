@@ -150,20 +150,14 @@ function updateUser(userName){
         //debugger;
         if(response.result==true){
             
-            $("#userName").val(response.user.userName);
+            $("#userName").val(response.user.userName).prop('disabled', true);
             $("#id").val(response.user.id);
             $("#age").val(response.user.age);
             $("#name").val(response.user.name);
             $("#lastName").val(response.user.lastName);
             $("#password").val(response.user.password);
-            if (response.user.role == "Admin"){
-                $("#role").val("Admin");
-            }
-            else if (response.user.role == "Employee"){
-                $("#role").val("Employee");
-            }
+            $("#role").val(response.user.role)
         
-            // window.location.href="09.EditUser.html"  
         }
         },
         error: function(response){
@@ -174,6 +168,7 @@ function updateUser(userName){
 }
 
 function editUser(){
+   
     var msg="";
 
     var age = $("#age").val();
@@ -196,7 +191,7 @@ function editUser(){
     if (age == 0){
         msg += "The field 'Age' is required \n"
     }
-    if (lastName == "" || name == "" || userName == ""){
+    if (lastName == ""){
         msg += "The field 'LastName' is required \n"
     }
     if (name == ""){
@@ -226,7 +221,7 @@ function editUser(){
                 //debugger;
                 console.log(response);
                 if(response.result==true){
-                    swal("User create Succesfull.");
+                    swal("User edited succesfull.");
                     cancel();
                 }else{
                     swal("The user already exist!")
@@ -241,7 +236,7 @@ function editUser(){
         })
         console.log(users);
         $('#exampleModal').modal('hide');
-        location = location;
+        //location = location;
     }
 }
 
@@ -252,7 +247,8 @@ function cancel(){
     $("#lastName").val("");
     $("#name").val("");
     $("#password").val("");
-    $("#userName").val("");
+    $("#role").val("");
+    $("#userName").val("").prop('disabled', false);;
 }
 
 function back(){
