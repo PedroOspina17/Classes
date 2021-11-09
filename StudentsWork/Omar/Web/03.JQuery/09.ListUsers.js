@@ -40,6 +40,76 @@ function info(){
 
 }
 
+function createUser(){
+    var msg="";
+    
+    var age = $("#age").val();
+    var lastName = $("#lastName").val();
+    var name = $("#name").val();
+    var password = $("#password").val();
+    var role = $("#role").val();
+    var userName = $("#userName").val();
+    
+    var users = {
+        
+        "age": age,
+        "lastName": lastName,
+        "name": name,
+        "password": password,
+        "role": role,
+        "userName": userName
+    }
+    if (age == 0){
+        msg += "The field 'Age' is required \n"
+    }
+    if (lastName == "" || name == "" || userName == ""){
+        msg += "The field 'LastName' is required \n"
+    }
+    if (name == ""){
+        msg += "The field 'Name' is required \n"
+    }
+    if (userName == ""){
+        msg += "The field 'UserName' is required \n"
+    }
+    if (role == ""){
+        msg += "The field 'Role' is required \n"
+    }
+    if (password.length<4 || password == ""){
+        msg += "The field 'Password' cannot be less than 4 characters \n"
+    }
+    if(msg != ""){
+        swal(msg);
+    }
+    else {
+        var id = users.id
+        console.log(id);
+        $.ajax({
+            url: "http://3.14.144.130/CreateUser",
+            type: "POST",
+            data: JSON.stringify(users),
+            dataType: "JSON",
+            success: function(response){
+                //debugger;
+                console.log(response);
+                if(response.result==true){
+                    swal("User create Succesfull.");
+                    window.location.href="09.Login.html"
+                }else{
+                    swal("The user already exist!")
+                } 
+                
+            },
+            error: function(response){
+                console.log(response);
+                
+            }
+            
+        })
+        console.log(users);
+        cancel()
+    }
+}
+
 function deleteUser(userName){
     //debugger;
     console.log("delete");
@@ -65,7 +135,8 @@ function deleteUser(userName){
 
 
 function updateUser(userName){
-      
+    $("#editUs").removeClass('text-hide');
+    $("#createUs").addClass('text-hide');
     //debugger;
     var dataUser = {
         "userName": userName
@@ -79,20 +150,14 @@ function updateUser(userName){
         //debugger;
         if(response.result==true){
             
-            $("#userName").val(response.user.userName);
+            $("#userName").val(response.user.userName).prop('disabled', true);
             $("#id").val(response.user.id);
             $("#age").val(response.user.age);
             $("#name").val(response.user.name);
             $("#lastName").val(response.user.lastName);
             $("#password").val(response.user.password);
-            if (response.user.role == "Admin"){
-                $("#role").val("Admin");
-            }
-            else if (response.user.role == "Employee"){
-                $("#role").val("Employ");
-            }
+            $("#role").val(response.user.role)
         
-            // window.location.href="09.EditUser.html"  
         }
         },
         error: function(response){
@@ -103,6 +168,7 @@ function updateUser(userName){
 }
 
 function editUser(){
+   
     var msg="";
 
     var age = $("#age").val();
@@ -125,7 +191,7 @@ function editUser(){
     if (age == 0){
         msg += "The field 'Age' is required \n"
     }
-    if (lastName == "" || name == "" || userName == ""){
+    if (lastName == ""){
         msg += "The field 'LastName' is required \n"
     }
     if (name == ""){
@@ -155,7 +221,7 @@ function editUser(){
                 //debugger;
                 console.log(response);
                 if(response.result==true){
-                    swal("User create Succesfull.");
+                    swal("User edited succesfull.");
                     cancel();
                 }else{
                     swal("The user already exist!")
@@ -169,15 +235,20 @@ function editUser(){
             
         })
         console.log(users);
+        $('#exampleModal').modal('hide');
+        //location = location;
     }
 }
 
 function cancel(){
+    $("#editUs").addClass('text-hide');
+    $("#createUs").removeClass('text-hide');
     $("#age").val("");
     $("#lastName").val("");
     $("#name").val("");
     $("#password").val("");
-    $("#userName").val("");
+    $("#role").val("");
+    $("#userName").val("").prop('disabled', false);;
 }
 
 function back(){

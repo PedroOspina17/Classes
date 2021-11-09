@@ -35,7 +35,7 @@ function validar_usuario() {
 
 function SaveInfo() {
     if ($("#Age").val() == "" || $("#LastName").val() == "" ||$("#Name").val() == "" ||$("#password").val() == "" ||$("#UserName").val() == "") {
-        swal("SORRY", "All the fields are required", "warning")
+        swal("SORRY", "All the fields are required", "warning");
     }
     else{
         if ($("#password").val() == $("#Confirmation").val()) {
@@ -45,7 +45,7 @@ function SaveInfo() {
                 "name": $("#Name").val(),
                 "password": $("#password").val(),
                 "userName": $("#UserName").val()
-            }
+            };
             $.ajax({
                 url: "http://3.14.144.130/CreateUser",
                 type: "POST",
@@ -53,29 +53,23 @@ function SaveInfo() {
                 dataType: "json",
                 success: function(response){
                     console.log(response);
+                    if (response.result == false) {
+                        swal("SORRY", "This account already exist", "error");
+                    }else{
+                    swal("PERFECT", "Your account was created successfully", "success").then(function(){
+                        window.location.href = "03.Loguin_FALENA.html";
+                    })
+                    }
                 },
                 error: function (response){
                     console.log(response);
                 }
-
-            })
-
-
-            console.log(ITS)
-            $("#Age").val("")
-            $("#LastName").val("")
-            $("#Name").val("")
-            $("#password").val("")
-            $("#UserName").val("")
-            $("#Confirmation").val("")
-            swal("PERFECT", "Your account was created successfully", "success")
-            
+            });
         }
         else {
-            swal("SORRY", "Your password confirmation is not the same", "error")
+            swal("SORRY", "Your password confirmation is not the same", "error");
         }
     }
-
 }
 
 
