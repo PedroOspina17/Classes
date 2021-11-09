@@ -5,7 +5,7 @@ $(document).ready(function () {
     if (security == null) {
         window.location.href = "09.loggin.html"
     }
-    
+
     var role = localStorage.getItem("Role");
 
     if (role = ! 'Admin') {
@@ -21,31 +21,17 @@ function CreateUser() {
 
     var errorMsg = "";
 
+    debugger;
+
     dataToSend = {
         "age": $("#inputAge").val(),
         "lastName": $("#inputLastName").val().trim(),
         "name": $("#inputName").val().trim(),
         "password": $("#inputPassword").val(),
+        "ConfirmPassword": $("#inputConfirmPassword").val(),
         "userName": $("#inputUserName").val(),
         "role": $("#inputRole").val()
     }
-
-    $.ajax({
-        url: "http://3.14.144.130/GetUser?userName=" + dataToSend.userName,
-        type: "GET",
-        data: JSON.stringify(dataToSend),
-        dataType: "json",
-
-        success: function (response) {
-
-            if (response.result == true) {
-                errorMsg += "The userName: " + dataToSend.userName + " you are already registered \n";
-            }
-        },
-        error: function (response) {
-            swal("Try again");
-        }
-    });
 
     if (dataToSend.name == "") {
         errorMsg += "The user cannot be null. \n";
@@ -62,11 +48,11 @@ function CreateUser() {
     }
 
     if (dataToSend.age == "") {
-        errorMsg += "Ah ingresado una edad no valida \n";
+        errorMsg += "age can't be empty \n";
     }
 
     if (parseInt(dataToSend.age) < 1 && parseInt(dataToSend.age) > 150) {
-        errorMsg += "Ah ingresado una edad no valida \n";
+        errorMsg += "I have entered an invalid age \n";
     }
 
     if (dataToSend.userName == "") {
@@ -77,7 +63,10 @@ function CreateUser() {
         errorMsg += "username must not contain spaces. \n"
     }
     if (dataToSend.password.length < 5) {
-        errorMsg += "La contrasena debe ser mas larga \n"
+        errorMsg += "the password must contain between 5 and 20 characters \n"
+    }
+    if (dataToSend.password != dataToSend.ConfirmPassword) {
+        errorMsg += "The password and confirm password fields must be the same \n"
     }
 
     if (errorMsg != "") {
@@ -90,10 +79,11 @@ function CreateUser() {
             dataType: "JSON",
             success: function (response) {
                 if (response.result == true) {
-                    swal("User created successfully");
-                    window.location.href = "09.listUsers.html";
+                    swal("User created successfully").then(function () {
+                        window.location.href = "09.listUsers.html";
+                    });
                 } else {
-                    swal("Please validate that the data is correct");
+                    swal(response.message);
                 }
             },
             error: function (response) {

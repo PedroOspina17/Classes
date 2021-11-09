@@ -14,6 +14,7 @@ function create(){
     var password = $("#password").val();
     var role = $("#role").val();
     var userName = $("#userName").val();
+    
     var users = {
         
         "age": age,
@@ -23,32 +24,55 @@ function create(){
         "role": role,
         "userName": userName
     }
-    var id = users.id
-    console.log(id);
-    $.ajax({
-        url: "http://3.14.144.130/CreateUser",
-        type: "POST",
-        data: JSON.stringify(users),
-        dataType: "JSON",
-        success: function(response){
-            //debugger;
-            console.log(response);
-            if(response.result==true){
-                swal("User create Succesfull.");
-                window.location.href="09.Login.html"
-            }else{
-                swal("The user already exist!")
-            } 
+    if (age == 0){
+        msg += "The field 'Age' is required \n"
+    }
+    if (lastName == "" || name == "" || userName == ""){
+        msg += "The field 'LastName' is required \n"
+    }
+    if (name == ""){
+        msg += "The field 'Name' is required \n"
+    }
+    if (userName == ""){
+        msg += "The field 'UserName' is required \n"
+    }
+    if (role == ""){
+        msg += "The field 'Role' is required \n"
+    }
+    if (password.length<4 || password == ""){
+        msg += "The field 'Password' cannot be less than 4 characters \n"
+    }
+    if(msg != ""){
+        swal(msg);
+    }
+    else {
+        var id = users.id
+        console.log(id);
+        $.ajax({
+            url: "http://3.14.144.130/CreateUser",
+            type: "POST",
+            data: JSON.stringify(users),
+            dataType: "JSON",
+            success: function(response){
+                //debugger;
+                console.log(response);
+                if(response.result==true){
+                    swal("User create Succesfull.");
+                    window.location.href="09.Login.html"
+                }else{
+                    swal("The user already exist!")
+                } 
+                
+            },
+            error: function(response){
+                console.log(response);
+                
+            }
             
-        },
-        error: function(response){
-            console.log(response);
-            
-        }
-        
-    })
-    console.log(users);
-    cancel()
+        })
+        console.log(users);
+        cancel()
+    }
 }
 
 function cancel(){

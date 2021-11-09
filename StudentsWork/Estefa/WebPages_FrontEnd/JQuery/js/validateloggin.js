@@ -49,7 +49,7 @@ function LoginUsuario() {
             }
         },
         error: function (response) {
-            swal("Ha ocurrido un ERROR, consultar mas tarde");
+            swal("Usuario o contraseña incorrecta");
         }
     })
 }

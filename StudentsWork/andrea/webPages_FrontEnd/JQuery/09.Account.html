@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../Common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../Common/css/toastr.min.css">
+    <script src="../../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="js/09.Account.js"></script>
+    <script src="../../../Common/js/sweetalert.min.js"></script>
+    <script src="../../../Common/js/toastr.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-3">Crear Cuenta</h1>
+
+        <div class="row">
+            <div class="col form-group">
+                <label for="txtNombre">Nombre</label>
+                <input type="text" name="txtNombre" id="txtNombre" placeholder="ingrese nombre" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label for="txtApellido">Apellido</label>
+                <input type="text" name="txtApellido" id="txtApellido" placeholder="ingrese apellido" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label for="txtEdad">Fecha de nacimiento</label>
+                <input type="date" name="txtEdad" id="txtEdad" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label for="txtUsuario">Usuario</label>
+                <input type="text" name="txtUsuario" id="txtUsuario" placeholder="ingrese Usuario" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label for="txtContraseña">Contraseña</label>
+                <input type="password" name="txtContraseña" id="txtContraseña" placeholder="ingrese Contraseña" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label for="txtConfirmacion">Confirmación</label>
+                <input type="password" name="txtConfirmacion" id="txtConfirmacion" placeholder="confirme Contraseña" class="form-control">
+            </div>
+        </div>
+        <div class="btn-group">
+            <input type="button" value="Guadar" class="btn btn-success" onclick="guardar()">
+            <input type="button" value="Cancelar" class="btn btn-danger" onclick="cancelar()">
+        </div>
+    </div>
+</body>
+
+</html>

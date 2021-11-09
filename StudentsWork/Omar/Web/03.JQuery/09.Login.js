@@ -41,6 +41,7 @@ function save(){
                 console.log(response);
                 if(response.result==true){
                     localStorage.setItem("Security", email)
+                    localStorage.setItem("role", response.user.role);
                     window.location.href="09.Welcome.html"  
                 }else{
                     swal("User or Password incorrect.")
