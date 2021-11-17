@@ -196,7 +196,7 @@ function editUser() {
 
 function formEdit() {
 
-    /*$("#EditUser").empty();*/
+    $("#EditUser").empty();
 
     $("#EditUser").append(` 
     <form id = "formEdit">
