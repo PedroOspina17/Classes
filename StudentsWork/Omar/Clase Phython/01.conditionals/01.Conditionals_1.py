@@ -85,4 +85,84 @@ elif(ejercicio == 14):
         sueldo_ex = hours_ex * value_ex
         sueldo_t = sueldo_ex + 12000
         print(f"El sueldo semanal del empleado fue: {sueldo_t}")
+
+elif(ejercicio == 15):
+    num = int(input("Ingrese un número del 1 al 7: "))
+    day = ""
+    if(num == 1):
+       day = "Lunes"
+    elif(num == 2):
+        day = "Martes"
+    elif(num == 3):
+       day = "Miercoles"
+    elif(num == 4):
+       day = "Jueves"
+    elif(num == 5):
+        day = "Viernes"
+    elif(num == 6):
+        day = "Sabado"
+    elif(num == 7):
+        day = "Domingo"
+    print(f"El día elegido es: {day}")
+
+elif(ejercicio == 16):
+    user = input("Ingrese el nombre de usuario: ")
+    password = input("Ingrese la contraseña: ")
+    if(user == "omarendon" and password == "1234"):
+        print(f"Bienvenido {user}")
+    elif(user != "omarendon" or password != "1234"):
+        print(f"El usuario y/o la contraseña son incorrectos ")
+
+elif(ejercicio == 17):
+    num = int(input("Ingrese el ultimo número de la placa de su vehiculo: "))
+    day = ""
+    if(num == 0 or num == 1):
+        day = "Lunes"
+    elif(num == 2 or num == 3):
+        day = "Martes"
+    elif(num == 4 or num == 5):
+        day = "Miercoles"
+    elif(num == 6 or num == 7):
+        day = "Jueves"
+    elif(num == 8 or num == 9):
+        day = "Viernes"
+    print(f"Su vehiculo tiene pico y placa el día: {day}")
+
+elif(ejercicio == 18):
+    letra = input("Ingrese una letra: ")
+    if(letra == "a" or letra == "A" or letra == "e" or letra == "E" or letra == "i" or letra == "I" or letra == "o" or letra == "O" or letra == "u" or letra == "U"):
+        print(f"La letra ingresada {letra} es una vocal")
+    else:
+        print(f"La letra ingresada es: {letra} y no es vocal")
     
+elif(ejercicio == 19):
+    option = int(input("Bienvenido, para ingresar a nuestro menu elija una de las siguentes opciones: \n - Archvo presione 1. \n - Buscar presione 2. \n - Si desea salir presione 3. \n"))
+   
+    if(option == 1):
+        option1 = int (input("Ud ha elegido la opción Archivo. \n- Si desea salir presione 3. \n"))
+        if(option1 == 3):
+            print("Hasta luego!!!")
+        elif(option1 != 3):
+            option2 = int (input("Opción invalida. \n- Si desea salir presione 3. \n"))
+            if(option2 == 3):
+                print("Hasta luego!!!")
+    elif(option == 2):
+        option1 = int (input("Ud ha eligido la opción Buscar. \n- Si desea salir presione 3. \n"))
+        if(option1 == 3):
+            print("Hasta luego!!!")
+        elif(option1 != 3):
+            option2 = int (input("Opción invalida. \n- Si desea salir presione 3. \n"))
+            if(option2 == 3):
+                print("Hasta luego!!!")
+    elif(option == 3):
+        print("Hasta luego!!!")
+    elif(option != 1 and option != 2 and option != 3):
+        option = int(input("La opción que eligió no existe en nuestro menú. \n - Archvo presione 1. \n - Buscar presione 2. \n - Si desea salir presione 3. \n"))
+        if(option == 1):
+            option = int (input("Ud ha elegido la opción Archivo. \n- Si desea salir presione 3. \n"))
+        elif(option == 2):
+            option = int (input("Ud ha eligido la opción Buscar. \n- Si desea salir presione 3. \n"))
+        elif(option == 3):
+            print("Hasta luego!!!")
+
+        
