@@ -21,11 +21,14 @@ function CreateUser() {
 
     var errorMsg = "";
 
+    debugger;
+
     dataToSend = {
         "age": $("#inputAge").val(),
         "lastName": $("#inputLastName").val().trim(),
         "name": $("#inputName").val().trim(),
         "password": $("#inputPassword").val(),
+        "ConfirmPassword": $("#inputConfirmPassword").val(),
         "userName": $("#inputUserName").val(),
         "role": $("#inputRole").val()
     }
@@ -45,11 +48,11 @@ function CreateUser() {
     }
 
     if (dataToSend.age == "") {
-        errorMsg += "Ah ingresado una edad no valida \n";
+        errorMsg += "age can't be empty \n";
     }
 
     if (parseInt(dataToSend.age) < 1 && parseInt(dataToSend.age) > 150) {
-        errorMsg += "Ah ingresado una edad no valida \n";
+        errorMsg += "I have entered an invalid age \n";
     }
 
     if (dataToSend.userName == "") {
@@ -60,7 +63,10 @@ function CreateUser() {
         errorMsg += "username must not contain spaces. \n"
     }
     if (dataToSend.password.length < 5) {
-        errorMsg += "La contrasena debe ser mas larga \n"
+        errorMsg += "the password must contain between 5 and 20 characters \n"
+    }
+    if (dataToSend.password != dataToSend.ConfirmPassword) {
+        errorMsg += "The password and confirm password fields must be the same \n"
     }
 
     if (errorMsg != "") {

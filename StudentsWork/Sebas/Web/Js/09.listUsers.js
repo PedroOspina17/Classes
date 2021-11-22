@@ -89,6 +89,7 @@ function LogOut() {
 }
 
 function editUserInterface(UserName) {
+
     var User = {
         "userName": UserName
     }
@@ -122,6 +123,8 @@ function cancelEdit() {
 
 function editUser() {
 
+    debugger;
+
     var errorMsg = "";
 
     dataToSend = {
@@ -136,14 +139,14 @@ function editUser() {
     if (dataToSend.name == "") {
         errorMsg += "The name field cannot be empty. \n";
     }
-    if (dataToSend.name = ! "" && dataToSend.name.length < 3) {
+    if (dataToSend.name != "" && dataToSend.name.length < 3) {
         errorMsg += "The name field must contain more than 3 characters. \n"
     }
 
     if (dataToSend.lastName == "") {
         errorMsg += "The lastName field cannot be empty. \n";
     }
-    if (dataToSend.lastName = ! "" && dataToSend.lastName.length < 3) {
+    if (dataToSend.lastName !=  "" && dataToSend.lastName.length < 3) {
         errorMsg += "The lastName field must contain more than 3 characters. \n"
     }
 
@@ -193,7 +196,7 @@ function editUser() {
 
 function formEdit() {
 
-    /*$("#EditUser").empty();*/
+    $("#EditUser").empty();
 
     $("#EditUser").append(` 
     <form id = "formEdit">
