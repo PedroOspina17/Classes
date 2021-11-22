@@ -45,11 +45,11 @@ function LoginUsuario() {
                 localStorage.setItem("Logueado", user);
                 localStorage.setItem("Role", response.user.role);
             } else {
-                swal("Ha ocurrido un ERROR, consultar mas tarde");
+                swal("Usuario o contraseña incorrecta");
             }
         },
         error: function (response) {
-            swal("Usuario o contraseña incorrecta");
+            swal("Ha ocurrido un ERROR, consultar mas tarde");            
         }
     })
 }
@@ -146,10 +146,10 @@ function ShowHideForm(valueBtn) {
     //$("#FormSignUp").toggle('slow');
     if (valueBtn != 'Login') {
         $("#FormLogin").hide('slow');
-        $("#FormSignUp").toggle('slow');
+        setTimeout(function (){$("#FormSignUp").toggle('slow');},600) //Hace una espera para ejecutar otro evento 'Dar tiempo'        
     } else if (valueBtn != 'Registration') {
         $("#FormSignUp").hide('slow');
-        $("#FormLogin").toggle('slow');
+        setTimeout(function (){$("#FormLogin").toggle('slow');},600) //Hace una espera para ejecutar otro evento 'Dar tiempo'
     }
 }
 function ShowFormSignUp() {

@@ -51,15 +51,9 @@ function TableListUsers() {
 }
 // Funcion que carga la pagina cada vez que se recarga la tabla de los usuarios 
 $(document).ready(function () {
-    debugger
-    if (localStorage.length != 0) {
-        for (var i = 0; i < localStorage.length; i++) {
-            var keyLogin = localStorage.key(i);
-            if (keyLogin == 'Logueado') {
-                TableListUsers();
-            }
-        }
-        window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
+    var keyLogin = localStorage.getItem('Logueado');
+    if (keyLogin != null) {
+        TableListUsers();        
     } else {
         window.location.href = "../../WebPages_FrontEnd/jQuery/01.logginStorage.html";
     }
