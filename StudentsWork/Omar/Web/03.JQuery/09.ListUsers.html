@@ -49,12 +49,17 @@
               </table>
           </div>
       </div>
+      <button type = 'button' id='createNew' class='btn btn_edit' style='background: mediumpurple;border:double' data-toggle="modal" data-target="#exampleModal" value='Create' onclick='cancel()'>Create User</button>
+                   
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h3 class="font-weight-bolder ml-auto" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">Edit User</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <div class="row col-10">
+                <h3 class="font-weight-bolder ml-auto text-hide" id="editUs" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">Edit User</h3>
+                <h3 class="font-weight-bolder ml-auto" id="createUs" style="font-size: -webkit-xxx-large;-webkit-text-stroke-width: medium;">Create User</h3>  
+              </div>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -71,7 +76,7 @@
                       <select class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="role" name="role" placeholder="Role">
                           <option value="">Select a role</option>
                           <option value="Admin">Admin</option>
-                          <option value="Employ">Employee</option>
+                          <option value="Employee">Employee</option>
                       </select>
                     </div>
                   </div>
@@ -83,14 +88,14 @@
                         <input type="password" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="password" name="password" placeholder="Password">
                       </div>
                       <div class="row-col mt-3">
-                          <input type="text" class="form-control border-dark text-center font-weight-bolder" style="border-bottom: inset;" id="userName" name="userName" placeholder="User Name">
+                          <input type="text" class="form-control border-dark text-center font-weight-bolder dis" style="border-bottom: inset;" id="userName" name="userName">
                       </div>
                   </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn" style='background: mediumpurple;' onclick="editUser()">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn" style='background: mediumpurple;' onclick="editUser()">Save</button>
             </div>
           </div>
         </div>
