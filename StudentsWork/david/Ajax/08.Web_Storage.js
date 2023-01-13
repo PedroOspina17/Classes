@@ -48,7 +48,7 @@ function Out() {
 function RLS() {
 
     if (localStorage.getItem("User") == null) {
-        window.location.href = "03.Loguin_FALENA.html"
+        //window.location.href = "03.Loguin_FALENA.html"
     }
     else { 
         for (var i = 0; i < localStorage.length; i++) {
