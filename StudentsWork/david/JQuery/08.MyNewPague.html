@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de productos</title>
+    <link rel="stylesheet" href="../../Common/css/bootstrap.min.css">
+    <script src="../../Common/js/jquery-3.5.1.min.js"></script>
+    <script src="../../Common/js/jquery.dataTables.min.js"></script>
+    <script src="../../Common/js/sweetalert.min.js"></script>
+    <script src="../../Common/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="../../Common/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../Common/css/toastr.min.css">
+    <script src="08.MyNewPague.js"></script>
+</head>
+<body class="container ">
+    <div class="font-weight-bolder text-center text-danger toast-body">
+        <p class="jumbotron">Esta es la nueva paguina de practica</p>
+    </div>
+    <div class="">
+        <div class="alert-success form-control">
+            <p class="text-center">
+                Tabla para registras sus productos
+            </p>
+            
+            <div class="alert-success row">
+                <div class="p-3 form-group col-4">
+                    <label for="MarcaProducto">Escribe la marca del producto</label>
+                    <br>
+                    <input type="text" class="badge-pill shadow table-dark" name="MarcaProducto" id="CampoDeEscritura" placeholder="Marca del producto" required>
+                </div>
+                <div class="p-3 form-group col-4">
+                    <label for="TipoProducto" >Escribe el tipo de producto</label>
+                    <br>
+                    <input type="text" class="badge-pill shadow table-dark" name="TipoProducto" id="TipoProducto" placeholder="Tipo del producto" required>
+                </div>
+                <div class="p-3 form-group col-4">
+                    <label for="CnatidadProducto">Escribe cantidad del producto</label>
+                    <br>
+                    <input type="number" class="badge-pill shadow table-dark" name="CnatidadProducto" id="CnatidadProducto" placeholder="Cantidad del producto" required>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
