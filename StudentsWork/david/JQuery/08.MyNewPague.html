@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,35 +15,68 @@
     <link rel="stylesheet" href="../../Common/css/toastr.min.css">
     <script src="08.MyNewPague.js"></script>
 </head>
-<body class="container ">
-    <div class="font-weight-bolder text-center text-danger toast-body">
-        <p class="jumbotron">Esta es la nueva paguina de practica</p>
-    </div>
-    <div class="">
-        <div class="alert-success form-control">
-            <p class="text-center">
-                Tabla para registras sus productos
-            </p>
-            
-            <div class="alert-success row">
+
+<body class="container bg-dark p-5 ">
+    <div class="form-control bg-dark">
+        <p class="text-light text-center">
+            Tabla de registro de productos
+        </p>
+        <div class="bg-dark p-3 text-center table-bordered">
+            <div class="row">
                 <div class="p-3 form-group col-4">
-                    <label for="MarcaProducto">Escribe la marca del producto</label>
+                    <label for="MarcaProducto" class="text-warning">Escribe la marca del producto</label>
                     <br>
-                    <input type="text" class="badge-pill shadow table-dark" name="MarcaProducto" id="CampoDeEscritura" placeholder="Marca del producto" required>
+                    <input type="text" class="badge-pill shadow table-dark" name="MarcaProducto" id="MarcaProducto"
+                        placeholder="Marca del producto" required>
                 </div>
                 <div class="p-3 form-group col-4">
-                    <label for="TipoProducto" >Escribe el tipo de producto</label>
+                    <label for="TipoProducto" class="text-warning">Escribe el tipo de producto</label>
                     <br>
-                    <input type="text" class="badge-pill shadow table-dark" name="TipoProducto" id="TipoProducto" placeholder="Tipo del producto" required>
+                    <input type="text" class="badge-pill shadow table-dark" name="TipoProducto" id="TipoProducto"
+                        placeholder="Tipo del producto" required>
                 </div>
                 <div class="p-3 form-group col-4">
-                    <label for="CnatidadProducto">Escribe cantidad del producto</label>
+                    <label for="CnatidadProducto" class="text-warning">Escribe cantidad del producto</label>
                     <br>
-                    <input type="number" class="badge-pill shadow table-dark" name="CnatidadProducto" id="CnatidadProducto" placeholder="Cantidad del producto" required>
+                    <input type="number" class="badge-pill shadow table-dark" name="CantidadProducto"
+                        id="CantidadProducto" placeholder="Cantidad del producto" required>
                 </div>
             </div>
-
+            <div class="text-center">
+                <div class="btn-group">
+                    <input type="button" class="btn btn-success" value="GUARDAR" onclick="SaveInformation()">
+                    <input type="button" class="btn btn-danger" value="CANCELAR" onclick="CancelAll()">
+                </div>
+            </div>
         </div>
+        <br>
+        <div class="text-center ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td class="text-primary ">
+                            Marcas
+                        </td>
+                        <td class="text-primary ">
+                            Tipos
+                        </td>
+                        <td class="text-primary ">
+                            cantidaes
+                        </td>
+                        <td class="text-warning">
+                            Acciones
+                        </td>
+
+                    </tr>
+                </thead>
+                <tbody id="CrearTabla">
+
+                </tbody>
+            </table>
+        </div>
+
     </div>
+
 </body>
+
 </html>
