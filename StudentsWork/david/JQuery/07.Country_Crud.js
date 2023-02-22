@@ -120,7 +120,7 @@ function ValidationSave() {
                     <input id="Edit_${Id}" class="btn btn-success" type="button" value="Edit" onclick="Edit(${Id})">
                     <input id="Delete_${Id}" class="btn btn-danger" type="button" value="Delete" onclick="Delete(${Id})">
                 </div>
-            </td>
+            </td>           
             
          </tr>`;
         $("#table1").append(Row)
